@@ -1,0 +1,18 @@
+{
+  "tailwindCSS.emmetCompletions": true,
+  "auto-close-tag.SublimeText3Mode": true,
+  "eslint.alwaysShowStatus": true,
+  "headwind.prependCustomClasses": true,
+  "npm-intellisense.packageSubfoldersIntellisense": true,
+  "npm-intellisense.scanDevDependencies": true,
+  "npm-intellisense.showBuildInLibs": true,
+  "prettier.configPath": "prettier.config",
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.mappings": {
+    "/": "${workspaceFolder}",
+    "lib": "${workspaceFolder}/lib",
+    "global": "/Users/dummy/globalLibs",
+    "components": "${workspaceFolder}/components"
+  }
+}
