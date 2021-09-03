@@ -1,4 +1,4 @@
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 
 export default function Videoplayer({ videoUrl }) {
   return (

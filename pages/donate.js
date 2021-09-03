@@ -75,7 +75,7 @@ export default function Donate() {
       <section>
         <Sectiontext
           subheader="Your Donation"
-          header="100% of your donation goes to mental health care."
+          headerone="100% of your donation goes to mental health care."
           body="We believe so strongly in the idea that your donation- every cent of it, should help someone in our community. Someone on your friend list, someone you queued up against, someone in the same Discord. Thanks to our partners, our operations are covered and your donation can have the most impact."
           learn="Learn more about our funding"
           link="/about"
