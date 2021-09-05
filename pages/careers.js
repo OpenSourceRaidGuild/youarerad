@@ -1,18 +1,17 @@
-import Layout from '../components/Layout'
-import Pageheader from '../components/Pageheader'
-import Videoplayer from '../components/utils/Videoplayer'
-import Sectionheader from '../components/Sectionheader'
 import {
   BeakerIcon,
-  HeartIcon,
-  StarIcon,
-  GlobeAltIcon,
-  HomeIcon,
   BookmarkAltIcon,
-  CalendarIcon,
+  GlobeAltIcon,
+  HeartIcon,
+  HomeIcon,
   LocationMarkerIcon,
+  StarIcon,
   UsersIcon,
 } from '@heroicons/react/solid'
+import ReactPlayer from 'react-player'
+import Layout from '../components/Layout'
+import Pageheader from '../components/Pageheader'
+import Sectionheader from '../components/Sectionheader'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -26,7 +25,7 @@ export default function Careers() {
       description="Learn more working at Rise Above The Disorder. Mental health care is a human right- we're the team fighting to make it a reality. Informed by the latest research on workspace wellbeing, we offer some of the greatest benefits and encourage seperation between work and personal life."
       pageHeader={
         <section>
-          <div className="lg:space-y-0 lg:justify-between lg:flex space-y-16">
+          <div className="space-y-16 lg:space-y-0 lg:justify-between lg:flex">
             <div>
               <Pageheader
                 subheader="Careers at RAD"
@@ -36,14 +35,26 @@ export default function Careers() {
                 chartwo="♡"
               />
             </div>
-            <div className="lg:w-2/5 rounded-xl relative w-full overflow-hidden">
-              <Videoplayer videoUrl="https://res.cloudinary.com/df23ubjbb/video/upload/v1629827299/General%20Media/rad-volunteers.mov" />
+            <div className="relative w-full overflow-hidden lg:w-2/5 rounded-xl">
+              <div className="player-wrapper">
+                <ReactPlayer
+                  className="react-player"
+                  playsinline={true}
+                  playing={true}
+                  width="100%"
+                  height="100%"
+                  controls={false}
+                  muted={true}
+                  loop={true}
+                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1629827299/General%20Media/rad-volunteers.mov"
+                />
+              </div>
             </div>
           </div>
         </section>
       }
     >
-      <div className="bg-gray-50 text-black">
+      <div className="text-black bg-gray-50">
         <section>
           <Sectionheader
             color="text-black"
@@ -51,7 +62,7 @@ export default function Careers() {
             headerone="Everyone deserves to feel well."
             headertwo="That means you, too!"
           />
-          <div className="sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px rounded-xl max-w-screen-md mx-auto mt-16 overflow-hidden text-center divide-y divide-gray-200 shadow">
+          <div className="max-w-screen-md mx-auto mt-16 overflow-hidden text-center divide-y divide-gray-200 shadow sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px rounded-xl">
             {perks.map((context, contextIdx) => (
               <div
                 key={context.id}
@@ -92,20 +103,20 @@ export default function Careers() {
       <div>
         <section>
           <Sectionheader subheader="Open Positions" headerone="Ready to change the world?" />
-          <div className="sm:rounded-xl max-w-screen-md mx-auto mt-16 overflow-hidden bg-white shadow">
+          <div className="max-w-screen-md mx-auto mt-16 overflow-hidden bg-white shadow sm:rounded-xl">
             <ul role="list" className="divide-y divide-gray-200">
               {positions.map((position) => (
                 <li key={position.id}>
-                  <a href="#" className="hover:bg-gray-50 block">
-                    <div className="sm:px-6 px-4 py-4">
+                  <a href="#" className="block hover:bg-gray-50">
+                    <div className="px-4 py-4 sm:px-6">
                       <div className="flex items-center justify-between">
-                        <p className=" font-medium text-black truncate">{position.title}</p>
+                        <p className="font-medium text-black truncate ">{position.title}</p>
                         <div className="relative flex items-center flex-shrink-0 ml-2">
-                          <p className="rounded-xl inline-flex px-2 pt-0 text-xs font-semibold leading-5 text-black bg-green-100">
+                          <p className="inline-flex px-2 pt-0 text-xs font-semibold leading-5 text-black bg-green-100 rounded-xl">
                             {position.type}
                           </p>
                           <span
-                            className="top-6 right-6 group-hover:text-gray-400 absolute text-gray-300 pointer-events-none"
+                            className="absolute text-gray-300 pointer-events-none top-6 right-6 group-hover:text-gray-400"
                             aria-hidden="true"
                           >
                             <svg
@@ -119,7 +130,7 @@ export default function Careers() {
                           </span>
                         </div>
                       </div>
-                      <div className="sm:flex sm:justify-between mt-2">
+                      <div className="mt-2 sm:flex sm:justify-between">
                         <div className="sm:flex">
                           <p className="flex items-center text-sm text-gray-500">
                             <UsersIcon
@@ -129,7 +140,7 @@ export default function Careers() {
                             {position.department}
                           </p>
 
-                          <p className="sm:mt-0 sm:ml-6 flex items-center mt-2 text-sm text-gray-500">
+                          <p className="flex items-center mt-2 text-sm text-gray-500 sm:mt-0 sm:ml-6">
                             <LocationMarkerIcon
                               className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
                               aria-hidden="true"

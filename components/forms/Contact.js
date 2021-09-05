@@ -148,10 +148,11 @@ export default function Contactform() {
               aria-describedby="message-max"
             />
             <button
+              disabled={submitted}
               type="submit"
-              className="flex justify-center w-full p-3 my-8 overflow-hidden text-lg font-bold align-middle transition-all duration-300 ease-linear border-2 border-black rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
+              className={submitted === true ? 'bg-black text-white mt-2' : 'form-button mt-2'}
             >
-              {setSubmitted ? 'Send Message' : 'Your message has been sent!'}
+              {submitted ? <div className="font-bold ">Success!</div> : 'Contact RAD'}
             </button>
           </div>
         </div>

@@ -16,7 +16,7 @@ function classNames(...classes) {
 export default function Transparency() {
   return (
     <div className="bg-white">
-      <div aria-labelledby="Transparency at RAD" className="py-32 mx-auto max-w-7xl">
+      <div aria-labelledby="Transparency at RAD" className="mx-auto max-w-7xl">
         <div className="">
           <Tab.Group as="div" className="mt-4">
             <div className="flex sm:mx-0">

@@ -8,7 +8,7 @@ export default function Terms() {
       pageTitle="RAD Terms"
       description="Rise Above The Disorders terms of service, where you can access and learn more about the terms set for use of our website."
     >
-      <section className="max-w-full">
+      <section className="">
         <h2 className="text-2xl font-bold">Privacy Policy</h2>
         <p>
           Your privacy is important to us. It is Rise Above The Disorder&#39;s policy to respect

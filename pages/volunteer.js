@@ -1,11 +1,11 @@
+import { Tab } from '@headlessui/react'
+import Image from 'next/image'
+import { Fragment } from 'react'
+import ReactPlayer from 'react-player'
+import Button from '../components/Button'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectiontext from '../components/Sectiontext'
-import VideoPlayer from '../components/utils/VideoPlayer'
-import { Fragment } from 'react'
-import { Tab } from '@headlessui/react'
-import { Button } from '../components/Button'
-import Image from 'next/image'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -29,7 +29,7 @@ export default function Volunteer() {
         </section>
       }
     >
-      <div className="bg-gray-50 text-black">
+      <div className="text-black bg-gray-50">
         <section>
           <Sectiontext
             subheader="A Community Effort"
@@ -38,8 +38,20 @@ export default function Volunteer() {
             body="Originally founded as a World of Warcraft guild, our cause has always depended on volunteers. From reviewing text on this site, to traveling to remote countries around the world to setup our programs, there are plenty of rad ways to help others rise above."
             link="#"
             media={
-              <div className="rounded-xl overflow-hidden border">
-                <VideoPlayer videoUrl="https://res.cloudinary.com/df23ubjbb/video/upload/v1629827299/General%20Media/rad-volunteers.mov" />
+              <div className="overflow-hidden border rounded-xl">
+                <div className="player-wrapper">
+                  <ReactPlayer
+                    className="react-player"
+                    playsinline={true}
+                    playing={true}
+                    width="100%"
+                    height="100%"
+                    controls={false}
+                    muted={true}
+                    loop={true}
+                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1629827299/General%20Media/rad-volunteers.mov"
+                  />
+                </div>
               </div>
             }
           />
@@ -49,14 +61,14 @@ export default function Volunteer() {
         <section>
           <div className="bg-white">
             <div aria-labelledby="Volunteer positions open" className="">
-              <div className="lg:px-0 lg:max-w-none max-w-2xl mx-auto">
+              <div className="max-w-2xl mx-auto lg:px-0 lg:max-w-none">
                 <div className="max-w-3xl">
                   <h2 id="volunteer work">Looking for more:</h2>
                 </div>
 
                 <Tab.Group as="div" className="mt-4">
-                  <div className="sm:mx-0 flex -mx-4 overflow-x-auto">
-                    <div className="sm:px-0 flex-auto border-b border-gray-200">
+                  <div className="flex -mx-4 overflow-x-auto sm:mx-0">
+                    <div className="flex-auto border-b border-gray-200 sm:px-0">
                       <Tab.List className="flex -mb-px space-x-10">
                         {tabs.map((tab) => (
                           <Tab
@@ -79,13 +91,13 @@ export default function Volunteer() {
 
                   <Tab.Panels as={Fragment}>
                     {tabs.map((tab) => (
-                      <Tab.Panel key={tab.name} className="lg:space-y-16 py-10">
+                      <Tab.Panel key={tab.name} className="py-10 lg:space-y-16">
                         {tab.features.map((feature) => (
                           <div
                             key={feature.name}
-                            className="lg:grid lg:grid-cols-12 lg:gap-x-8 flex flex-col-reverse"
+                            className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8"
                           >
-                            <div className="lg:mt-0 lg:col-span-5 mt-6">
+                            <div className="mt-6 lg:mt-0 lg:col-span-5">
                               <h3 className="text-xl font-bold text-gray-900">
                                 {feature.name}
                                 <span className="text-blue-700">.</span>
@@ -95,7 +107,7 @@ export default function Volunteer() {
                               <Button linkTo="#"> Volunteer Form </Button>
                             </div>
                             <div className="lg:col-span-7">
-                              <div className="sm:aspect-w-16 sm:aspect-h-19 relative overflow-hidden rounded-lg">
+                              <div className="relative overflow-hidden rounded-lg sm:aspect-w-16 sm:aspect-h-19">
                                 <Image
                                   src={feature.imageSrc}
                                   alt={feature.imageAlt}

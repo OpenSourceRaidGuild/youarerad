@@ -11,6 +11,9 @@ module.exports = {
         primary: '0px 10px 0px 0px rgba(34, 24, 28, 1)',
         secondary: '0px 8px 0px 0px rgba(90, 103, 216, 1)',
       },
+      zIndex: {
+        '-10': '-10',
+      },
     },
   },
   variants: {

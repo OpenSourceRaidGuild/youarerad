@@ -1,10 +1,9 @@
+import { Tab } from '@headlessui/react'
+import { Fragment } from 'react'
+import ReactPlayer from 'react-player/lazy'
+import Button from '../components/Button'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
-import ReactPlayer from 'react-player/lazy'
-import { Fragment } from 'react'
-import { Tab } from '@headlessui/react'
-import { Button } from '../components/Button'
-import Videoplayer from '../components/utils/Videoplayer'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -93,11 +92,23 @@ export default function Partner() {
                               </h3>
                               <p className="mt-2 text-lg text-gray-500">{feature.description}</p>
 
-                              <Button linkTo="#"> Volunteer Form </Button>
+                              <Button linkTo="#"> Partnership Form </Button>
                             </div>
                             <div className="lg:col-span-7">
                               <div className="relative overflow-hidden rounded-lg ">
-                                <Videoplayer videoUrl={feature.video} />
+                                <div className="player-wrapper">
+                                  <ReactPlayer
+                                    className="react-player"
+                                    playsinline={true}
+                                    playing={true}
+                                    width="100%"
+                                    height="100%"
+                                    controls={false}
+                                    muted={true}
+                                    loop={true}
+                                    url={feature.video}
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>

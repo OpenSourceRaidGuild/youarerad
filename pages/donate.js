@@ -1,11 +1,11 @@
+import Link from 'next/dist/client/link'
+import Image from 'next/image'
+import ReactPlayer from 'react-player'
 import DonateForm from '../components/forms/Donate/Donation'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Sectiontext from '../components/Sectiontext'
-import VideoPlayer from '../components/utils/Videoplayer'
-import Link from 'next/dist/client/link'
-import Image from 'next/image'
 
 export default function Donate() {
   return (
@@ -15,7 +15,7 @@ export default function Donate() {
       description="Thanks to heroes like you, someone will start therapy today. Your donation to Rise Above The Disorder changes lives."
       pageHeader={
         <section className="">
-          <div className="lg:space-y-0 lg:justify-between lg:flex space-y-16">
+          <div className="space-y-16 lg:space-y-0 lg:justify-between lg:flex">
             <div>
               <Pageheader
                 subheader="donate"
@@ -25,7 +25,7 @@ export default function Donate() {
                 chartwo="♡"
               />
             </div>
-            <div className="lg:w-4/12 w-full">
+            <div className="w-full lg:w-4/12">
               <DonateForm />
             </div>
           </div>
@@ -36,19 +36,18 @@ export default function Donate() {
         <section className="space-y-16">
           <Sectionheader
             subheader={
-              <span className="bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text text-transparent">
+              <span className="text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text">
                 the guild
               </span>
             }
             headerone="Membership starts at just"
             headertwo="$1 per day!"
           />
-          <div className="md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0 flex flex-wrap-reverse space-y-10">
-            <div className="md:text-left md:mt-0 mt-4 text-center">
-              <h5></h5>
+          <div className="flex flex-wrap-reverse space-y-10 md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0">
+            <div className="mt-4 text-center md:text-left md:mt-0">
               <h3>
                 Give monthly.{' '}
-                <span className="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
                   Provide therapy to thousands.
                 </span>
               </h3>
@@ -58,16 +57,28 @@ export default function Donate() {
                 friends.
               </p>
               <div className="mt-6">
-                <div className="lg:mx-px group relative w-64 h-12 mx-auto">
-                  <button className="text-md rounded-xl group-hover:bg-opacity-0 hover:text-white absolute flex justify-center w-64 px-3 py-2 font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white">
+                <div className="relative w-64 h-12 mx-auto lg:mx-px group">
+                  <button className="absolute flex justify-center w-64 px-3 py-2 font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white text-md rounded-xl group-hover:bg-opacity-0 hover:text-white">
                     Join The Guild
                   </button>
-                  <div className="bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10 w-64 h-12 transition-all duration-300 ease-in-out"></div>
+                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
                 </div>
               </div>
             </div>
-            <div className="rounded-xl w-full p-1 border">
-              <VideoPlayer videoUrl="https://res.cloudinary.com/df23ubjbb/video/upload/v1628790148/General%20Media/RADMythicGarry.mp4" />
+            <div className="w-full p-1 border rounded-xl">
+              <div className="player-wrapper">
+                <ReactPlayer
+                  className="react-player"
+                  playsinline={true}
+                  playing={true}
+                  width="100%"
+                  height="100%"
+                  controls={false}
+                  muted={true}
+                  loop={true}
+                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628790148/General%20Media/RADMythicGarry.mp4"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -1,10 +1,10 @@
 import Layout from '../components/Layout'
-import { Button } from '../components/Button'
 import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
 import Faq from '../components/FAQ'
 import ReactPlayer from 'react-player/lazy'
 import Link from 'next/dist/client/link'
+import Button from '../components/Button'
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
         pageLink="/"
         description="We are a non-profit covering the cost of mental health care for thousands of people around the world."
       >
-        <section className="lg:mb-32 mb-8">
+        <section className="mb-8 lg:mb-32">
           <h1>
             We are a nonprofit covering the cost of mental health care for{' '}
-            <span className="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
               everyone.
             </span>
           </h1>
@@ -35,7 +35,7 @@ export default function Home() {
             <Carousel />
           </section>
         </div>
-        <div className=" bg-white">
+        <div className="bg-white ">
           <section className="">
             <Sectionheader
               color="text-black"
@@ -55,8 +55,8 @@ export default function Home() {
               headerone="Three ways to help."
               headertwo="Be the reason someone starts therapy."
             />
-            <div className="lg:grid lg:grid-cols-3 gap-x-10 pt-8">
-              <div className="rounded-xl p-8 mx-auto mb-32 text-center border">
+            <div className="pt-8 lg:grid lg:grid-cols-2">
+              <div className="max-h-[65vh] col-span-2 p-8 mx-auto text-center">
                 <ReactPlayer
                   playsinline={true}
                   playing={true}
@@ -69,27 +69,27 @@ export default function Home() {
                 />
                 <h5 className="mt-4">the guild</h5>
                 <h3>
-                  Give monthly.<br className="md:hidden flex"></br>
-                  <span className="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                  Give monthly.<br className="flex md:hidden"></br>
+                  <span className="items-center text-center text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
                     {' '}
                     Provide therapy to thousands.{' '}
                   </span>
                 </h3>
-                <p className="mt-2">
+                <p className="mx-auto mt-2 text-center">
                   For more than 10 years, our guild has come together to make mental health care
                   free for those in need. We are casual players, content creators, music artists,
                   and friends.
                 </p>
-                <div className="group relative w-64 h-12 mx-auto mt-4">
+                <div className="relative w-64 h-12 mx-auto mt-4 group">
                   <Link href="/guild">
-                    <a className="rounded-xl group-hover:bg-opacity-0 hover:text-white absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white">
+                    <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
                       Join The Guild
                     </a>
                   </Link>
-                  <div className="bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10 w-64 h-12 transition-all duration-300 ease-in-out"></div>
+                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
                 </div>
               </div>
-              <div className="rounded-xl p-8 mx-auto mb-32 text-center border">
+              <div className="p-8 mx-auto text-center ">
                 <ReactPlayer
                   playsinline={true}
                   playing={true}
@@ -103,7 +103,7 @@ export default function Home() {
                 <h5 className="mt-4">Stream for Rad</h5>
                 <h3>
                   Go live.<br></br>
-                  <span className="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
                     {' '}
                     Change lives.{' '}
                   </span>
@@ -113,16 +113,16 @@ export default function Home() {
                   then, content creators have covered the cost of over 80,000 therapy sessions.
                 </p>
 
-                <div className="group relative w-64 h-12 mx-auto mt-4">
+                <div className="relative w-64 h-12 mx-auto mt-4 group">
                   <Link href="/stream">
-                    <a className="rounded-xl group-hover:bg-opacity-0 hover:text-white absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white">
+                    <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
                       Stream For RAD
                     </a>
                   </Link>
-                  <div className="bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10 w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400"></div>
+                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                 </div>
               </div>
-              <div className="rounded-xl p-8 mx-auto mb-32 text-center border">
+              <div className="p-8 mx-auto text-center">
                 <ReactPlayer
                   playsinline={true}
                   playing={true}
@@ -136,7 +136,7 @@ export default function Home() {
                 <h5 className="mt-4">Our Community</h5>
                 <h3>
                   A community<br></br>
-                  <span className="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
                     {' '}
                     of super rad friends.{' '}
                   </span>
@@ -146,15 +146,15 @@ export default function Home() {
                   weekly game nights, support each other on tough days, and share tons of memes.
                 </p>
 
-                <div className="group relative w-64 h-12 mx-auto mt-4">
+                <div className="relative w-64 h-12 mx-auto mt-4 group">
                   <a
                     href="https://discord.gg/youarerad"
-                    className="rounded-xl group-hover:bg-opacity-0 hover:text-white absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white"
+                    className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white"
                   >
                     Join The Discord
                   </a>
 
-                  <div className="bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10 w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400"></div>
+                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
-import Layout from '../components/Layout.js'
-import Pageheader from '../components/Pageheader.js'
 import Image from 'next/image'
 import Contactform from '../components/forms/Contact.js'
+import Layout from '../components/Layout.js'
+import Pageheader from '../components/Pageheader.js'
 
 export default function Contact() {
   return (
@@ -21,7 +21,7 @@ export default function Contact() {
         </section>
       }
     >
-      <div className="px-4 mx-auto max-w-screen-2xl sm:px-6 md:px-8 lg:px-10 ">
+      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 md:px-8 lg:px-10 ">
         <div className="lg:space-x-20 lg:flex">
           <div className="w-full lg:w-1/2">
             <div className="w-full">
