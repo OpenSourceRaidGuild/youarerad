@@ -1,10 +1,11 @@
+import Link from 'next/dist/client/link'
+import ReactPlayer from 'react-player/lazy'
+import Button from '../components/Button'
+import Faq from '../components/FAQ'
 import Layout from '../components/Layout'
 import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
-import Faq from '../components/FAQ'
-import ReactPlayer from 'react-player/lazy'
-import Link from 'next/dist/client/link'
-import Button from '../components/Button'
+import Fadeinsections from '../components/utils/fadesections.js'
 
 export default function Home() {
   return (
@@ -14,22 +15,43 @@ export default function Home() {
         pageLink="/"
         description="We are a non-profit covering the cost of mental health care for thousands of people around the world."
       >
-        <section className="mb-8 lg:mb-32">
-          <h1>
-            We are a nonprofit covering the cost of mental health care for{' '}
-            <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-              everyone.
-            </span>
-          </h1>
-          <Button linkTo="/donate">Donate Therapy</Button>
+        <section className="relative pt-8 mb-8 lg:pt-16 lg:mb-16">
+          <div className="relative z-30">
+            <h1>
+              We are a nonprofit covering the cost of mental health care for{' '}
+              <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
+                everyone.
+              </span>
+            </h1>
+            <Button linkTo="/donate">Donate Therapy</Button>
+          </div>
+          <ReactPlayer
+            className="pt-16"
+            playsinline={true}
+            playing={true}
+            width="100%"
+            height="100%"
+            controls={true}
+            muted={true}
+            loop={true}
+            url="https://res.cloudinary.com/df23ubjbb/video/upload/v1630971571/RADIntro.mp4"
+          />
         </section>
+        <div className="text-white bg-black">
+          <Fadeinsections>
+            <section className="grid grid-flow-col grid-cols-2 text-center">
+              <h2>38,000 people helped</h2>
+              <h2>133 countries reached</h2>
+            </section>
+          </Fadeinsections>
+        </div>
         <div className="bg-gray-50">
           <section className="space-y-4">
             <Sectionheader
               color="text-black"
               subheader="This is RAD"
               headerone="Everyone deserves mental health care."
-              headertwo="Heroes like you make it possible"
+              headertwo="Heroes like you make it possible."
               bodytext="Founded as a World of Warcraft guild in 2013, our small group centered around crowd funding mental health care for friends. Today, we are an international team helping everyone access mental health care."
             />
             <Carousel />

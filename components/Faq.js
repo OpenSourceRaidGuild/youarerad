@@ -36,7 +36,14 @@ const Tabs = ({ color }) => {
                     </span>
                     <span className="flex items-center ml-6 h-7"></span>
                   </a>
-                  <div className={openTab === 1 ? 'block' : 'hidden'} id="link1">
+                  <div
+                    className={
+                      openTab === 1
+                        ? 'block transition-all duration-150 ease-in'
+                        : 'hidden transition-all duration-150 ease-in'
+                    }
+                    id="link1"
+                  >
                     <p className="mt-2 text-xl text-gray-800 lg:pr-12">
                       We&apos;ll find you the best possible licensed therapist in your area that is
                       in-network or on your budget.
@@ -51,7 +58,14 @@ const Tabs = ({ color }) => {
                       <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
                     </div>
                   </div>
-                  <div className={openTab === 1 ? 'lg:hidden' : 'hidden'} id="link1">
+                  <div
+                    className={
+                      openTab === 1
+                        ? 'lg:hidden transition-all duration-150 ease-in'
+                        : 'hidden transition-all duration-150 ease-in'
+                    }
+                    id="link1"
+                  >
                     <div className="relative py-10">
                       <div className="flex flex-col">
                         <div className="relative ">

@@ -1,6 +1,6 @@
-import { Fragment, useState, useEffect } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import { Fragment, useState } from 'react'
 
 const people = [
   { id: 1, name: 'General Contact' },
@@ -150,7 +150,11 @@ export default function Contactform() {
             <button
               disabled={submitted}
               type="submit"
-              className={submitted === true ? 'bg-black text-white mt-2' : 'form-button mt-2'}
+              className={
+                submitted === true
+                  ? 'bg-black text-white mt-2 form-button cursor-default'
+                  : 'form-button mt-2'
+              }
             >
               {submitted ? <div className="font-bold ">Success!</div> : 'Contact RAD'}
             </button>

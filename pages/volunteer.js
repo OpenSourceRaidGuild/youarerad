@@ -1,17 +1,75 @@
 import { Tab } from '@headlessui/react'
 import Image from 'next/image'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import ReactPlayer from 'react-player'
-import Button from '../components/Button'
+import VolunteerForm from '../components/forms/Volunteer.js'
 import Layout from '../components/Layout'
+import Ctahover from '../components/lotties/cta.js'
 import Pageheader from '../components/Pageheader'
 import Sectiontext from '../components/Sectiontext'
+
+const tabs = [
+  {
+    name: 'Coding',
+    features: [
+      {
+        name: 'Leveling up mental healthcare',
+        description:
+          'The RAD team is always looking for programmers to join us on the frontlines of mental healthcare tech. The repo for this website is open for suggestion, while our new backend intake system and crisis detection Discord bot are looking for long-term volunteers.',
+        imageSrc:
+          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839867/RADDevVolunteer.jpg',
+        imageAlt: "A volunteer for Rise Above The Disorder's developer team.",
+      },
+    ],
+  },
+  {
+    name: 'Clinical',
+    features: [
+      {
+        name: 'Champions for wellness',
+        description:
+          'Work alongside our social work team to make mental health care accessible around the world. Translating clinical texts to various languages, providing screenings, offering expertise,or working on our warmline are immediate ways to support.',
+        imageSrc:
+          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839998/RADCareVolunteers.png',
+        imageAlt: "Medical doctors volunteering for Rise Above The Disorder's clinical wing.",
+      },
+    ],
+  },
+  {
+    name: 'Community',
+    features: [
+      {
+        name: 'Gaming for good',
+        description:
+          'From playing games with those in need of someone to game with to reporting concerning behavior across Twitch to our clinical team- our community volunteers help RAD keep people safe.',
+        imageSrc:
+          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839970/RADCommunityVolunteer.jpg',
+        imageAlt: "A volunteer for Rise Above The Disorder's community team.",
+      },
+    ],
+  },
+  {
+    name: 'Event',
+    features: [
+      {
+        name: 'Attend rad events with RAD',
+        description:
+          "Once it's safe to do so, we'd love to have you join us at all of the big conventions. Introduce content creators to our cause at TwitchCon, booth it up and party at PAX, and pass out positive letters at DreamHack.",
+        imageSrc:
+          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839891/RADEventVolunteers.jpg',
+        imageAlt: 'Volunteers for Rise Above The Disorder at Pax West in 2018.',
+      },
+    ],
+  },
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Volunteer() {
+const Volunteer = () => {
+  const [openForm, setOpenForm] = useState(false)
+
   return (
     <Layout
       pageTitle="RAD Volunteer"
@@ -67,7 +125,7 @@ export default function Volunteer() {
                 </div>
 
                 <Tab.Group as="div" className="mt-4">
-                  <div className="flex -mx-4 overflow-x-auto sm:mx-0">
+                  <div className="flex overflow-x-auto sm:mx-0">
                     <div className="flex-auto border-b border-gray-200 sm:px-0">
                       <Tab.List className="flex -mb-px space-x-10">
                         {tabs.map((tab) => (
@@ -104,7 +162,17 @@ export default function Volunteer() {
                               </h3>
                               <p className="mt-2 text-lg text-gray-500">{feature.description}</p>
 
-                              <Button linkTo="#"> Volunteer Form </Button>
+                              <div className="relative w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
+                                <button
+                                  onClick={setOpenForm}
+                                  className="relative z-10 w-full p-2 font-bold text-center "
+                                >
+                                  Volunteer Form
+                                </button>
+                                <div className="absolute top-0 z-0">
+                                  <Ctahover />
+                                </div>
+                              </div>
                             </div>
                             <div className="lg:col-span-7">
                               <div className="relative overflow-hidden rounded-lg sm:aspect-w-16 sm:aspect-h-19">
@@ -130,61 +198,9 @@ export default function Volunteer() {
           </div>
         </section>
       </div>
+      {openForm ? <VolunteerForm /> : ''}
     </Layout>
   )
 }
 
-export const tabs = [
-  {
-    name: 'Coding',
-    features: [
-      {
-        name: 'Leveling up mental healthcare',
-        description:
-          'The RAD team is always looking for programmers to join us on the frontlines of mental healthcare tech. The repo for this website is open for suggestion, while our new backend intake system and crisis detection Discord bot are looking for long-term volunteers.',
-        imageSrc:
-          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839867/RADDevVolunteer.jpg',
-        imageAlt: "A volunteer for Rise Above The Disorder's developer team.",
-      },
-    ],
-  },
-  {
-    name: 'Clinical',
-    features: [
-      {
-        name: 'Champions for wellness',
-        description:
-          'Work alongside our social work team to make mental health care accessible around the world. Translating clinical texts to various languages, providing screenings, offering expertise,or working on our warmline are immediate ways to support.',
-        imageSrc:
-          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839998/RADCareVolunteers.png',
-        imageAlt: "Medical doctors volunteering for Rise Above The Disorder's clinical wing.",
-      },
-    ],
-  },
-  {
-    name: 'Community',
-    features: [
-      {
-        name: 'Gaming for good',
-        description:
-          'From playing games with those in need of someone to game with to reporting concerning behavior across Twitch to our clinical team- our community volunteers help RAD keep people safe.',
-        imageSrc:
-          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839970/RADCommunityVolunteer.jpg',
-        imageAlt: "A volunteer for Rise Above The Disorder's community team.",
-      },
-    ],
-  },
-  {
-    name: 'Event',
-    features: [
-      {
-        name: 'Attend rad events with RAD',
-        description:
-          "Once it's safe to do so, we'd love to have you join us at all of the big conventions. Introduce content creators to our cause at TwitchCon, booth it up and party at PAX, and pass out positive letters at DreamHack.",
-        imageSrc:
-          'https://res.cloudinary.com/df23ubjbb/image/upload/v1629839891/RADEventVolunteers.jpg',
-        imageAlt: 'Volunteers for Rise Above The Disorder at Pax West in 2018.',
-      },
-    ],
-  },
-]
+export default Volunteer

@@ -1,15 +1,74 @@
 import { Tab } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import ReactPlayer from 'react-player/lazy'
-import Button from '../components/Button'
+import PartnershipForm from '../components/forms/Partnership.js'
 import Layout from '../components/Layout'
+import Ctahover from '../components/lotties/cta.js'
 import Pageheader from '../components/Pageheader'
+
+const tabs = [
+  {
+    name: 'Community Support',
+    features: [
+      {
+        name: 'Make healing possible for your community',
+        description:
+          'Take your ambassador or community impact program to the next level with RAD! Electronic Arts provides free mental health care through RAD to their ambassadors, while Jagex has a fund for players of Runescape to access mental health care.',
+        video: 'https://youtu.be/qFtfG9f_eDM',
+        imageAlt: "Medical doctors volunteering for Rise Above The Disorder's clinical wing.",
+      },
+    ],
+  },
+  {
+    name: 'Event Activations',
+    features: [
+      {
+        name: 'Attend rad events with RAD',
+        description:
+          "Once it's safe to do so, we'd love to have you join us at all of the big conventions. Introduce content creators to our cause at TwitchCon, booth it up and party at PAX, and pass out positive letters at DreamHack.",
+        video:
+          'https://res.cloudinary.com/df23ubjbb/video/upload/v1630624088/General%20Media/ChessxCoinbase.mp4',
+        imageAlt:
+          'Rise Above The Disorder teams up with Chess.com, Coinbase, and some of the most well known content creators in the world for the ultimate Chess tournament.',
+      },
+    ],
+  },
+  {
+    name: 'HR & Employee Care',
+    features: [
+      {
+        name: 'Equip your team with game changing mental health care',
+        description:
+          "We're honored to be a core benefit for many of the greatest companies, teams, and agencies out there! When you empower your team with RAD, you provide them with access to a global network of mental health professionals ready to make sure they feel well.",
+        video:
+          'https://res.cloudinary.com/df23ubjbb/video/upload/v1628807282/General%20Media/teamworkshop.mp4',
+        imageAlt: "A volunteer for Rise Above The Disorder's developer team.",
+      },
+    ],
+  },
+
+  {
+    name: 'Programs & Care',
+    features: [
+      {
+        name: 'Gaming for good',
+        description:
+          'From playing games with those in need of someone to game with to reporting concerning behavior across Twitch to our clinical team- our community volunteers help RAD keep people safe.',
+        video:
+          'https://res.cloudinary.com/df23ubjbb/video/upload/v1630635789/General%20Media/DreamclothingxRAD.mp4',
+        imageAlt: "A volunteer for Rise Above The Disorder's community team.",
+      },
+    ],
+  },
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Partner() {
+  const [openForm, setOpenForm] = useState(false)
+
   return (
     <Layout
       pageTitle="RAD Partnerships"
@@ -92,7 +151,17 @@ export default function Partner() {
                               </h3>
                               <p className="mt-2 text-lg text-gray-500">{feature.description}</p>
 
-                              <Button linkTo="#"> Partnership Form </Button>
+                              <div className="relative w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
+                                <button
+                                  onClick={setOpenForm}
+                                  className="relative z-10 w-full p-2 font-bold text-center "
+                                >
+                                  Partnership Form
+                                </button>
+                                <div className="absolute top-0 z-0">
+                                  <Ctahover />
+                                </div>
+                              </div>
                             </div>
                             <div className="lg:col-span-7">
                               <div className="relative overflow-hidden rounded-lg ">
@@ -122,62 +191,7 @@ export default function Partner() {
           </div>
         </section>
       </div>
+      {openForm ? <PartnershipForm /> : ''}
     </Layout>
   )
 }
-
-export const tabs = [
-  {
-    name: 'Community Support',
-    features: [
-      {
-        name: 'Make healing possible for your community',
-        description:
-          'Take your ambassador or community impact program to the next level with RAD! Electronic Arts provides free mental health care through RAD to their ambassadors, while Jagex has a fund for players of Runescape to access mental health care.',
-        video: 'https://youtu.be/qFtfG9f_eDM',
-        imageAlt: "Medical doctors volunteering for Rise Above The Disorder's clinical wing.",
-      },
-    ],
-  },
-  {
-    name: 'Event Activations',
-    features: [
-      {
-        name: 'Attend rad events with RAD',
-        description:
-          "Once it's safe to do so, we'd love to have you join us at all of the big conventions. Introduce content creators to our cause at TwitchCon, booth it up and party at PAX, and pass out positive letters at DreamHack.",
-        video:
-          'https://res.cloudinary.com/df23ubjbb/video/upload/v1630624088/General%20Media/ChessxCoinbase.mp4',
-        imageAlt:
-          'Rise Above The Disorder teams up with Chess.com, Coinbase, and some of the most well known content creators in the world for the ultimate Chess tournament.',
-      },
-    ],
-  },
-  {
-    name: 'HR & Employee Care',
-    features: [
-      {
-        name: 'Equip your team with game changing mental health care',
-        description:
-          "We're honored to be a core benefit for many of the greatest companies, teams, and agencies out there! When you empower your team with RAD, you provide them with access to a global network of mental health professionals ready to make sure they feel well.",
-        video:
-          'https://res.cloudinary.com/df23ubjbb/video/upload/v1628807282/General%20Media/teamworkshop.mp4',
-        imageAlt: "A volunteer for Rise Above The Disorder's developer team.",
-      },
-    ],
-  },
-
-  {
-    name: 'Programs & Care',
-    features: [
-      {
-        name: 'Gaming for good',
-        description:
-          'From playing games with those in need of someone to game with to reporting concerning behavior across Twitch to our clinical team- our community volunteers help RAD keep people safe.',
-        video:
-          'https://res.cloudinary.com/df23ubjbb/video/upload/v1630635789/General%20Media/DreamclothingxRAD.mp4',
-        imageAlt: "A volunteer for Rise Above The Disorder's community team.",
-      },
-    ],
-  },
-]

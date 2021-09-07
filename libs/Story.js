@@ -1,5 +1,5 @@
-import Sectionheader from '../components/Sectionheader'
 import Image from 'next/image'
+import Sectionheader from '../components/Sectionheader'
 
 export const Story = [
   {
@@ -26,6 +26,7 @@ export const Story = [
       />
     ),
   },
+
   {
     id: 2,
     chapter: 2,
@@ -41,8 +42,8 @@ export const Story = [
     ),
     chapterpicture: (
       <Image
-        src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630526311/StoryCover.png"
-        alt="A pencil sketch of our founder's in-game character. Before them, a vast in-game world filled with mountains, trees, and the portal they came from."
+        src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630526311/Chapterstart.jpg"
+        alt="Pencil sketch of a video game character walking down a somber path. High mountain walls surround them."
         width="1920"
         height="1080"
         layout="intrinsic"
@@ -50,6 +51,7 @@ export const Story = [
       />
     ),
   },
+
   {
     id: 3,
     chapter: 3,
@@ -65,8 +67,58 @@ export const Story = [
     ),
     chapterpicture: (
       <Image
-        src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630526311/Chapterstart.jpg"
-        alt="Pencil sketch of a video game character walking down a somber path. High mountain walls surround them."
+        src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630526311/Chapter%203.jpg"
+        alt="Two potions sit empty, with coins scattered around them.."
+        width="1920"
+        height="1080"
+        layout="intrinsic"
+        objectFit="scale-down"
+      />
+    ),
+  },
+
+  {
+    id: 4,
+    chapter: 4,
+    chaptertext: (
+      <Sectionheader
+        color="text-black"
+        subheader="Our Story"
+        headerone="We're on a quest"
+        headertwo="to change mental health care"
+        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
+        link="#"
+      />
+    ),
+    chapterpicture: (
+      <Image
+        src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630526311/Chapter%204.jpg"
+        alt="Two potions sit empty, with coins scattered around them.."
+        width="1920"
+        height="1080"
+        layout="intrinsic"
+        objectFit="scale-down"
+      />
+    ),
+  },
+
+  {
+    id: 4,
+    chapter: 4,
+    chaptertext: (
+      <Sectionheader
+        color="text-black"
+        subheader="Our Story"
+        headerone="We're on a quest"
+        headertwo="to change mental health care"
+        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
+        link="#"
+      />
+    ),
+    chapterpicture: (
+      <Image
+        src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630526312/Chapter%205.jpg"
+        alt="Two potions sit empty, with coins scattered around them.."
         width="1920"
         height="1080"
         layout="intrinsic"

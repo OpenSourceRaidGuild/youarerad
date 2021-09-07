@@ -44,7 +44,11 @@ export default function Newsletter() {
       <button
         disabled={submitted}
         type="submit"
-        className={submitted === true ? 'bg-black text-white mt-2' : 'form-button mt-2'}
+        className={
+          submitted === true
+            ? 'bg-black text-white mt-2 form-button cursor-default'
+            : 'form-button mt-2'
+        }
       >
         {submitted ? <div className="font-bold ">Success!</div> : 'Sign Up'}
       </button>

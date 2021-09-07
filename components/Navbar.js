@@ -1,14 +1,14 @@
-import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
   BookmarkAltIcon,
+  ChevronDownIcon,
   GlobeAltIcon,
   MenuIcon,
   UserGroupIcon,
-  ChevronDownIcon,
   XIcon,
 } from '@heroicons/react/solid'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 const resources = [
   { name: 'Careers', href: '/careers', icon: UserGroupIcon },
@@ -40,11 +40,11 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Popover className="max-w-screen-2xl sm:px-6 md:px-8 lg:px-10 relative px-4 py-4 mx-auto">
+    <Popover className="relative z-50 px-4 py-4 mx-auto max-w-screen-2xl sm:px-6 md:px-8 lg:px-10">
       {({ open }) => (
         <>
           <div className="relative z-20">
-            <div className="md:justify-start md:space-x-10 lg:py-0 flex items-center justify-between py-4 mx-auto">
+            <div className="flex items-center justify-between py-4 mx-auto md:justify-start md:space-x-10 lg:py-0">
               <div className="flex w-2/5 pr-3">
                 <Link href="/" passHref={true}>
                   <a className="inline-flex items-center">
@@ -71,19 +71,19 @@ export default function Navbar() {
                   </a>
                 </Link>
               </div>
-              <div className="md:hidden -my-2 -mr-2">
-                <Popover.Button className="hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md">
+              <div className="-my-2 -mr-2 md:hidden">
+                <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open menu</span>
                   <MenuIcon className="w-6 h-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
-              <div className="md:flex items-baseline justify-end hidden w-4/5 space-x-4">
+              <div className="items-baseline justify-end hidden w-4/5 space-x-4 md:flex">
                 <Popover.Group as="nav" className="flex items-center space-x-4">
-                  <div className="group relative text-base lowercase">
+                  <div className="relative text-base lowercase group">
                     <Link href="/about">About Us</Link>
                     <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
                   </div>
-                  <div className="group relative text-base lowercase">
+                  <div className="relative text-base lowercase group">
                     <Link href="/therapy">Start Therapy</Link>
                     <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
                   </div>
@@ -126,14 +126,14 @@ export default function Navbar() {
                         >
                           <Popover.Panel
                             static
-                            className="md:block top-full absolute inset-x-0 z-10 hidden transform shadow-lg"
+                            className="absolute inset-x-0 z-10 hidden transform shadow-lg md:block top-full"
                           >
                             <div className="absolute inset-0 flex">
                               <div className="w-1/2 bg-white" />
-                              <div className="bg-gray-50 w-1/2" />
+                              <div className="w-1/2 bg-gray-50" />
                             </div>
-                            <div className="max-w-7xl md:grid-cols-2 relative grid grid-cols-1 mx-auto">
-                              <nav className="gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12 grid px-4 py-8 bg-white">
+                            <div className="relative grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-2">
+                              <nav className="grid px-4 py-8 bg-white gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                                 <div>
                                   <h3 className="text-xs font-bold tracking-wide text-black uppercase">
                                     Supporting RAD
@@ -143,7 +143,7 @@ export default function Navbar() {
                                       <li key={item.name} className="flow-root">
                                         <a
                                           href={item.href}
-                                          className="hover:bg-gray-50 flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md"
+                                          className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md hover:bg-gray-50"
                                         >
                                           <item.icon
                                             className="flex-shrink-0 w-6 h-6 text-gray-400"
@@ -156,7 +156,7 @@ export default function Navbar() {
                                   </ul>
                                 </div>
                               </nav>
-                              <div className="sm:py-12 sm:px-6 lg:px-8 xl:pl-12 px-4 py-8">
+                              <div className="px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                                 <div>
                                   <h3 className="text-xs font-bold tracking-wide text-black uppercase">
                                     RAD Community
@@ -166,17 +166,17 @@ export default function Navbar() {
                                       <li key={post.id} className="flow-root">
                                         <a
                                           href={post.href}
-                                          className="hover:bg-gray-300 flex p-3 -m-3 rounded-lg"
+                                          className="flex p-3 -m-3 rounded-lg hover:bg-gray-300"
                                         >
-                                          <div className="sm:block flex-shrink-0 hidden">
+                                          <div className="flex-shrink-0 hidden sm:block">
                                             <img
                                               className="object-cover w-32 h-20 rounded-md"
                                               src={post.imageUrl}
                                               alt=""
                                             />
                                           </div>
-                                          <div className="sm:ml-8 flex-1 w-0">
-                                            <h4 className="bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-base font-medium text-transparent">
+                                          <div className="flex-1 w-0 sm:ml-8">
+                                            <h4 className="text-base font-medium text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
                                               {post.name}
                                             </h4>
                                             <p className="mt-1 text-base text-gray-500">
@@ -201,7 +201,7 @@ export default function Navbar() {
                       aria-labelledby="donate button"
                       aria-label="Click to donate"
                     >
-                      <button className="rounded-xl md:w-24 shadow-primary hover:shadow-none hover:bg-black hover:text-white flex justify-center w-full p-2 overflow-hidden text-base align-middle transition-all duration-300 ease-linear border-2 border-black">
+                      <button className="flex justify-center w-full p-2 overflow-hidden text-base align-middle transition-all duration-300 ease-linear border-2 border-black rounded-xl md:w-24 shadow-primary hover:shadow-none hover:bg-black hover:text-white">
                         Donate
                       </button>
                     </a>
@@ -224,10 +224,10 @@ export default function Navbar() {
             <Popover.Panel
               focus
               static
-              className="md:hidden absolute inset-x-0 top-0 z-30 transition origin-top-right transform bg-black"
+              className="absolute inset-x-0 top-0 z-30 transition origin-top-right transform bg-black md:hidden"
             >
-              <div className="ring-1 ring-black ring-opacity-5 w-full rounded-lg shadow-lg">
-                <div className=" px-5 pt-5">
+              <div className="w-full rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                <div className="px-5 pt-5 ">
                   <div className="flex justify-between">
                     <div>
                       <Link href="/">
@@ -237,7 +237,7 @@ export default function Navbar() {
                       </Link>
                     </div>
                     <div className="-mr-2">
-                      <Popover.Button className="hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 inline-flex justify-center p-2 text-white bg-black rounded-md">
+                      <Popover.Button className="inline-flex justify-center p-2 text-white bg-black rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Close menu</span>
                         <XIcon className="w-6 h-6" aria-hidden="true" />
                       </Popover.Button>
@@ -250,39 +250,39 @@ export default function Navbar() {
                 <div className="px-5 py-6">
                   <div className="flex flex-col space-y-4">
                     <Link href="/about">
-                      <a className="hover:text-gray-700 text-base font-medium text-white rounded-md">
+                      <a className="text-base font-medium text-white rounded-md hover:text-gray-700">
                         About Us
                       </a>
                     </Link>
                     <Link href="/careers">
-                      <a className="hover:text-gray-700 text-base font-medium text-white rounded-md">
+                      <a className="text-base font-medium text-white rounded-md hover:text-gray-700">
                         RAD Careers
                       </a>
                     </Link>
                     <Link href="/volunteer">
-                      <a className="hover:text-gray-700 text-base font-medium text-white rounded-md">
+                      <a className="text-base font-medium text-white rounded-md hover:text-gray-700">
                         Volunteering
                       </a>
                     </Link>
                     <Link href="/partner">
-                      <a className="hover:text-gray-700 text-base font-medium text-white rounded-md">
+                      <a className="text-base font-medium text-white rounded-md hover:text-gray-700">
                         Partnerships
                       </a>
                     </Link>
                     <Link href="/guild">
-                      <a className="hover:text-gray-700 text-base font-medium text-white rounded-md">
+                      <a className="text-base font-medium text-white rounded-md hover:text-gray-700">
                         Join The Guild
                       </a>
                     </Link>
                     <Link href="/stream">
-                      <a className="hover:text-gray-700 text-base font-medium text-white rounded-md">
+                      <a className="text-base font-medium text-white rounded-md hover:text-gray-700">
                         Stream Fundraiser
                       </a>
                     </Link>
                   </div>
                   <div className="items-center justify-center mx-auto mt-6 space-y-2">
                     <Link href="/therapy">
-                      <a className="rounded-xl flex items-center justify-center w-full px-4 py-2 text-black bg-white border-2 border-transparent">
+                      <a className="flex items-center justify-center w-full px-4 py-2 text-black bg-white border-2 border-transparent rounded-xl">
                         Start Therapy
                       </a>
                     </Link>

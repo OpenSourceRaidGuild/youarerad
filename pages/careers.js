@@ -31,7 +31,7 @@ export default function Careers() {
                 subheader="Careers at RAD"
                 headerone="Everyone deserves therapy"
                 charone="&amp;"
-                headertwo="We're making it a reality that"
+                headertwo="We're making it a reality"
                 chartwo="♡"
               />
             </div>
