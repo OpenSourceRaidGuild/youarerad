@@ -1,4 +1,4 @@
-import { loadStripe } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 
 const stripePromise = loadStripe('pk_test_k9y7PjN6bsvzBcH5cX2gXUKg')
 
