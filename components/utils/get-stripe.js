@@ -9,4 +9,4 @@ const getStripe = () => {
   return stripePromise
 }
 
-export default function getStripe()
+export default getStripe
