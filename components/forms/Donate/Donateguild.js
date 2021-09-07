@@ -53,28 +53,18 @@ export default function DonateGuild() {
             <input
               type="radio"
               name="donation"
-              value="price_1JVIvnEavBxf0OLSGhqDWyox"
-              id="100"
+              value="price_1JXB2OEavBxf0OLSdG6zXsMF"
+              id="300"
               onChange={handleInputChange}
             />
-            <label className="relative radio-label" htmlFor="100">
-              $10
+            <label className="relative radio-label" htmlFor="300">
+              $30
             </label>
           </div>
           <input
             type="radio"
             name="donation"
-            value="price_1JVIvnEavBxf0OLSeJ01R6FH"
-            id="300"
-            onChange={handleInputChange}
-          />
-          <label className="relative radio-label" htmlFor="300">
-            $30
-          </label>
-          <input
-            type="radio"
-            name="donation"
-            value="price_1JVIvnEavBxf0OLSydjaIyU6"
+            value="price_1JXB2OEavBxf0OLSek4zCo3H"
             id="600"
             onChange={handleInputChange}
           />
@@ -84,12 +74,22 @@ export default function DonateGuild() {
           <input
             type="radio"
             name="donation"
-            value="price_1JVIvnEavBxf0OLSTNaZEI7e"
+            value="price_1JXB2OEavBxf0OLSh8QCH0QR"
             id="1200"
             onChange={handleInputChange}
           />
           <label className="relative radio-label" htmlFor="1200">
             $120
+          </label>
+          <input
+            type="radio"
+            name="donation"
+            value="price_1JXB2OEavBxf0OLSegJXvghM"
+            id="2000"
+            onChange={handleInputChange}
+          />
+          <label className="relative radio-label" htmlFor="2000">
+            $200
           </label>
         </div>
         <div></div>
