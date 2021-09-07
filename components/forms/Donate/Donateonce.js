@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Ctahover from '../../lotties/cta.js'
 import { fetchPostJSON } from '../../utils/api-helpers.js'
-import getStripe from '../../utils/Get-stripe.js'
+import getStripe from '../../utils/get-stripe.js'
 
 export default function Donateonce() {
   const [loading, setLoading] = useState(false)
