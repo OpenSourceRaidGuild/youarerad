@@ -4,6 +4,10 @@ module.exports = {
     BASE_URL: process.env.BASE_URL,
   },
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     domains: ['res.cloudinary.com', 'pbs.twimg.com', 'abs.twimg.com'],
   },
