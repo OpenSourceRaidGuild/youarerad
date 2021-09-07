@@ -1,6 +1,6 @@
-import Mayhover from './lotties/may'
 import Link from 'next/dist/client/link'
 import Newsletter from './forms/Newsletter'
+import Mayhover from './lotties/may'
 
 export const navigation = {
   main: [
@@ -43,7 +43,7 @@ export const socials = [
 export default function Footer() {
   return (
     <div className="w-full px-4 py-16 mx-auto lg:max-w-lg lg:px-0">
-      <div id="footer" className="w-1/2 mx-auto">
+      <div id="footer" className="mx-auto ">
         <Mayhover />
         <h2 className="sr-only">Footer</h2>
       </div>

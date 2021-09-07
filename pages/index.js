@@ -1,11 +1,13 @@
 import Link from 'next/dist/client/link'
-import ReactPlayer from 'react-player/lazy'
+import dynamic from 'next/dynamic'
 import Button from '../components/Button'
 import Faq from '../components/Faq.js'
 import Layout from '../components/Layout'
 import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
 import Fadeinsections from '../components/utils/fadesections.js'
+
+const ReactPlayer = dynamic(() => import('react-player/lazy/'), { ssr: false })
 
 export default function Home() {
   return (

@@ -1,6 +1,7 @@
 import Head from 'next/dist/shared/lib/head'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import('../components/Navbar.js'))
+const Footer = dynamic(() => import('../components/Footer.js'))
 
 export const siteTitle = 'Rise Above The Disorder'
 export default function Layout({ children, pageHeader, pageTitle, pageLink, description }) {
