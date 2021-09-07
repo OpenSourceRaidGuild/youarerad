@@ -27,17 +27,6 @@ export default function Home() {
             </h1>
             <Button linkTo="/donate">Donate Therapy</Button>
           </div>
-          <ReactPlayer
-            className="pt-16"
-            playsinline={true}
-            playing={true}
-            width="100%"
-            height="100%"
-            controls={true}
-            muted={true}
-            loop={true}
-            url="https://res.cloudinary.com/df23ubjbb/video/upload/v1630971571/RADIntro.mp4"
-          />
         </section>
         <div className="text-white bg-black">
           <Fadeinsections>
