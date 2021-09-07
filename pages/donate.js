@@ -7,6 +7,33 @@ import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Sectiontext from '../components/Sectiontext'
 
+const Partners = [
+  {
+    name: 'Jagex',
+    logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1629765022/Logos/Jagexlogo.png.png',
+    alt: 'Jagex, makers of Runescape, support Rise Above The Disorder.',
+    link: 'https://www.jagex.com/en-GB/charitable-giving',
+  },
+  {
+    name: 'Electronic Arts',
+    logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1629766474/Logos/EAlogo.png.png',
+    alt: 'Electronic Arts supports Rise Above The Disorder.',
+    link: 'https://www.ea.com/compete/wellness',
+  },
+  {
+    name: 'G4.tv',
+    logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1629765666/Logos/G4logo.png.png',
+    alt: 'G4.tv supports Rise Above The Disorder.',
+    link: 'https://g4tv.com/',
+  },
+  {
+    name: 'Columbia Records',
+    logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1629765876/Logos/ColumbiaRecordslogo.jpg.jpg',
+    alt: 'Columbia Records supports Rise Above The Disorder.',
+    link: 'http://www.columbiarecords.com/',
+  },
+]
+
 export default function Donate() {
   return (
     <Layout
@@ -58,10 +85,14 @@ export default function Donate() {
               </p>
               <div className="mt-6">
                 <div className="relative w-64 h-12 mx-auto lg:mx-px group">
-                  <button className="absolute flex justify-center w-64 px-3 py-2 font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white text-md rounded-xl group-hover:bg-opacity-0 hover:text-white">
-                    Join The Guild
-                  </button>
-                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
+                  <Link href="/guild">
+                    <a>
+                      <button className="absolute flex justify-center w-64 px-3 py-2 font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white text-md rounded-xl group-hover:bg-opacity-0 hover:text-white">
+                        Join The Guild
+                      </button>
+                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -116,7 +147,7 @@ export default function Donate() {
   )
 }
 
-export const Partners = [
+const Partners = [
   {
     name: 'Jagex',
     logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1629765022/Logos/Jagexlogo.png.png',
