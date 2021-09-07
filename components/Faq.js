@@ -382,7 +382,7 @@ const Tabs = ({ color }) => {
                           : 'text-gray-600 font-bold text-2xl lg:text-5xl hover:text-black'
                       }
                     >
-                      I'd like to support my staff or team
+                      I&apos;d like to support my staff or team
                     </span>
                     <span></span>
                   </a>
