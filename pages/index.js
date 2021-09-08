@@ -17,16 +17,14 @@ export default function Home() {
         pageLink="/"
         description="We are a non-profit covering the cost of mental health care for thousands of people around the world."
       >
-        <section className="relative h-screen pt-40 lg:pt-0 ">
-          <div className="relative z-30 lg:translate-y-2/4">
-            <h1>
-              We are a nonprofit covering the cost of mental health care for{' '}
-              <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-                everyone.
-              </span>
-            </h1>
-            <Button linkTo="/donate">Donate Therapy</Button>
-          </div>
+        <section className="h-screen pt-0 lg:pt-40">
+          <h1>
+            We are a nonprofit covering the cost of mental health care for{' '}
+            <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
+              everyone.
+            </span>
+          </h1>
+          <Button linkTo="/donate">Donate Therapy</Button>
         </section>
         <div className="relative text-white bg-black">
           <Fadeinsections>
@@ -69,8 +67,8 @@ export default function Home() {
               headerone="Three ways to help."
               headertwo="Be the reason someone starts therapy."
             />
-            <div className="pt-8 lg:grid lg:grid-cols-2">
-              <div className="max-h-[65vh] col-span-2 p-8 mx-auto text-center">
+            <div className="pt-8 space-y-20 lg:space-y-0 lg:grid lg:grid-cols-2">
+              <div className="col-span-2 mx-auto text-center ">
                 <ReactPlayer
                   playsinline={true}
                   playing={true}
@@ -89,7 +87,7 @@ export default function Home() {
                     Provide therapy to thousands.{' '}
                   </span>
                 </h3>
-                <p className="mx-auto mt-2 text-center">
+                <p className="mx-auto text-center">
                   For more than 10 years, our guild has come together to make mental health care
                   free for those in need. We are casual players, content creators, music artists,
                   and friends.
@@ -103,7 +101,7 @@ export default function Home() {
                   <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
                 </div>
               </div>
-              <div className="p-8 mx-auto text-center ">
+              <div className="mx-auto text-center ">
                 <ReactPlayer
                   playsinline={true}
                   playing={true}
@@ -122,7 +120,7 @@ export default function Home() {
                     Change lives.{' '}
                   </span>
                 </h3>
-                <p className="mt-2">
+                <p className="">
                   In 2016, Trick2G and Imagine Dragons hosted the first live stream for RAD. Since
                   then, content creators have covered the cost of over 80,000 therapy sessions.
                 </p>
@@ -136,7 +134,7 @@ export default function Home() {
                   <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                 </div>
               </div>
-              <div className="p-8 mx-auto text-center">
+              <div className="mx-auto text-center ">
                 <ReactPlayer
                   playsinline={true}
                   playing={true}
@@ -155,7 +153,7 @@ export default function Home() {
                     of super rad friends.{' '}
                   </span>
                 </h3>
-                <p className="mt-2">
+                <p className="">
                   Join hundreds of friends from around the world in our community Discord. We host
                   weekly game nights, support each other on tough days, and share tons of memes.
                 </p>

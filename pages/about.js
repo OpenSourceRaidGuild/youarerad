@@ -52,13 +52,13 @@ export default function About() {
         </div>
       }
     >
-      <section className="">
+      <section className="h-screen">
         <Swiper
           autoHeight={true}
           pagination={{
             clickable: true,
           }}
-          className="h-full"
+          className=""
         >
           {Story.map((chapter, index) => (
             <SwiperSlide

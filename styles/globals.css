@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .player-wrapper {
   position: relative;
   padding-top: 56.25%;
