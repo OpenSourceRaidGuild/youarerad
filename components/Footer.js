@@ -43,7 +43,7 @@ export const socials = [
 export default function Footer() {
   return (
     <div className="w-full px-4 py-16 mx-auto lg:max-w-lg lg:px-0">
-      <div id="footer" className="max-w-sm mx-auto">
+      <div id="footer" className="mx-auto w-60 lg:max-w-xs">
         <Mayhover />
         <h2 className="sr-only">Footer</h2>
       </div>

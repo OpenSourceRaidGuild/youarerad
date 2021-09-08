@@ -107,7 +107,7 @@ const Volunteer = () => {
                     controls={false}
                     muted={true}
                     loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1629827299/General%20Media/rad-volunteers.mov"
+                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1631113317/General%20Media/rad-volunteers.mp4"
                   />
                 </div>
               </div>

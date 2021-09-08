@@ -58,7 +58,7 @@ export default function About() {
           pagination={{
             clickable: true,
           }}
-          className=""
+          className="h-full"
         >
           {Story.map((chapter, index) => (
             <SwiperSlide

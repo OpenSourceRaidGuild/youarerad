@@ -1,11 +1,11 @@
+import Image from 'next/image'
+import ReactPlayer from 'react-player'
+import Button from '../components/Button'
 import Layout from '../components/Layout.js'
 import Pageheader from '../components/Pageheader'
-import Button from '../components/Button'
-import Image from 'next/image'
-import Fadescrolling from '../components/utils/fade-scrolling.js'
-import ReactPlayer from 'react-player'
 import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
+import Fadescrolling from '../components/utils/fade-scrolling.js'
 
 const videos = [
   <ReactPlayer
@@ -133,7 +133,7 @@ export default function Stream() {
             headerone="You can help your community"
             headertwo="and beyond!"
           />
-          <div className="py-16">
+          <div className="">
             <Fadescrolling videos={videos}>
               <div className="sm:space-y-96">
                 <div className="flex-wrap">

@@ -43,6 +43,7 @@ export default function Guild() {
               <div className="player-wrapper">
                 <ReactPlayer
                   className="react-player"
+                  playsinline={true}
                   playing={true}
                   width="100%"
                   height="100%"
