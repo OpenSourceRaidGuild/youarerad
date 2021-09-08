@@ -17,8 +17,8 @@ export default function Home() {
         pageLink="/"
         description="We are a non-profit covering the cost of mental health care for thousands of people around the world."
       >
-        <section className="relative pt-8 mb-8 lg:pt-16 lg:mb-16">
-          <div className="relative z-30">
+        <section className="relative h-screen pt-40 lg:pt-0 ">
+          <div className="relative z-30 lg:translate-y-2/4">
             <h1>
               We are a nonprofit covering the cost of mental health care for{' '}
               <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
@@ -28,11 +28,13 @@ export default function Home() {
             <Button linkTo="/donate">Donate Therapy</Button>
           </div>
         </section>
-        <div className="text-white bg-black">
+        <div className="relative text-white bg-black">
           <Fadeinsections>
-            <section className="grid grid-flow-col grid-cols-2 text-center">
-              <h2>38,000 people helped</h2>
-              <h2>133 countries reached</h2>
+            <section className="relative mx-auto text-center">
+              <h2>38,000 peopled helped across 133 countries.</h2>
+              <p className="mx-auto text-center">
+                We’re creating a world where universal mental health care is one day a reality.
+              </p>
             </section>
           </Fadeinsections>
         </div>
@@ -43,7 +45,6 @@ export default function Home() {
               subheader="This is RAD"
               headerone="Everyone deserves mental health care."
               headertwo="Heroes like you make it possible."
-              bodytext="Founded as a World of Warcraft guild in 2013, our small group centered around crowd funding mental health care for friends. Today, we are an international team helping everyone access mental health care."
             />
             <Carousel />
           </section>
