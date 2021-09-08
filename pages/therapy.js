@@ -58,7 +58,6 @@ export default function Therapy() {
                               <Image
                                 width="400"
                                 height="400"
-                                layout="responsive"
                                 objectFit="scale-down"
                                 className="rounded-full"
                                 alt="Vana"
