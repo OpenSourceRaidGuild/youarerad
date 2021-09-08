@@ -1,7 +1,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 
-function useOnScreen(ref, rootMargin = '-200px') {
+function useOnScreen(ref, rootMargin) {
   // State and setter for storing whether element is visible
   const [isIntersecting, setIntersecting] = useState(false)
 
@@ -46,6 +46,10 @@ const Lazysections = ({ children }) => {
   }, [onScreen, controls])
   return (
     <motion.div
+      threshold="0.5"
+      delay="100"
+      rootMargin="0px"
+      triggerOnce="true"
       className="lazy-div"
       ref={rootRef}
       initial={{ opacity: 0, x: -10 }}
