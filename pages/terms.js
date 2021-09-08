@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
 import Link from 'next/dist/client/link'
+import Layout from '../components/Layout'
 
 export default function Terms() {
   return (
@@ -12,14 +12,14 @@ export default function Terms() {
         <h2 className="text-2xl font-bold">Terms of Service</h2>
         <p className="pt-4">
           These Terms of Service govern your use of the website located at{' '}
-          <Link href="/home">
+          <Link href="/">
             <a className="text-blue-700 underline">https://youarerad.org</a>
           </Link>{' '}
           and any related services provided by Rise Above The Disorder.{' '}
         </p>
         <p className="pt-4">
           By accessing{' '}
-          <Link href="/home">
+          <Link href="/">
             <a className="text-blue-700 underline">https://youarerad.org</a>
           </Link>
           , you agree to abide by these Terms of Service and to comply with all applicable laws and

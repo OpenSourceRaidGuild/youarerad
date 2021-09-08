@@ -205,13 +205,12 @@ export default function Stream() {
           </div>
         </section>
       </div>
-      <section className="space-y-16">
+      <section className="">
         <Sectionheader
           subheader="Our Heroes"
           headerone="Together,"
           headertwo="we can help everyone rise above!"
         />
-        <Button linkTo="/">Plan Your Stream</Button>
         <Carousel />
         <div className="relative items-center w-full mx-auto"></div>
       </section>

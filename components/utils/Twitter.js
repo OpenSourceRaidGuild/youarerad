@@ -11,8 +11,8 @@ export default function Twitter({
   comments,
   image,
 }) {
-  const authorUrl = `https://twitter.com/${author.username}`
-  const tweetUrl = `https://twitter.com/${author.username}/status/${id}`
+  const authorUrl = `https://twitter.com/${author}`
+  const tweetUrl = `https://twitter.com/${author}/status/${id}`
 
   return (
     <div className="pr-2">

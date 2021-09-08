@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
 import Link from 'next/dist/client/link'
+import Layout from '../components/Layout'
 
 export default function Terms() {
   return (
@@ -14,7 +14,7 @@ export default function Terms() {
           Your privacy is important to us. It is Rise Above The Disorder&#39;s policy to respect
           your privacy and comply with any applicable law and regulation regarding any personal
           information we may collect about you, including across our website,{' '}
-          <Link href="/home">
+          <Link href="/">
             <a className="text-blue-700 underline">https://youarerad.org</a>
           </Link>
           , and other sites we own and operate.{' '}

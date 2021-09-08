@@ -171,11 +171,10 @@ export default function Navbar() {
                                         >
                                           <div className="flex-shrink-0 hidden sm:block">
                                             <Image
-                                              width="400"
-                                              height="400"
-                                              layout="responsive"
-                                              objectFit="scale-down"
-                                              className="object-cover w-32 h-20 rounded-md"
+                                              width="200"
+                                              height="100"
+                                              objectFit="cover"
+                                              className="rounded-md"
                                               src={post.imageUrl}
                                               alt=""
                                             />
@@ -184,7 +183,7 @@ export default function Navbar() {
                                             <h4 className="text-base font-medium text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
                                               {post.name}
                                             </h4>
-                                            <p className="mt-1 text-base text-gray-500">
+                                            <p className="pt-0 text-base text-gray-500">
                                               {post.preview}
                                             </p>
                                           </div>
