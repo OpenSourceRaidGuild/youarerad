@@ -81,7 +81,6 @@ const Tabs = ({ color }) => {
                                 <Image
                                   width="400"
                                   height="400"
-                                  layout="responsive"
                                   objectFit="scale-down"
                                   className="rounded-full"
                                   alt="Vana"
@@ -257,7 +256,6 @@ const Tabs = ({ color }) => {
                                 <Image
                                   width="400"
                                   height="400"
-                                  layout="responsive"
                                   objectFit="scale-down"
                                   className="rounded-full"
                                   alt="John Robbins"
@@ -447,7 +445,6 @@ const Tabs = ({ color }) => {
                         <Image
                           width="400"
                           height="400"
-                          layout="responsive"
                           objectFit="scale-down"
                           className="rounded-full"
                           alt="Vana"
@@ -587,7 +584,6 @@ const Tabs = ({ color }) => {
                         <Image
                           width="400"
                           height="400"
-                          layout="responsive"
                           objectFit="scale-down"
                           className="rounded-full"
                           alt="John Robbins"
