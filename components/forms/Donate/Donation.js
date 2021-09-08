@@ -8,7 +8,7 @@ function classNames(...classes) {
 
 export default function DonateForm() {
   return (
-    <div>
+    <div className="">
       <Tab.Group>
         <div className="m-4">
           <Tab.List className="flex">

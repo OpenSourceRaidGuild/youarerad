@@ -40,13 +40,13 @@ export default function Donateonce() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="relative p-10 border rounded-xl bg-gray-50">
+      <form onSubmit={handleSubmit} className="relative p-10 border rounded-xl bg-gray-50 ">
         <div
           role="group"
           aria-labelledby="donation-amount"
           className="grid items-center grid-cols-3 gap-5 min-w-max"
         >
-          <div className="relative">
+          <div className="relative w-24">
             <input type="radio" name="donation" value="30" id="300" onChange={handleInputChange} />
             <label className="relative radio-label" htmlFor="300">
               $30{' '}
@@ -87,7 +87,7 @@ export default function Donateonce() {
         <button
           disabled={loading}
           type="submit"
-          className="relative w-full col-span-3 p-2 mx-auto mt-20 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
+          className="relative w-full col-span-3 p-2 mx-auto mt-10 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
         >
           <span className="relative z-10 w-full font-bold text-center">Donate</span>
           <div className="absolute top-0 z-0">

@@ -52,7 +52,7 @@ export default function Donate() {
                 chartwo="♡"
               />
             </div>
-            <div className="w-full lg:w-4/12">
+            <div className="">
               <DonateForm />
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function Donate() {
       }
     >
       <div className="text-white bg-black">
-        <section className="space-y-16">
+        <section className="">
           <Sectionheader
             subheader={
               <span className="text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text">

@@ -160,7 +160,7 @@ video {
     @apply text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl;
   }
   h2 {
-    @apply text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl;
+    @apply text-3xl font-extrabold tracking-tight whitespace-pre-wrap sm:text-5xl lg:text-5xl lg:whitespace-normal;
   }
   h3 {
     @apply text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl;
