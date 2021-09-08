@@ -1,7 +1,6 @@
+import SwiperCore, { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Twitter from './Twitter'
-
-import SwiperCore, { Pagination, Navigation } from 'swiper'
 
 SwiperCore.use([Pagination, Navigation])
 
@@ -19,7 +18,7 @@ const slides = [
           <div>
             Thank you so much for this amazing stream! I cannot put into words how thankful I am for
             all your support and the love from my community. we also managed to completely smash the
-            donation goal for'{' '}
+            donation goal for{' '}
             <a href="https://twitter.com/youarerad">
               <span className="text-blue-700">@YouAreRAD</span>
             </a>{' '}
@@ -47,8 +46,8 @@ const slides = [
             <a href="https://t.co/vWzYpYvisV?amp=1">
               <span className="text-blue-700">https://t.co/vWzYpYvisV?amp=1</span>
             </a>{' '}
-            There is still time to donate if you'd like to buy therapy for people who can't afford
-            it.
+            There is still time to donate if you&apos;d like to buy therapy for people who
+            can&apos;t afford it.
           </div>
         }
         likes="1.5k"
@@ -68,8 +67,8 @@ const slides = [
         created_at="10:32 AM · May 16, 2021"
         text={
           <div>
-            I'm doing my first Charity stream today! All Donation proceeds go to a mental health
-            cause: Rise Above the Disorder!!
+            I&apos;m doing my first Charity stream today! All Donation proceeds go to a mental
+            health cause: Rise Above the Disorder!!
           </div>
         }
         likes="988"
@@ -92,12 +91,12 @@ const slides = [
             <a href="https://twitter.com/youarerad">
               <span className="text-blue-700">@YouAreRAD</span>
             </a>{' '}
-            and more than doubled our goal. I'm blown away by you guys and love you all so much. ❤️
-            And thank you to all the{' '}
+            and more than doubled our goal. I&apos;m blown away by you guys and love you all so
+            much. ❤️ And thank you to all the{' '}
             <a href="https://twitter.com/SCLiveClub">
               <span className="text-blue-700">@SCLiveClub</span>
             </a>{' '}
-            streamers who participated, y'all are incredible 😀 ❤️❤️❤️
+            streamers who participated, y&apos;all are incredible 😀 ❤️❤️❤️
           </div>
         }
         likes="87"
@@ -142,9 +141,9 @@ const slides = [
         created_at="3:35 PM · Apr 26, 2021"
         text={
           <div>
-            We're still reeling from yesterday but I wanted to take a moment to sincerely thank you
-            all. Last year, we streamed for 24 hours and raised 6k. This year, after 14 hours, you
-            all raised $15,222.20 for{' '}
+            We&apos;re still reeling from yesterday but I wanted to take a moment to sincerely thank
+            you all. Last year, we streamed for 24 hours and raised 6k. This year, after 14 hours,
+            you all raised $15,222.20 for{' '}
             <a href="https://twitter.com/youarerad">
               <span className="text-blue-700">@YouAreRAD</span> This community is incredible & we
               are so lucky to have you.

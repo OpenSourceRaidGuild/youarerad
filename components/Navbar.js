@@ -7,6 +7,7 @@ import {
   UserGroupIcon,
   XIcon,
 } from '@heroicons/react/solid'
+import Image from 'next/dist/client/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
 
@@ -169,7 +170,11 @@ export default function Navbar() {
                                           className="flex p-3 -m-3 rounded-lg hover:bg-gray-300"
                                         >
                                           <div className="flex-shrink-0 hidden sm:block">
-                                            <img
+                                            <Image
+                                              width="400"
+                                              height="400"
+                                              layout="responsive"
+                                              objectFit="scale-down"
                                               className="object-cover w-32 h-20 rounded-md"
                                               src={post.imageUrl}
                                               alt=""

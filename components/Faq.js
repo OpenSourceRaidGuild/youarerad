@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useState } from 'react'
 
 const Tabs = ({ color }) => {
@@ -77,7 +78,11 @@ const Tabs = ({ color }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
-                                <img
+                                <Image
+                                  width="400"
+                                  height="400"
+                                  layout="responsive"
+                                  objectFit="scale-down"
                                   className="rounded-full"
                                   alt="Vana"
                                   src="https://pbs.twimg.com/profile_images/1422007712645255172/OfxqBOzd_400x400.jpg"
@@ -249,7 +254,11 @@ const Tabs = ({ color }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
-                                <img
+                                <Image
+                                  width="400"
+                                  height="400"
+                                  layout="responsive"
+                                  objectFit="scale-down"
                                   className="rounded-full"
                                   alt="John Robbins"
                                   src="https://pbs.twimg.com/profile_images/1091028285184724994/it8rCc37_400x400.jpg"
@@ -435,7 +444,11 @@ const Tabs = ({ color }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
+                        <Image
+                          width="400"
+                          height="400"
+                          layout="responsive"
+                          objectFit="scale-down"
                           className="rounded-full"
                           alt="Vana"
                           src="https://pbs.twimg.com/profile_images/1422007712645255172/OfxqBOzd_400x400.jpg"
@@ -571,7 +584,11 @@ const Tabs = ({ color }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img
+                        <Image
+                          width="400"
+                          height="400"
+                          layout="responsive"
+                          objectFit="scale-down"
                           className="rounded-full"
                           alt="John Robbins"
                           src="https://pbs.twimg.com/profile_images/1091028285184724994/it8rCc37_400x400.jpg"

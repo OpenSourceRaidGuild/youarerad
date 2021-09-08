@@ -9,6 +9,7 @@ import Fadescrolling from '../components/utils/fade-scrolling.js'
 
 const videos = [
   <ReactPlayer
+    key="id-1"
     playsinline={true}
     playing={true}
     width="100%"
@@ -19,6 +20,7 @@ const videos = [
     url="https://res.cloudinary.com/df23ubjbb/video/upload/v1630020608/General%20Media/MattWaldenCharithon.mp4"
   />,
   <ReactPlayer
+    key="id-2"
     playsinline={true}
     playing={true}
     width="100%"
@@ -29,6 +31,7 @@ const videos = [
     url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628974976/General%20Media/FeelsRAD.mp4"
   />,
   <ReactPlayer
+    key="id-3"
     playsinline={true}
     playing={true}
     width="100%"
@@ -42,28 +45,31 @@ const videos = [
 
 const creatorImage = [
   {
-    img: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628530955/Creator%20gif/Pokimane.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/df23ubjbb/image/upload/v1628530955/Creator%20gif/Pokimane.jpg',
     alt: "Content creator Pokimane sharing the importance of mental health in Rise Above The Disorder's Mental Health Awareness Month campaign with HyperX.",
     gif: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628530565/Creator%20gif/Pokimanegif.gif',
     order: '1',
     linkout: '',
   },
   {
-    img: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628534391/Creator%20gif/BBNO%24.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/df23ubjbb/image/upload/v1628534391/Creator%20gif/BBNO%24.jpg',
     alt: 'BBNO$ supporting Rise Above The Disorder.',
     gif: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628530564/Creator%20gif/BBNO%24gif.gif',
     order: '2',
     linkout: '',
   },
   {
-    img: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628532793/Creator%20gif/Prozd.jpg',
+    imgSrc: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628532793/Creator%20gif/Prozd.jpg',
     alt: 'Prozd supporting Rise Above The Disorder.',
     gif: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628530566/Creator%20gif/Prozdgif.gif',
     order: '3',
     linkout: '',
   },
   {
-    img: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628532736/Creator%20gif/Vikkstar.jpg',
+    imgSrc:
+      'https://res.cloudinary.com/df23ubjbb/image/upload/v1628532736/Creator%20gif/Vikkstar.jpg',
     alt: 'Vikkstar supporting Rise Above The Disorder.',
     gif: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628530565/Creator%20gif/Vikkstargif.gif',
     order: '4',
@@ -110,8 +116,8 @@ export default function Stream() {
                     <div className="relative w-full p-4 h-60 group-hover:hidden">
                       <Image
                         unoptimized={process.env.ENVIRONMENT !== 'PRODUCTION'}
-                        key={index.img}
-                        src={index.img}
+                        key={index.imgSrc}
+                        src={index.imgSrc}
                         layout="fill"
                         objectFit="cover"
                         alt={index.alt}

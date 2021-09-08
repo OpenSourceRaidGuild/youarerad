@@ -1,4 +1,5 @@
 import Link from 'next/dist/client/link'
+import Image from 'next/image'
 import ReactPlayer from 'react-player'
 import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -105,7 +106,11 @@ export default function About() {
               {Staff.map((team, index) => (
                 <li key={index} className="relative">
                   <div className="block w-full overflow-hidden bg-gray-100 lg:w-6/12 rounded-xl group focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500">
-                    <img
+                    <Image
+                      width="400"
+                      height="400"
+                      layout="responsive"
+                      objectFit="scale-down"
                       src={team.picture}
                       alt=""
                       className="object-cover pointer-events-none group-hover:opacity-75"

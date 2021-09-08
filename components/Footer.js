@@ -1,3 +1,4 @@
+import Image from 'next/dist/client/image'
 import Link from 'next/dist/client/link'
 import Newsletter from './forms/Newsletter'
 import Mayhover from './lotties/may'
@@ -78,7 +79,7 @@ export default function Footer() {
         <div className="flex flex-row items-center justify-center mx-auto mt-3 space-x-5">
           {socials.map((social) => (
             <a href={social.href} key={social.logo}>
-              <img src={social.logo} width="40" height="auto" alt={social.alt} />
+              <Image src={social.logo} width="40" height="40" alt={social.alt} />
             </a>
           ))}
         </div>

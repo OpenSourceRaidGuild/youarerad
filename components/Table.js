@@ -1,4 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
+import Image from 'next/dist/client/image'
 import { Staff } from '../libs/Data/Staff'
 
 export default function Table() {
@@ -36,7 +37,15 @@ export default function Table() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 w-10 h-10">
-                          <img className="w-10 h-10 rounded-full" src={person.picture} alt="" />
+                          <Image
+                            width="400"
+                            height="400"
+                            layout="responsive"
+                            objectFit="scale-down"
+                            className="w-10 h-10 rounded-full"
+                            src={person.picture}
+                            alt=""
+                          />
                         </div>
                         <div className="ml-4">
                           <div className="text-sm font-medium text-gray-900">{person.name}</div>

@@ -22,5 +22,5 @@ export const useIntersection = (ref, selector, handler, options) => {
       }
     }
     return () => {}
-  }, [ref.current, options.threshold, options.rootMargin])
+  })
 }

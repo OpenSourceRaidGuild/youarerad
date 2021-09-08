@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import ReactPlayer from 'react-player'
 import Button from '../components/Button.js'
 import Layout from '../components/Layout.js'
@@ -54,7 +55,11 @@ export default function Therapy() {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <img
+                              <Image
+                                width="400"
+                                height="400"
+                                layout="responsive"
+                                objectFit="scale-down"
                                 className="rounded-full"
                                 alt="Vana"
                                 src="https://pbs.twimg.com/profile_images/1422007712645255172/OfxqBOzd_400x400.jpg"
