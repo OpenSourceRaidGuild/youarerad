@@ -1,8 +1,8 @@
+import { useEmblaCarousel } from 'embla-carousel/react'
 import Link from 'next/dist/client/link'
 import Image from 'next/image'
+import React, { useCallback, useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
-import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
@@ -10,9 +10,38 @@ import Transparency from '../components/Transparencytab'
 import { Staff } from '../libs/Data/Staff'
 import { Story } from '../libs/Story'
 
-SwiperCore.use([Pagination, Navigation, EffectFade])
-
 export default function About() {
+  const [viewportRef, embla] = useEmblaCarousel({
+    containScroll: 'trimSnaps',
+    dragFree: true,
+  })
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla])
+  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla])
+
+  const onSelect = useCallback(() => {
+    if (!embla) return
+    setPrevBtnEnabled(embla.canScrollPrev())
+    setNextBtnEnabled(embla.canScrollNext())
+  }, [embla])
+
+  const onScroll = useCallback(() => {
+    if (!embla) return
+    const progress = Math.max(0, Math.min(1, embla.scrollProgress()))
+    setScrollProgress(progress * 100)
+  }, [embla, setScrollProgress])
+
+  useEffect(() => {
+    if (!embla) return
+    onSelect()
+    onScroll()
+    embla.on('select', onSelect)
+    embla.on('scroll', onScroll)
+  }, [embla, onSelect, onScroll])
+
   return (
     <Layout
       pageTitle="RAD About Us"
@@ -53,30 +82,43 @@ export default function About() {
         </div>
       }
     >
-      <section className="h-screen">
-        <Swiper
-          autoHeight={true}
-          pagination={{
-            clickable: true,
-          }}
-          className="h-full"
-        >
-          {Story.map((chapter, index) => (
-            <SwiperSlide
-              key={chapter.id}
-              className="space-y-10 lg:space-y-0 lg:justify-between lg:flex"
-            >
-              <div key={index} className="relative w-full overflow-hidden lg:w-3/5 rounded-xl">
-                <div className="">{chapter.chapterpicture}</div>
-              </div>
-              <div className="" key={chapter.chapter}>
-                <div className="w-full" key={chapter.chaptertext}>
-                  {chapter.chaptertext}
+      <section>
+        <div className="embla">
+          <div className="embla__viewport" ref={viewportRef}>
+            <div className="embla__container">
+              {Story.map((chapters) => (
+                <div className="embla__slide__full" key={chapters.id}>
+                  <div className="embla__slide__full">
+                    <div className="lg:flex">
+                      {chapters.chapterpicture}
+                      {chapters.chaptertext}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="z-10 flex justify-center pt-10 mx-auto space-x-3">
+          <button
+            className="relative flex justify-center w-1/4 p-2 overflow-hidden text-base align-middle transition-all duration-300 ease-linear border-2 border-black rounded-lg l shadow-cta hover:shadow-none hover:bg-black hover:text-white"
+            onClick={scrollPrev}
+          >
+            Prev
+          </button>
+          <button
+            className="relative flex justify-center w-1/4 p-2 overflow-hidden text-base align-middle transition-all duration-300 ease-linear border-2 border-black rounded-lg shadow-cta hover:shadow-none hover:bg-black hover:text-white"
+            onClick={scrollNext}
+          >
+            Next
+          </button>
+        </div>
+        <div className="embla__progress">
+          <div
+            className="embla__progress__bar"
+            style={{ transform: `translateX(${scrollProgress}%)` }}
+          />
+        </div>
       </section>
       <div className="text-black bg-gray-50">
         <section>
