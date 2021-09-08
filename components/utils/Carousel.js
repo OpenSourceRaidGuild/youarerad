@@ -192,8 +192,8 @@ const Carousel = () => {
     <div className=" embla">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
-          {slides.map((slides) => (
-            <div className="embla__slide" key={slides.theslide}>
+          {slides.map((slides, index) => (
+            <div className="embla__slide" key={index}>
               <div className="embla__slide__inner">{slides.theslide}</div>
             </div>
           ))}
