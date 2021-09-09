@@ -75,21 +75,18 @@ export default function Home() {
                 subheader="the guild"
                 headerone="Give monthly,"
                 headertwo="help thousands."
-                body={
-                  <div>
-                    <p className="pt-0">
-                      For more than 10 years, our guild has come together to make mental health care
+                body="  For more than 10 years, our guild has come together to make mental health care
                       free for those in need. We are casual players, content creators, music
                       artists, and friends.
-                    </p>
-                    <div className="relative w-64 h-12 mt-4 group">
-                      <Link href="/guild">
-                        <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
-                          Join The Guild
-                        </a>
-                      </Link>
-                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
-                    </div>
+"
+                button={
+                  <div className="relative w-64 h-12 mt-4 group">
+                    <Link href="/guild">
+                      <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
+                        Join The Guild
+                      </a>
+                    </Link>
+                    <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
                   </div>
                 }
                 media={
@@ -112,21 +109,17 @@ export default function Home() {
                 subheader="Stream for Rad"
                 headerone="Go live."
                 headertwo="Change lives."
-                body={
-                  <div>
-                    <p className="pt-0">
-                      In 2016, Trick2G and Imagine Dragons hosted the first live stream for RAD.
+                body=" In 2016, Trick2G and Imagine Dragons hosted the first live stream for RAD.
                       Since then, content creators have covered the cost of over 80,000 therapy
-                      sessions.
-                    </p>
-                    <div className="relative w-64 h-12 mt-4 group">
-                      <Link href="/stream">
-                        <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
-                          Stream For RAD
-                        </a>
-                      </Link>
-                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
-                    </div>
+                      sessions."
+                button={
+                  <div className="relative w-64 h-12 mt-4 group">
+                    <Link href="/stream">
+                      <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
+                        Stream For RAD
+                      </a>
+                    </Link>
+                    <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                   </div>
                 }
                 media={
@@ -148,23 +141,19 @@ export default function Home() {
                 subheader="Our Community"
                 headerone="A community"
                 headertwo="of super rad friends."
-                body={
-                  <div>
-                    <p className="pt-0">
-                      Join hundreds of friends from around the world in our community Discord. We
+                body="Join hundreds of friends from around the world in our community Discord. We
                       host weekly game nights, support each other on tough days, and share tons of
-                      memes.
-                    </p>
-                    <div className="relative w-64 h-12 mt-4 group">
-                      <a
-                        href="https://discord.gg/youarerad"
-                        className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white"
-                      >
-                        Join The Discord
-                      </a>
+                      memes."
+                button={
+                  <div className="relative w-64 h-12 mt-4 group">
+                    <a
+                      href="https://discord.gg/youarerad"
+                      className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white"
+                    >
+                      Join The Discord
+                    </a>
 
-                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
-                    </div>
+                    <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                   </div>
                 }
                 media={

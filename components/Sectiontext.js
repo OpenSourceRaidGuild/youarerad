@@ -5,6 +5,7 @@ export default function Sectiontext({
   subheader,
   headerone,
   headertwo,
+  button,
   body,
   learn,
   link,
@@ -22,7 +23,8 @@ export default function Sectiontext({
               {headertwo}
             </span>
           </h3>
-          <p>{body}</p>
+          {body && <p>{body}</p>}
+          {button && <div>{button}</div>}
           {link && (
             <div className="relative inline-flex flex-row items-center mt-2 text-lg group">
               <Link href={link}>

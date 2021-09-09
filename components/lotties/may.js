@@ -1,15 +1,21 @@
-import { useEffect, useState } from 'react'
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import Lottie from '@rookino/react-lottie-light'
+import May from './May.json'
 
 const Mayhover = () => {
-  const [animationData, setAnimationData] = useState()
+  const defaultOptions = {
+    animationData: May,
+    loop: true,
+    autoplay: true,
+    renderSettings: {
+      progressiveLoad: true,
+    },
+  }
 
-  useEffect(() => {
-    import('./May.json').then(setAnimationData)
-  }, [])
-
-  if (!animationData) return <div>Loading...</div>
-  return <Lottie animationData={animationData} play style={{ width: '100%', height: '100%' }} />
+  return (
+    <>
+      <Lottie options={defaultOptions} />
+    </>
+  )
 }
 
 export default Mayhover
