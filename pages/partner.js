@@ -1,10 +1,12 @@
 import { Tab } from '@headlessui/react'
+import dynamic from 'next/dynamic'
 import { Fragment, useState } from 'react'
-import ReactPlayer from 'react-player/lazy'
 import PartnershipForm from '../components/forms/Partnership.js'
 import Layout from '../components/Layout'
 import Ctahover from '../components/lotties/cta.js'
 import Pageheader from '../components/Pageheader'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 const tabs = [
   {
@@ -14,7 +16,7 @@ const tabs = [
         name: 'Make healing possible for your community',
         description:
           'Take your ambassador or community impact program to the next level with RAD! Electronic Arts provides free mental health care through RAD to their ambassadors, while Jagex has a fund for players of Runescape to access mental health care.',
-        video: 'https://youtu.be/qFtfG9f_eDM',
+        video: 'Jagex',
         imageAlt: "Medical doctors volunteering for Rise Above The Disorder's clinical wing.",
       },
     ],
@@ -26,8 +28,7 @@ const tabs = [
         name: 'Attend rad events with RAD',
         description:
           "Once it's safe to do so, we'd love to have you join us at all of the big conventions. Introduce content creators to our cause at TwitchCon, booth it up and party at PAX, and pass out positive letters at DreamHack.",
-        video:
-          'https://res.cloudinary.com/df23ubjbb/video/upload/v1630624088/General%20Media/ChessxCoinbase.mp4',
+        video: 'General%20Media/ChessxCoinbase',
         imageAlt:
           'Rise Above The Disorder teams up with Chess.com, Coinbase, and some of the most well known content creators in the world for the ultimate Chess tournament.',
       },
@@ -40,8 +41,7 @@ const tabs = [
         name: 'Equip your team with game changing mental health care',
         description:
           "We're honored to be a core benefit for many of the greatest companies, teams, and agencies out there! When you empower your team with RAD, you provide them with access to a global network of mental health professionals ready to make sure they feel well.",
-        video:
-          'https://res.cloudinary.com/df23ubjbb/video/upload/v1628807282/General%20Media/teamworkshop.mp4',
+        video: 'General%20Media/teamworkshop',
         imageAlt: "A volunteer for Rise Above The Disorder's developer team.",
       },
     ],
@@ -54,8 +54,7 @@ const tabs = [
         name: 'Gaming for good',
         description:
           'From playing games with those in need of someone to game with to reporting concerning behavior across Twitch to our clinical team- our community volunteers help RAD keep people safe.',
-        video:
-          'https://res.cloudinary.com/df23ubjbb/video/upload/v1630635789/General%20Media/DreamclothingxRAD.mp4',
+        video: 'General%20Media/DreamclothingxRAD',
         imageAlt: "A volunteer for Rise Above The Disorder's community team.",
       },
     ],
@@ -87,19 +86,7 @@ export default function Partner() {
               />
             </div>
             <div className="relative w-full col-start-2 overflow-hidden border border-transparent lg:w-4/5 rounded-xl">
-              <div className="player-wrapper">
-                <ReactPlayer
-                  className="react-player"
-                  playsinline={false}
-                  playing={false}
-                  width="100%"
-                  height="100%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url={'https://www.youtube.com/watch?v=AOlzu5r-PNol'}
-                />
-              </div>
+              <VideoPlayer publicId="Hyperx" />
             </div>
           </div>
         </section>
@@ -108,7 +95,7 @@ export default function Partner() {
       <div className="bg-gray-50">
         <section>
           <div className="">
-            <div aria-labelledby="Partnership oppertunities" className="">
+            <div aria-labelledby="Partnership opportunities" className="">
               <div className="max-w-2xl mx-auto lg:px-0 lg:max-w-none">
                 <div className="max-w-3xl">
                   <h2 id="Partnership types">Partnership Types:</h2>
@@ -151,7 +138,7 @@ export default function Partner() {
                               </h3>
                               <p className="mt-2 text-lg text-gray-500">{feature.description}</p>
 
-                              <div className="relative w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
+                              <div className="relative items-center w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
                                 <button
                                   onClick={setOpenForm}
                                   className="relative z-10 w-full p-2 font-bold text-center "
@@ -165,19 +152,7 @@ export default function Partner() {
                             </div>
                             <div className="lg:col-span-7">
                               <div className="relative overflow-hidden rounded-lg ">
-                                <div className="player-wrapper">
-                                  <ReactPlayer
-                                    className="react-player"
-                                    playsinline={true}
-                                    playing={true}
-                                    width="100%"
-                                    height="100%"
-                                    controls={false}
-                                    muted={true}
-                                    loop={true}
-                                    url={feature.video}
-                                  />
-                                </div>
+                                <VideoPlayer publicId={feature.video} />
                               </div>
                             </div>
                           </div>

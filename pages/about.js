@@ -1,14 +1,16 @@
 import { useEmblaCarousel } from 'embla-carousel/react'
 import Link from 'next/dist/client/link'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
-import ReactPlayer from 'react-player'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Transparency from '../components/Transparencytab'
 import { Staff } from '../libs/Data/Staff'
 import { Story } from '../libs/Story'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 export default function About() {
   const [viewportRef, embla] = useEmblaCarousel({
@@ -63,19 +65,7 @@ export default function About() {
                 />
               </div>
               <div className="relative w-full overflow-hidden lg:w-2/5 rounded-xl">
-                <div className="player-wrapper">
-                  <ReactPlayer
-                    className="react-player"
-                    playsinline={true}
-                    playing={true}
-                    width="100%"
-                    height="100%"
-                    controls={false}
-                    muted={true}
-                    loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628874723/General%20Media/Aboutrad.mp4"
-                  />
-                </div>
+                <VideoPlayer publicId="General%20Media/Aboutrad" />
               </div>
             </div>
           </section>

@@ -1,12 +1,14 @@
 import { Tab } from '@headlessui/react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import ReactPlayer from 'react-player'
 import VolunteerForm from '../components/forms/Volunteer.js'
 import Layout from '../components/Layout'
 import Ctahover from '../components/lotties/cta.js'
 import Pageheader from '../components/Pageheader'
 import Sectiontext from '../components/Sectiontext'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 const tabs = [
   {
@@ -97,19 +99,7 @@ const Volunteer = () => {
             link="#"
             media={
               <div className="overflow-hidden border rounded-xl">
-                <div className="player-wrapper">
-                  <ReactPlayer
-                    className="react-player"
-                    playsinline={true}
-                    playing={true}
-                    width="100%"
-                    height="100%"
-                    controls={false}
-                    muted={true}
-                    loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1631113317/General%20Media/rad-volunteers.mp4"
-                  />
-                </div>
+                <VideoPlayer publicId="General%20Media/rad-volunteers" />
               </div>
             }
           />
@@ -162,7 +152,7 @@ const Volunteer = () => {
                               </h3>
                               <p className="mt-2 text-lg text-gray-500">{feature.description}</p>
 
-                              <div className="relative w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
+                              <div className="relative items-center w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
                                 <button
                                   onClick={setOpenForm}
                                   className="relative z-10 w-full p-2 font-bold text-center "

@@ -1,11 +1,13 @@
 import Link from 'next/dist/client/link'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import ReactPlayer from 'react-player'
 import DonateForm from '../components/forms/Donate/Donation'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Sectiontext from '../components/Sectiontext'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 const Partners = [
   {
@@ -97,19 +99,7 @@ export default function Donate() {
               </div>
             </div>
             <div className="w-full p-1 border rounded-xl">
-              <div className="player-wrapper">
-                <ReactPlayer
-                  className="react-player"
-                  playsinline={true}
-                  playing={true}
-                  width="100%"
-                  height="100%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628790148/General%20Media/RADMythicGarry.mp4"
-                />
-              </div>
+              <VideoPlayer publicId="General%20Media/RADMythicGarry" />
             </div>
           </div>
         </section>

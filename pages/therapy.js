@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import ReactPlayer from 'react-player'
 import Button from '../components/Button.js'
 import Layout from '../components/Layout.js'
 import Pageheader from '../components/Pageheader.js'
 import Sectionheader from '../components/Sectionheader.js'
 import Sectiontext from '../components/Sectiontext.js'
 import Lazysections from '../components/utils/lazysections.js'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 export default function Therapy() {
   return (
@@ -186,19 +188,7 @@ export default function Therapy() {
                 headertwo="Let's map it out together."
                 body="Everyone's journey is unique- that's why our social workers like to work with you directly to best understand how we can help. We'll explore therapy and discuss any other resources that could be useful."
                 link="/"
-                media={
-                  <ReactPlayer
-                    key="community"
-                    playsinline={true}
-                    playing={true}
-                    width="100%"
-                    height="100%"
-                    controls={false}
-                    muted={true}
-                    loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628807215/General%20Media/therapistfinder.mp4"
-                  />
-                }
+                media={<VideoPlayer publicId="General%20Media/therapistfinder" />}
               />
             </div>
           </Lazysections>

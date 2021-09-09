@@ -11,8 +11,7 @@ export const Story = [
         subheader="Our Story"
         headerone="We're on a quest"
         headertwo="to change mental health care"
-        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
-        link="#"
+        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest began in the only world they felt they still existed in- The World of Warcraft."
       />
     ),
     chapterpicture: (
@@ -31,14 +30,15 @@ export const Story = [
     id: 2,
     chapter: 2,
     chaptertext: (
-      <Sectionheader
-        color="text-black"
-        subheader="Our Story"
-        headerone="We're on a quest"
-        headertwo="to change mental health care"
-        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
-        link="#"
-      />
+      <div>
+        <h3>The quest</h3>
+        <p>
+          Every dungeon and every battleground, they welcomed anyone having thoughts of self-harm to
+          reach out. Nights were filled with long talks about life and hardship, while each day
+          recruited members interested in helping. Although our founder intended to help just one
+          person, so long as there were others in need, their quest continued.
+        </p>
+      </div>
     ),
     chapterpicture: (
       <Image
@@ -56,14 +56,15 @@ export const Story = [
     id: 3,
     chapter: 3,
     chaptertext: (
-      <Sectionheader
-        color="text-black"
-        subheader="Our Story"
-        headerone="We're on a quest"
-        headertwo="to change mental health care"
-        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
-        link="#"
-      />
+      <div>
+        <h3>The quest</h3>
+        <p>
+          Every dungeon and every battleground, they welcomed anyone having thoughts of self-harm to
+          reach out. Nights were filled with long talks about life and hardship, while each day
+          recruited members interested in helping. Although our founder intended to help just one
+          person, so long as there were others in need, their quest continued.
+        </p>
+      </div>
     ),
     chapterpicture: (
       <Image

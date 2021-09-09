@@ -1,10 +1,12 @@
 import Image from 'next/dist/client/image'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import ReactPlayer from 'react-player'
 import DonateGuild from '../components/forms/Donate/Donateguild.js'
 import Layout from '../components/Layout.js'
 import Pageheader from '../components/Pageheader.js'
 import Sectiontext from '../components/Sectiontext.js'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 export default function Guild() {
   const [selected, setSelected] = useState(0)
@@ -39,21 +41,7 @@ export default function Guild() {
             headertwo="you join a community of IRL healers"
             body="Over a decade ago, our founder took what little was left from his disability check to pay for someone's therapy. Alone, he was able to pay for one therapy session a month. As a guild, RAD has been able to cover thousands of therapy sessions. "
             link=""
-            media={
-              <div className="player-wrapper">
-                <ReactPlayer
-                  className="react-player"
-                  playsinline={true}
-                  playing={true}
-                  width="100%"
-                  height="100%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1630889981/Untitled_project_2021-09-05_17_53_1_c3ifsn.mp4"
-                />
-              </div>
-            }
+            media={<VideoPlayer publicId="RADHighlightTwo" />}
           />
           <div className="flex flex-wrap pt-16 lg:grid lg:grid-cols-3">
             <div>

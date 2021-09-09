@@ -1,5 +1,5 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import ReactPlayer from 'react-player'
 import Button from '../components/Button'
 import Layout from '../components/Layout.js'
 import Pageheader from '../components/Pageheader'
@@ -7,40 +7,12 @@ import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
 import Fadescrolling from '../components/utils/fade-scrolling.js'
 
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+
 const videos = [
-  <ReactPlayer
-    key="id-1"
-    playsinline={true}
-    playing={true}
-    width="100%"
-    height="100%"
-    controls={false}
-    muted={true}
-    loop={true}
-    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1630020608/General%20Media/MattWaldenCharithon.mp4"
-  />,
-  <ReactPlayer
-    key="id-2"
-    playsinline={true}
-    playing={true}
-    width="100%"
-    height="100%"
-    controls={false}
-    muted={true}
-    loop={true}
-    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628974976/General%20Media/FeelsRAD.mp4"
-  />,
-  <ReactPlayer
-    key="id-3"
-    playsinline={true}
-    playing={true}
-    width="100%"
-    height="100%"
-    controls={false}
-    muted={true}
-    loop={true}
-    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628902398/General%20Media/BBN0%24.mp4"
-  />,
+  <VideoPlayer key="1" publicId="General%20Media/MattWaldenCharithon" />,
+  <VideoPlayer key="2" publicId="General%20Media/FeelsRAD" />,
+  <VideoPlayer key="3" publicId="General%20Media/BBN0%24" />,
 ]
 
 const creatorImage = [
@@ -149,16 +121,7 @@ export default function Stream() {
                     therapy sessions.
                   </h3>
                   <div className="py-16 sm:hidden">
-                    <ReactPlayer
-                      playsinline={true}
-                      playing={true}
-                      width="100%"
-                      height="100%"
-                      controls={false}
-                      muted={true}
-                      loop={true}
-                      url="https://res.cloudinary.com/df23ubjbb/video/upload/v1630020608/General%20Media/MattWaldenCharithon.mp4"
-                    />
+                    <VideoPlayer publicId="General%20Media/MattWaldenCharithon" />
                   </div>
                 </div>
                 <div>
@@ -169,16 +132,7 @@ export default function Stream() {
                     <br className="hidden sm:flex"></br> 78% of people heard about RAD on Twitch.
                   </h3>
                   <div className="py-16 sm:hidden">
-                    <ReactPlayer
-                      playsinline={true}
-                      playing={true}
-                      width="100%"
-                      height="100%"
-                      controls={false}
-                      muted={true}
-                      loop={true}
-                      url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628974976/General%20Media/FeelsRAD.mp4"
-                    />
+                    <VideoPlayer publicId="General%20Media/FeelsRAD" />
                   </div>
                 </div>
                 <div>
@@ -188,16 +142,7 @@ export default function Stream() {
                     therapy session.
                   </h3>
                   <div className="py-16 sm:hidden">
-                    <ReactPlayer
-                      playsinline={true}
-                      playing={true}
-                      width="100%"
-                      height="100%"
-                      controls={false}
-                      muted={true}
-                      loop={true}
-                      url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628902398/General%20Media/BBN0%24.mp4"
-                    />
+                    <VideoPlayer publicId="General%20Media/BBN0%24" />
                   </div>
                 </div>
               </div>

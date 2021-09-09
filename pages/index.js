@@ -8,13 +8,13 @@ import Sectiontext from '../components/Sectiontext.js'
 import Carousel from '../components/utils/Carousel'
 import Fadeinsections from '../components/utils/fadesections.js'
 
-const ReactPlayer = dynamic(() => import('react-player/lazy/'), { ssr: false })
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 export default function Home() {
   return (
     <>
       <Layout
-        pageTitle="Rise Above The Disoder"
+        pageTitle="Rise Above The Disorder"
         pageLink="/"
         description="We are a non-profit covering the cost of mental health care for thousands of people around the world."
       >
@@ -89,18 +89,7 @@ export default function Home() {
                     <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
                   </div>
                 }
-                media={
-                  <ReactPlayer
-                    playsinline={true}
-                    playing={true}
-                    width="100%"
-                    height="50%"
-                    controls={false}
-                    muted={true}
-                    loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628790148/General%20Media/RADMythicGarry.mp4"
-                  />
-                }
+                media={<VideoPlayer publicId="General%20Media/RADMythicGarry" />}
               />
             </div>
             <div className="py-16 border-t border-b">
@@ -122,18 +111,7 @@ export default function Home() {
                     <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                   </div>
                 }
-                media={
-                  <ReactPlayer
-                    playsinline={true}
-                    playing={true}
-                    width="100%"
-                    height="50%"
-                    controls={false}
-                    muted={true}
-                    loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628902398/General%20Media/BBN0%24.mp4"
-                  />
-                }
+                media={<VideoPlayer publicId="General%20Media/BBN0%24" />}
               />
             </div>
             <div>
@@ -156,18 +134,7 @@ export default function Home() {
                     <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
                   </div>
                 }
-                media={
-                  <ReactPlayer
-                    playsinline={true}
-                    playing={true}
-                    width="100%"
-                    height="50%"
-                    controls={false}
-                    muted={true}
-                    loop={true}
-                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628974976/General%20Media/FeelsRAD.mp4"
-                  />
-                }
+                media={<VideoPlayer publicId="General%20Media/FeelsRAD" />}
               />
             </div>
           </section>

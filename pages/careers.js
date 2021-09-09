@@ -8,10 +8,12 @@ import {
   StarIcon,
   UsersIcon,
 } from '@heroicons/react/solid'
-import ReactPlayer from 'react-player'
+import dynamic from 'next/dynamic'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
+
+const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -36,19 +38,7 @@ export default function Careers() {
               />
             </div>
             <div className="relative w-full overflow-hidden lg:w-2/5 rounded-xl">
-              <div className="player-wrapper">
-                <ReactPlayer
-                  className="react-player"
-                  playsinline={true}
-                  playing={true}
-                  width="100%"
-                  height="100%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1629827299/General%20Media/rad-volunteers.mov"
-                />
-              </div>
+              <VideoPlayer publicId="General%20Media/rad-volunteers" />
             </div>
           </div>
         </section>
