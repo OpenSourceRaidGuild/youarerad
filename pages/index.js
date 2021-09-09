@@ -1,9 +1,10 @@
 import Link from 'next/dist/client/link'
 import dynamic from 'next/dynamic'
 import Button from '../components/Button'
-import Faq from '../components/Faq.js'
 import Layout from '../components/Layout'
+import Programs from '../components/Programs.js'
 import Sectionheader from '../components/Sectionheader'
+import Sectiontext from '../components/Sectiontext.js'
 import Carousel from '../components/utils/Carousel'
 import Fadeinsections from '../components/utils/fadesections.js'
 
@@ -49,126 +50,136 @@ export default function Home() {
         </div>
         <div className="bg-white ">
           <section className="">
-            <Sectionheader
-              color="text-black"
-              subheader="How We Help"
-              headerone="Mental health care."
-              headertwo="For anyone, anywhere."
-              bodytext="We remove the two greatest barriers to mental health care: access and affordability. All licensed professionals, all personally matched to you. You deserve to feel rad."
-            />
-            <Faq />
+            <div className="w-full lg:w-1/2">
+              <Sectionheader
+                color="text-black"
+                subheader="How We Help"
+                headerone="Mental health care."
+                headertwo="For anyone, anywhere."
+                bodytext="We remove the two greatest barriers to mental health care: access and affordability. All licensed professionals, all personally matched to you. You deserve to feel rad."
+              />
+            </div>
+            <Programs />
           </section>
         </div>
         <div className="text-white bg-black">
-          <section className="">
+          <section className="space-y-16">
             <Sectionheader
               color="text-white"
               subheader="how you help"
               headerone="Three ways to help."
               headertwo="Be the reason someone starts therapy."
             />
-            <div className="pt-8 space-y-20 lg:space-y-0 lg:grid lg:grid-cols-2">
-              <div className="col-span-2 mx-auto text-center ">
-                <ReactPlayer
-                  playsinline={true}
-                  playing={true}
-                  width="100%"
-                  height="50%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628790148/General%20Media/RADMythicGarry.mp4"
-                />
-                <h5 className="mt-4">the guild</h5>
-                <h3>
-                  Give monthly.<br className="flex md:hidden"></br>
-                  <span className="items-center text-center text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-                    {' '}
-                    Provide therapy to thousands.{' '}
-                  </span>
-                </h3>
-                <p className="mx-auto text-center">
-                  For more than 10 years, our guild has come together to make mental health care
-                  free for those in need. We are casual players, content creators, music artists,
-                  and friends.
-                </p>
-                <div className="relative w-64 h-12 mx-auto mt-4 group">
-                  <Link href="/guild">
-                    <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
-                      Join The Guild
-                    </a>
-                  </Link>
-                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
-                </div>
-              </div>
-              <div className="mx-auto text-center ">
-                <ReactPlayer
-                  playsinline={true}
-                  playing={true}
-                  width="100%"
-                  height="50%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628902398/General%20Media/BBN0%24.mp4"
-                />
-                <h5 className="mt-4">Stream for Rad</h5>
-                <h3>
-                  Go live.<br></br>
-                  <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-                    {' '}
-                    Change lives.{' '}
-                  </span>
-                </h3>
-                <p className="">
-                  In 2016, Trick2G and Imagine Dragons hosted the first live stream for RAD. Since
-                  then, content creators have covered the cost of over 80,000 therapy sessions.
-                </p>
+            <div>
+              <Sectiontext
+                subheader="the guild"
+                headerone="Give monthly,"
+                headertwo="help thousands."
+                body={
+                  <div>
+                    <p className="pt-0">
+                      For more than 10 years, our guild has come together to make mental health care
+                      free for those in need. We are casual players, content creators, music
+                      artists, and friends.
+                    </p>
+                    <div className="relative w-64 h-12 mt-4 group">
+                      <Link href="/guild">
+                        <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
+                          Join The Guild
+                        </a>
+                      </Link>
+                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl group-hover:h-10"></div>
+                    </div>
+                  </div>
+                }
+                media={
+                  <ReactPlayer
+                    playsinline={true}
+                    playing={true}
+                    width="100%"
+                    height="50%"
+                    controls={false}
+                    muted={true}
+                    loop={true}
+                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628790148/General%20Media/RADMythicGarry.mp4"
+                  />
+                }
+              />
+            </div>
+            <div className="py-16 border-t border-b">
+              <Sectiontext
+                alternate={false}
+                subheader="Stream for Rad"
+                headerone="Go live."
+                headertwo="Change lives."
+                body={
+                  <div>
+                    <p className="pt-0">
+                      In 2016, Trick2G and Imagine Dragons hosted the first live stream for RAD.
+                      Since then, content creators have covered the cost of over 80,000 therapy
+                      sessions.
+                    </p>
+                    <div className="relative w-64 h-12 mt-4 group">
+                      <Link href="/stream">
+                        <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
+                          Stream For RAD
+                        </a>
+                      </Link>
+                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
+                    </div>
+                  </div>
+                }
+                media={
+                  <ReactPlayer
+                    playsinline={true}
+                    playing={true}
+                    width="100%"
+                    height="50%"
+                    controls={false}
+                    muted={true}
+                    loop={true}
+                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628902398/General%20Media/BBN0%24.mp4"
+                  />
+                }
+              />
+            </div>
+            <div>
+              <Sectiontext
+                subheader="Our Community"
+                headerone="A community"
+                headertwo="of super rad friends."
+                body={
+                  <div>
+                    <p className="pt-0">
+                      Join hundreds of friends from around the world in our community Discord. We
+                      host weekly game nights, support each other on tough days, and share tons of
+                      memes.
+                    </p>
+                    <div className="relative w-64 h-12 mt-4 group">
+                      <a
+                        href="https://discord.gg/youarerad"
+                        className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white"
+                      >
+                        Join The Discord
+                      </a>
 
-                <div className="relative w-64 h-12 mx-auto mt-4 group">
-                  <Link href="/stream">
-                    <a className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white">
-                      Stream For RAD
-                    </a>
-                  </Link>
-                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
-                </div>
-              </div>
-              <div className="mx-auto text-center ">
-                <ReactPlayer
-                  playsinline={true}
-                  playing={true}
-                  width="100%"
-                  height="50%"
-                  controls={false}
-                  muted={true}
-                  loop={true}
-                  url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628974976/General%20Media/FeelsRAD.mp4"
-                />
-                <h5 className="mt-4">Our Community</h5>
-                <h3>
-                  A community<br></br>
-                  <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-                    {' '}
-                    of super rad friends.{' '}
-                  </span>
-                </h3>
-                <p className="">
-                  Join hundreds of friends from around the world in our community Discord. We host
-                  weekly game nights, support each other on tough days, and share tons of memes.
-                </p>
-
-                <div className="relative w-64 h-12 mx-auto mt-4 group">
-                  <a
-                    href="https://discord.gg/youarerad"
-                    className="absolute flex justify-center w-64 px-3 py-2 text-sm font-bold text-black align-middle transition-all duration-300 ease-in-out bg-white rounded-xl group-hover:bg-opacity-0 hover:text-white"
-                  >
-                    Join The Discord
-                  </a>
-
-                  <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
-                </div>
-              </div>
+                      <div className="w-64 h-12 transition-all duration-300 ease-in-out bg-blue-400 bg-gradient-to-r from-pink-400 to rounded-xl group-hover:h-10"></div>
+                    </div>
+                  </div>
+                }
+                media={
+                  <ReactPlayer
+                    playsinline={true}
+                    playing={true}
+                    width="100%"
+                    height="50%"
+                    controls={false}
+                    muted={true}
+                    loop={true}
+                    url="https://res.cloudinary.com/df23ubjbb/video/upload/v1628974976/General%20Media/FeelsRAD.mp4"
+                  />
+                }
+              />
             </div>
           </section>
         </div>
