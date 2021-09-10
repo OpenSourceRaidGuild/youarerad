@@ -3,16 +3,27 @@ import Ctahover from '../../lotties/cta.js'
 import { fetchPostJSON } from '../../utils/api-helpers.js'
 import getStripe from '../../utils/get-stripe.js'
 
+const stepOne = ' covers the cost of one therapy session.'
+const stepTwo = ' covers the cost of two therapy sessions.'
+const stepThree = ' covers the cost of an entire month of therapy sessions.'
+const stepFour = ' covers the cost of two full months of therapy sessions.'
+
 export default function Donateonce() {
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState()
+  const [impact, setImpact] = useState('$30')
+  const [message, setMessage] = useState(stepTwo)
 
   const handleInputChange = (e) => {
+    const id = e.target.id
     const value = e.target.value
+    const provides = e.target.step
     setInput({
       ...input,
       value: Math.round(value * 100),
     })
+    setImpact('$' + Math.floor(id / 10))
+    setMessage(provides)
   }
 
   console.log(input)
@@ -47,25 +58,47 @@ export default function Donateonce() {
           className="grid grid-cols-3 gap-4 auto-cols-fr"
         >
           <input
+            step={stepOne}
             type="radio"
             name="donation"
             value="30"
             id="300"
             onChange={handleInputChange}
-            defaultChecked
           />
           <label className="relative radio-label" htmlFor="300">
             $30{' '}
           </label>
-          <input type="radio" name="donation" value="60" id="600" onChange={handleInputChange} />
+          <input
+            step={stepTwo}
+            type="radio"
+            name="donation"
+            value="60"
+            id="600"
+            onChange={handleInputChange}
+          />
           <label className="relative radio-label" htmlFor="600">
             $60
           </label>
-          <input type="radio" name="donation" value="120" id="1200" onChange={handleInputChange} />
+          <input
+            step={stepThree}
+            defaultChecked
+            type="radio"
+            name="donation"
+            value="120"
+            id="1200"
+            onChange={handleInputChange}
+          />
           <label className="relative radio-label" htmlFor="1200">
             $120
           </label>
-          <input type="radio" name="donation" value="300" id="3000" onChange={handleInputChange} />
+          <input
+            step={stepFour}
+            type="radio"
+            name="donation"
+            value="300"
+            id="3000"
+            onChange={handleInputChange}
+          />
           <label className="relative radio-label" htmlFor="3000">
             $300
           </label>
@@ -88,11 +121,14 @@ export default function Donateonce() {
             </div>
           </div>
         </div>
-
+        <p>
+          Your donation of <span className="font-bold">{impact}</span>
+          {message}
+        </p>
         <button
           disabled={loading}
           type="submit"
-          className="relative w-full col-span-3 p-2 mx-auto mt-10 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
+          className="relative w-full col-span-3 p-2 mx-auto mt-4 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
         >
           <span className="relative z-10 w-full font-bold text-center">Donate</span>
           <div className="absolute top-0 z-0">

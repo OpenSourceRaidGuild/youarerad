@@ -4,16 +4,28 @@ import Ctahover from '../../lotties/cta.js'
 import { fetchPostJSON } from '../../utils/api-helpers.js'
 import getStripe from '../../utils/get-stripe.js'
 
+const stepOne = ' covers the cost of medication refills each month.'
+const stepTwo = ' covers the cost of one therapy session each month.'
+const stepThree = ' covers the cost of two therapy session each month.'
+const stepFour = ' covers the cost of four therapy session each month.'
+
 export default function Donatemonthly() {
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState()
+  const [impact, setImpact] = useState('$30')
+  const [message, setMessage] = useState(stepTwo)
 
   const handleInputChange = (e) => {
+    const id = e.target.id
     const value = e.target.value
+    const provides = e.target.step
+
     setInput({
       ...input,
       value,
     })
+    setImpact('$' + Math.floor(id / 10))
+    setMessage(provides)
   }
 
   console.log(input)
@@ -48,6 +60,7 @@ export default function Donatemonthly() {
           className="grid items-center grid-cols-3 gap-4 auto-cols-fr"
         >
           <input
+            step={stepOne}
             type="radio"
             name="donation"
             value="price_1JVIqXEavBxf0OLS7wmeK3rS"
@@ -59,16 +72,19 @@ export default function Donatemonthly() {
           </label>
 
           <input
+            step={stepTwo}
             type="radio"
             name="donation"
             value="price_1JVIqXEavBxf0OLS1NQzttQR"
             id="300"
+            defaultChecked
             onChange={handleInputChange}
           />
           <label className="relative radio-label" htmlFor="300">
             $30
           </label>
           <input
+            step={stepThree}
             type="radio"
             name="donation"
             value="price_1JVIqXEavBxf0OLS9LMxBJKd"
@@ -79,6 +95,7 @@ export default function Donatemonthly() {
             $60
           </label>
           <input
+            step={stepFour}
             type="radio"
             name="donation"
             value="price_1JVIqXEavBxf0OLSUbTR8x93"
@@ -100,11 +117,14 @@ export default function Donatemonthly() {
             </div>
           </div>
         </div>
-
+        <p>
+          Your donation of <span className="font-bold">{impact}</span>
+          {message}
+        </p>
         <button
           disabled={loading}
           type="submit"
-          className="relative items-center w-full col-span-3 p-2 mx-auto mt-10 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
+          className="relative items-center w-full col-span-3 p-2 mx-auto mt-4 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
         >
           <span className="relative z-10 w-full font-bold text-center">Donate</span>
           <div className="absolute top-0 z-0">

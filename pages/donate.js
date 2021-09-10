@@ -54,7 +54,7 @@ export default function Donate() {
                 chartwo="♡"
               />
             </div>
-            <div className="">
+            <div className=" lg:flex-grow-0 lg:w-1/3">
               <DonateForm />
             </div>
           </div>
