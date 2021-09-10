@@ -44,14 +44,19 @@ export default function Donateonce() {
         <div
           role="group"
           aria-labelledby="donation-amount"
-          className="grid items-center grid-cols-3 gap-5 min-w-max"
+          className="grid grid-cols-3 gap-4 auto-cols-fr"
         >
-          <div className="relative w-24">
-            <input type="radio" name="donation" value="30" id="300" onChange={handleInputChange} />
-            <label className="relative radio-label" htmlFor="300">
-              $30{' '}
-            </label>
-          </div>
+          <input
+            type="radio"
+            name="donation"
+            value="30"
+            id="300"
+            onChange={handleInputChange}
+            defaultChecked
+          />
+          <label className="relative radio-label" htmlFor="300">
+            $30{' '}
+          </label>
           <input type="radio" name="donation" value="60" id="600" onChange={handleInputChange} />
           <label className="relative radio-label" htmlFor="600">
             $60
@@ -71,12 +76,12 @@ export default function Donateonce() {
             >
               Donate Other
             </label>
-            <div className="mt-1 border-b border-gray-300 ">
+            <div className="border-gray-300">
               <input
                 type="number"
                 name="donation"
                 id="donateother"
-                className="block w-full px-3 py-2 border-transparent rounded-xl sm:text-sm"
+                className="block w-full px-3 py-2 border border-gray-300 rounded-xl sm:text-sm"
                 placeholder="300"
                 onChange={handleInputChange}
               />

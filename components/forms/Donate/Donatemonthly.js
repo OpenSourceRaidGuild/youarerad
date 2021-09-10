@@ -1,3 +1,4 @@
+import Link from 'next/dist/client/link'
 import React, { useState } from 'react'
 import Ctahover from '../../lotties/cta.js'
 import { fetchPostJSON } from '../../utils/api-helpers.js'
@@ -44,20 +45,19 @@ export default function Donatemonthly() {
         <div
           role="group"
           aria-labelledby="donation-amount"
-          className="grid items-center grid-cols-3 gap-5 min-w-max"
+          className="grid items-center grid-cols-3 gap-4 auto-cols-fr"
         >
-          <div className="relative w-24">
-            <input
-              type="radio"
-              name="donation"
-              value="price_1JVIqXEavBxf0OLS7wmeK3rS"
-              id="100"
-              onChange={handleInputChange}
-            />
-            <label className="relative radio-label" htmlFor="100">
-              $10
-            </label>
-          </div>
+          <input
+            type="radio"
+            name="donation"
+            value="price_1JVIqXEavBxf0OLS7wmeK3rS"
+            id="100"
+            onChange={handleInputChange}
+          />
+          <label className="relative radio-label" htmlFor="100">
+            $10
+          </label>
+
           <input
             type="radio"
             name="donation"
@@ -88,11 +88,23 @@ export default function Donatemonthly() {
           <label className="relative radio-label" htmlFor="1200">
             $120
           </label>
+          <div className="col-span-2 transition-all duration-300 cursor-pointer ">
+            <div className="">
+              <Link href="https://www.twitch.tv/subs/youarerad">
+                <a className="relative z-10 items-center justify-center block w-full p-4 mx-auto font-bold text-center align-middle bg-white border cursor-pointer rounded-xl h-14 hover:text-white hover:bg-indigo-500 hover:border-indigo-500 hover:shadow-2xl hover:bg-clip-border hover:drop-shadow-xl group">
+                  <label className="block text-sm font-bold text-center cursor-pointer group-hover:text-white">
+                    Donate Twitch Sub
+                  </label>
+                </a>
+              </Link>
+            </div>
+          </div>
         </div>
+
         <button
           disabled={loading}
           type="submit"
-          className="relative w-full col-span-3 p-2 mx-auto mt-10 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
+          className="relative items-center w-full col-span-3 p-2 mx-auto mt-10 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
         >
           <span className="relative z-10 w-full font-bold text-center">Donate</span>
           <div className="absolute top-0 z-0">

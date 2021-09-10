@@ -38,7 +38,7 @@ export default function Careers() {
               />
             </div>
             <div className="relative w-full overflow-hidden lg:w-2/5 rounded-xl">
-              <VideoPlayer publicId="General%20Media/rad-volunteers" />
+              <VideoPlayer publicId="General%20Media/grantprogram" />
             </div>
           </div>
         </section>
@@ -78,11 +78,11 @@ export default function Careers() {
                   </span>
                 </div>
                 <div className="mt-8">
-                  <h3 className="font-medium">
+                  <h5>
                     {/* Extend touch target to entire panel */}
                     <span className="absolute inset-0" aria-hidden="true" />
                     {context.id}
-                  </h3>
+                  </h5>
                   <p className="text-gray-500">{context.context}</p>
                 </div>
               </div>
@@ -199,29 +199,11 @@ export const perks = [
 export const positions = [
   {
     id: 1,
-    title: 'Back End Developer',
-    type: 'Full-time',
-    location: 'Remote',
-    department: 'Engineering',
-    closeDate: '2020-01-07',
-    closeDateFull: 'January 7, 2020',
-  },
-  {
-    id: 2,
-    title: 'Front End Developer',
-    type: 'Full-time',
-    location: 'Remote',
-    department: 'Engineering',
-    closeDate: '2020-01-07',
-    closeDateFull: 'January 7, 2020',
-  },
-  {
-    id: 3,
-    title: 'User Interface Designer',
-    type: 'Full-time',
-    location: 'Remote',
-    department: 'Design',
-    closeDate: '2020-01-14',
-    closeDateFull: 'January 14, 2020',
+    title: 'No open positions at the moment.',
+    type: '',
+    location: '',
+    department: '',
+    closeDate: '',
+    closeDateFull: '',
   },
 ]

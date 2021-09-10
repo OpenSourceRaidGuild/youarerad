@@ -62,7 +62,7 @@ export default function Donate() {
       }
     >
       <div className="text-white bg-black">
-        <section className="">
+        <section className="pb-16">
           <Sectionheader
             subheader={
               <span className="text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text">
@@ -72,6 +72,8 @@ export default function Donate() {
             headerone="Membership starts at just"
             headertwo="$1 per day!"
           />
+        </section>
+        <section className="pt-0">
           <div className="flex flex-wrap-reverse space-y-10 md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0">
             <div className="mt-4 text-center md:text-left md:mt-0">
               <h3>
@@ -104,7 +106,23 @@ export default function Donate() {
           </div>
         </section>
       </div>
-      <section>
+      <section className="space-y-32">
+        <Sectiontext
+          alternate={true}
+          subheader="How Donations Help"
+          headerone="You make"
+          headertwo="healing possible."
+          body="Your donation removes one of the greatest barriers to mental health care: affordability. When you donate, you cover the cost of someone's medication or therapy session. You make healing possible."
+          media={
+            <Image
+              src="https://res.cloudinary.com/df23ubjbb/image/upload/v1630893466/E-OwTMAUUAUGktf_vga0ut.jpg"
+              height="1080"
+              width="1920"
+              alt="August donors to Rise Above The Disorder being celebrated for the amount of therapy sessions they made possible."
+              objectFit="scale-down"
+            />
+          }
+        />
         <Sectiontext
           alternate={false}
           subheader="Your Donation"
