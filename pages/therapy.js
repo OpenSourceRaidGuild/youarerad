@@ -111,7 +111,9 @@ if you are seeking help but don't want to go from therapist to therapist trying 
         </section>
       </div>
       <div className="text-white bg-black">
-        <Faq faqs={faqs} />
+        <section>
+          <Faq faqs={faqs} />
+        </section>
       </div>
     </Layout>
   )
