@@ -8,7 +8,7 @@ export default function Sectionheader({ subheader, headerone, headertwo, bodytex
         </span>
         {headertwo}
       </h2>
-      <p>{bodytext}</p>
+      {bodytext && <p>{bodytext}</p>}
     </div>
   )
 }

@@ -31,7 +31,10 @@ export const Story = [
     chapter: 2,
     chaptertext: (
       <div>
-        <h3>The quest</h3>
+        <h3>
+          Accepting the quest to save one life, Jason set off in the only world he could- The World
+          Of Warcraft
+        </h3>
         <p>
           Every dungeon and every battleground, they welcomed anyone having thoughts of self-harm to
           reach out. Nights were filled with long talks about life and hardship, while each day
@@ -57,12 +60,12 @@ export const Story = [
     chapter: 3,
     chaptertext: (
       <div>
-        <h3>The quest</h3>
+        <h3>Talking together kept pain at bay, but the need for professional help became clear.</h3>
         <p>
-          Every dungeon and every battleground, they welcomed anyone having thoughts of self-harm to
-          reach out. Nights were filled with long talks about life and hardship, while each day
-          recruited members interested in helping. Although our founder intended to help just one
-          person, so long as there were others in need, their quest continued.
+          Now joined by many others, our founder and the guild spoke with people all over the world.
+          Their conversations brought warmth and shared hope, but therapy promised even more.
+          Helping people find a therapist and begin the healing process became a core part of the
+          guild. However, for those unable to afford therapy,
         </p>
       </div>
     ),
@@ -82,14 +85,18 @@ export const Story = [
     id: 4,
     chapter: 4,
     chaptertext: (
-      <Sectionheader
-        color="text-black"
-        subheader="Our Story"
-        headerone="We're on a quest"
-        headertwo="to change mental health care"
-        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
-        link="#"
-      />
+      <div>
+        <h3>
+          Changing mental health care became their end- game. The cost of therapy was a new raid.
+        </h3>
+        <p>
+          Desperate to make therapy available to everyone in need, the guild settled on a wild idea:
+          they would sell in-game services to pay for therapy. All of their time spent playing games
+          made for little money personally, but a great deal of skill and game knowledge. Those
+          looking to trade dollars for access to powerful items would fuel the mental health care of
+          many.
+        </p>
+      </div>
     ),
     chapterpicture: (
       <Image
@@ -107,14 +114,20 @@ export const Story = [
     id: 4,
     chapter: 4,
     chaptertext: (
-      <Sectionheader
-        color="text-black"
-        subheader="Our Story"
-        headerone="We're on a quest"
-        headertwo="to change mental health care"
-        bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest begain in the only world they felt they still existed in- The World of Warcraft."
-        link="#"
-      />
+      <div>
+        <h3>
+          One gamers attempt to save a life had grown into a something no one could have ever
+          imagined.
+        </h3>
+        <p>
+          Word of Anxiety Gaming spread quickly with the rise of Twitch.tv; eventually reaching
+          Trick2G,- the largest Twitch.tv partner at the time. He believed in the ability of gamers
+          to unite and overcome any challenge in the world. Many of his viewers agreed, including
+          legendary rock band Imagine Dragons. On March 21st, 2016, Trick2G, Dyrus, Wildturtle,
+          NightBlue3, FaZe Jev, SirchEz, and Imagine Dragons came together to fundraise for our
+          cause.
+        </p>
+      </div>
     ),
     chapterpicture: (
       <Image

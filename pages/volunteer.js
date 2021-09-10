@@ -96,7 +96,6 @@ const Volunteer = () => {
             headerone="Giving what you can,"
             headertwo="to help others rise above."
             body="Originally founded as a World of Warcraft guild, our cause has always depended on volunteers. From reviewing text on this site, to traveling to remote countries around the world to setup our programs, there are plenty of rad ways to help others rise above."
-            link="#"
             media={
               <div className="overflow-hidden border rounded-xl">
                 <VideoPlayer publicId="General%20Media/rad-volunteers" />

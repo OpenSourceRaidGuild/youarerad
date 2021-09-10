@@ -1,11 +1,16 @@
-import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
+import { Fragment } from 'react'
+import Teamstats from '../libs/Data/Diversity.js'
 import Table from './Table'
 
 const tabs = [
   {
     name: 'View Salaries',
     content: <Table />,
+  },
+  {
+    name: 'Team Diversity',
+    content: <Teamstats />,
   },
 ]
 

@@ -26,7 +26,9 @@ const Programs = () => {
                   href="#link1"
                   role="tablist"
                 >
-                  <span className="text-xl font-bold">I have healthcare or a budget</span>
+                  <span>
+                    <h3>I have healthcare or a budget</h3>
+                  </span>
                   <span className="flex items-center ml-6 h-7">
                     <ChevronDownIcon
                       className={
@@ -199,7 +201,9 @@ const Programs = () => {
                   href="#link2"
                   role="tablist"
                 >
-                  <span className="text-xl font-bold">I&apos;m unable to afford healthcare</span>
+                  <span>
+                    <h3>I&apos;m unable to afford healthcare</h3>
+                  </span>
                   <span>
                     <ChevronDownIcon
                       className={
@@ -364,8 +368,8 @@ const Programs = () => {
                   href="#link2"
                   role="tablist"
                 >
-                  <span className="text-xl font-bold">
-                    I&apos;d like to support my staff or team
+                  <span>
+                    <h3>I&apos;d like to support my staff or team</h3>
                   </span>
                   <span>
                     <ChevronDownIcon

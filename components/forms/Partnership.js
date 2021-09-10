@@ -59,7 +59,7 @@ export default function PartnershipForm() {
                 >
                   Your Name:
                 </label>
-                <input type="text" id="name" name="name" autoComplete="name" required />
+                <input autoFocus type="text" id="name" name="name" autoComplete="name" required />
               </div>
               <div>
                 <label
