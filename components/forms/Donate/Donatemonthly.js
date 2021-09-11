@@ -6,8 +6,8 @@ import getStripe from '../../utils/get-stripe.js'
 
 const stepOne = ' covers the cost of medication refills each month.'
 const stepTwo = ' covers the cost of one therapy session each month.'
-const stepThree = ' covers the cost of two therapy session each month.'
-const stepFour = ' covers the cost of four therapy session each month.'
+const stepThree = ' covers the cost of two therapy sessions each month.'
+const stepFour = ' covers the cost of four therapy sessions each month.'
 
 export default function Donatemonthly() {
   const [loading, setLoading] = useState(false)
