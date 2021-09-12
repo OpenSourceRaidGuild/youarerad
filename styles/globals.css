@@ -25,17 +25,6 @@ video {
   border-radius: 0.75rem;
 }
 
-:root {
-  --swiper-theme-color: #007aff;
-}
-.swiper {
-  position: relative;
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
-  z-index: 1;
-}
-
 .linkedin {
   width: 100%;
   min-height: 15em;
@@ -179,6 +168,14 @@ video {
 
   input[type='text'] {
     @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+  }
+
+  input[type='password'] {
+    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+  }
+
+  input[type='password']:focus {
+    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
   }
 
   input[type='text']:focus {
