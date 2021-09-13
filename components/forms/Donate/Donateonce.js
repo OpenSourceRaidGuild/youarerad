@@ -119,17 +119,17 @@ export default function Donateonce() {
           Your donation of <span className="font-bold">{impact}</span>
           {message}
         </p>
-        <button
-          disabled={loading}
-          type="submit"
-          className="relative items-center w-full col-span-3 p-2 mx-auto mt-4 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
-        >
-          <span className="relative w-full font-bold text-center">Donate</span>
-          <div className="absolute top-0 z-0">
-            <Ctahover />
-          </div>
-        </button>
       </form>
+      <button
+        disabled={loading}
+        type="submit"
+        className="relative items-center w-full col-span-3 p-2 mx-auto mt-4 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
+      >
+        <span className="relative w-full font-bold text-center">Donate</span>
+        <div className="absolute top-0 z-0">
+          <Ctahover />
+        </div>
+      </button>
     </div>
   )
 }

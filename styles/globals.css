@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.transparent {
+  filter: alpha(opacity=50); /* internet explorer */
+  -khtml-opacity: 0.5; /* khtml, old safari */
+  -moz-opacity: 0.5; /* mozilla, netscape */
+  opacity: 0.5; /* fx, safari, opera */
+}
+
 .player-wrapper {
   position: relative;
   padding-top: 56.25%;
 }
 
-body {
+.body {
   overscroll-behavior-y: none;
 }
 

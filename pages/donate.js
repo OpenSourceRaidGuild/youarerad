@@ -77,10 +77,10 @@ export default function Donate() {
           <div className="flex flex-wrap-reverse space-y-10 md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0">
             <div className="mt-4 text-center text-white md:text-left md:mt-0">
               <h3 className="text-white">
-                Give monthly.{' '}
                 <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-                  Provide therapy to thousands.
+                  Give monthly.{' '}
                 </span>
+                Provide therapy to thousands.
               </h3>
               <p>
                 For more than 10 years, our guild has come together to make mental health care free
