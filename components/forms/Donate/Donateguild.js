@@ -21,7 +21,7 @@ export default function DonateGuild() {
     e.preventDefault()
     setLoading(true)
 
-    const response = await fetchPostJSON('/api/checkout_sessionsM', {
+    const response = await fetchPostJSON('/api/checkout_sessionsguild', {
       amount: input,
     })
 
