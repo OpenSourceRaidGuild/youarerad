@@ -75,7 +75,7 @@ export default function Therapy() {
             <Sectiontext
               subheader="Step 1: The Form"
               headerone="We're here to help."
-              headertwo="Tell us what you're experiencing"
+              headertwo="Tell us what you're experiencing."
               body="The intake form is a place for you to share more about how you're feeling. There is one form for both those seeking support finding a great therapist in budget or on their healthcare plan, and those seeking the same but presently without the means to afford therapy."
               media={
                 <div className="lazy-div">

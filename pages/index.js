@@ -114,7 +114,7 @@ export default function Home() {
                 media={<VideoPlayer publicId="General%20Media/BBN0%24" />}
               />
             </div>
-            <div>
+            <div className="text-white">
               <Sectiontext
                 subheader="Our Community"
                 headerone="A community"
