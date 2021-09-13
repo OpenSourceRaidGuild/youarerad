@@ -4,9 +4,11 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
+import List from '../components/List.js'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Transparency from '../components/Transparencytab'
+import { Board } from '../libs/Data/Board.js'
 import { Staff } from '../libs/Data/Staff'
 import { Story } from '../libs/Story'
 
@@ -157,6 +159,19 @@ export default function About() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+      </div>
+      <div className="text-white bg-black">
+        <section>
+          <div className="pb-16 space-y-12 lg:grid lg:grid-cols-3 lg:gap-10 lg:space-y-0">
+            <div>
+              <h5>Our board</h5>
+              <h2> Heroes in-game and IRL.</h2>
+            </div>
+            <div className="col-span-2">
+              <List items={Board} />
+            </div>
           </div>
         </section>
       </div>

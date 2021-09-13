@@ -75,7 +75,7 @@ export default function Donate() {
         </section>
         <section className="pt-0">
           <div className="flex flex-wrap-reverse space-y-10 md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0">
-            <div className="mt-4 text-center md:text-left md:mt-0">
+            <div className="mt-4 text-center text-white md:text-left md:mt-0">
               <h3>
                 Give monthly.{' '}
                 <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
@@ -133,15 +133,15 @@ export default function Donate() {
           media={
             <div className="flex">
               {Partners.map((index) => (
-                <div key={index.name} className="flex justify-center col-span-1 px-8 py-8">
+                <div key={index.name} className="flex justify-center col-span-1 px-4 py-8 lg:py-0 ">
                   <Link href={index.link}>
                     <a>
                       <Image
                         key={index.name}
                         alt={index.alt}
                         src={index.logo}
-                        width="86"
-                        height="86"
+                        width="125"
+                        height="125"
                         objectFit="cover"
                       />
                     </a>

@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Image from 'next/dist/client/image'
+import Link from 'next/dist/client/link'
 import { useState } from 'react'
 
 const Programs = () => {
@@ -43,12 +44,11 @@ const Programs = () => {
                     in-network or on your budget.
                   </p>
                   <div className="relative inline-flex flex-row items-center mt-2 text-lg group">
-                    <a
-                      href="#"
-                      className="inline-flex text-xl text-blue-700 transition-all duration-500"
-                    >
-                      Learn more about finding a therapist.
-                    </a>
+                    <Link href="/therapy">
+                      <a className="inline-flex text-xl text-blue-700 transition-all duration-500">
+                        Learn more about finding a therapist.
+                      </a>
+                    </Link>
                     <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
                   </div>
                 </div>
@@ -214,16 +214,15 @@ const Programs = () => {
                 </a>
                 <div className={openTab === 2 ? 'block' : 'hidden'} id="link2">
                   <p className="mt-2 text-xl text-gray-500 lg:pr-12">
-                    We&apos;ll find you the best possible licensed therapist in your area that is
-                    in-network or on your budget.
+                    We&apos;ll find you the best possible licensed therapist in your area and cover
+                    the cost through donations.
                   </p>
                   <div className="relative inline-flex flex-row items-center mt-2 text-lg group">
-                    <a
-                      href="#"
-                      className="inline-flex text-xl text-blue-700 transition-all duration-500"
-                    >
-                      Learn more about free mental health care.
-                    </a>
+                    <Link href="/therapy">
+                      <a className="inline-flex text-xl text-blue-700 transition-all duration-500">
+                        Learn more about free mental health care.
+                      </a>
+                    </Link>
                     <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
                   </div>
                 </div>
@@ -385,12 +384,11 @@ const Programs = () => {
                     to help others.
                   </p>
                   <div className="relative inline-flex flex-row items-center mt-2 text-lg group">
-                    <a
-                      href="#"
-                      className="inline-flex text-xl text-blue-700 transition-all duration-500"
-                    >
-                      Learn more about our mental health benefits.
-                    </a>
+                    <Link href="partner">
+                      <a className="inline-flex text-xl text-blue-700 transition-all duration-500">
+                        Learn more about our mental health benefits.
+                      </a>
+                    </Link>
                     <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
                   </div>
                 </div>

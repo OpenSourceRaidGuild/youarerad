@@ -103,19 +103,13 @@ export default function Donateonce() {
             $300
           </label>
           <div className="col-span-2">
-            <label
-              className="block text-sm font-medium text-gray-700 "
-              onChange={handleInputChange}
-            >
-              Donate Other
-            </label>
             <div className="border-gray-300">
               <input
                 type="number"
                 name="donation"
                 id="donateother"
-                className="block w-full px-3 py-2 border border-gray-300 rounded-xl sm:text-sm"
-                placeholder="300"
+                className="block w-full px-3 py-4 border border-gray-300 shadow-sm rounded-xl sm:text-sm"
+                placeholder="Donate other amount"
                 onChange={handleInputChange}
               />
             </div>
@@ -130,7 +124,7 @@ export default function Donateonce() {
           type="submit"
           className="relative w-full col-span-3 p-2 mx-auto mt-4 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black fitems-center lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
         >
-          <span className="relative z-10 w-full font-bold text-center">Donate</span>
+          <span className="relative w-full font-bold text-center">Donate</span>
           <div className="absolute top-0 z-0">
             <Ctahover />
           </div>

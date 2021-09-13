@@ -10,7 +10,7 @@ export const Story = [
         color="text-black"
         subheader="Our Story"
         headerone="We're on a quest"
-        headertwo="to change mental health care"
+        headertwo="to change mental health care."
         bodytext="Overwhelmed with their mental health and unable to leave home, our founder hoped to help just one person before leaving this world. Their quest began in the only world they felt they still existed in- The World of Warcraft."
       />
     ),
@@ -33,7 +33,7 @@ export const Story = [
       <div>
         <h3>
           Accepting the quest to save one life, Jason set off in the only world he could- The World
-          Of Warcraft
+          Of Warcraft.
         </h3>
         <p>
           Every dungeon and every battleground, they welcomed anyone having thoughts of self-harm to
