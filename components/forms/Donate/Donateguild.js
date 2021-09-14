@@ -1,6 +1,6 @@
-import axios from 'axios'
 import { useState } from 'react'
 import Ctahover from '../../lotties/cta.js'
+import { fetchPostJSON } from '../../utils/api-helpers.js'
 import getStripe from '../../utils/get-stripe.js'
 
 export default function DonateGuild() {
@@ -17,14 +17,25 @@ export default function DonateGuild() {
 
   console.log(input)
 
-  const handleSubmit = async () => {
-    const {
-      data: { id },
-    } = await axios.post('/api/checkout_sessionsguild', {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+
+    const response = await fetchPostJSON('/api/checkout_sessionsguild', {
       amount: input,
     })
+
+    if (response.statusCode === 500) {
+      console.error(response.message)
+      return
+    }
+
     const stripe = await getStripe()
-    await stripe.redirectToCheckout({ sessionId: id })
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: response.id,
+    })
+    console.warn(error.message)
+    setLoading(false)
   }
 
   return (
