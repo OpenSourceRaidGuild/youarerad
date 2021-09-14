@@ -21,23 +21,20 @@ export default function Contact() {
         </section>
       }
     >
-      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 md:px-8 lg:px-10 ">
-        <div className="lg:space-x-20 lg:flex">
-          <div className="w-full lg:w-1/2">
-            <div className="w-full">
-              <Contactform />
-            </div>
-          </div>
-          <div className="relative w-full overflow-hidden rounded-xl h-80 lg:h-auto lg:w-1/2">
+      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 md:px-8 lg:px-10">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+          <div className="relative w-full overflow-hidden rounded-xl h-80 sm:h-auto ">
             <Image
               width="1080"
               height="1920"
-              layout="intrinsic"
               objectFit="contain"
               objectPosition="top"
               src="https://res.cloudinary.com/df23ubjbb/image/upload/v1629928188/RADContact.jpg"
               alt="Twitch.tv's Garvey and volunteer Amy pose in front of Rise Above The Disorder's banner at TwitchCon."
             />
+          </div>
+          <div className="w-full ">
+            <Contactform />
           </div>
         </div>
       </div>

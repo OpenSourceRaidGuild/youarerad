@@ -3,7 +3,7 @@ import Link from 'next/dist/client/link'
 import Newsletter from './forms/Newsletter'
 import Mayhover from './lotties/may'
 
-export const navigation = {
+const navigation = {
   main: [
     { name: 'About', href: '/about' },
     { name: 'Therapy', href: '/therapy' },
@@ -18,7 +18,7 @@ export const navigation = {
   ],
 }
 
-export const socials = [
+const socials = [
   {
     logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628595192/Logos/Discord-Logo-Color_dpa4dc.svg',
     href: 'https://www.discord.gg/youarerad/',
@@ -66,9 +66,8 @@ export default function Footer() {
           {navigation.main.map((item) => (
             <div key={item.href} className="relative text-base lowercase group">
               <Link href={item.href}>
-                <a className="grid grid-flow-row mx-4 mt-4">{item.name}</a>
+                <a className="grid grid-flow-row mx-4 mt-4 underline">{item.name}</a>
               </Link>
-              <div className="absolute h-0.5 w-full -bottom-1 scale-x-0  bg-gradient-to-r z-0 from-pink-400 to-blue-400 group-hover:scale-x-100  transition-all duration-200 ease-out" />
             </div>
           ))}
         </nav>
