@@ -1,6 +1,6 @@
 import Stripe from 'stripe'
 
-const stripe = new Stripe.default(process.env.STRIPE_SECRET_KEY, {})
+const stripe = new Stripe.default('process.env.STRIPE_SECRET_KEY', {})
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
           },
         ],
 
-        success_url: `${req.headers.origin}/member?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/`,
       }
       const checkoutSession = await stripe.checkout.sessions.create(params)

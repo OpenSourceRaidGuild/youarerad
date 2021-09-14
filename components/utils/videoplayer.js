@@ -7,12 +7,12 @@ const VideoPlayer = ({ publicId }) => {
     <CloudinaryContext cloud_name="df23ubjbb">
       <div>
         <Video
-          playsinline="true"
+          playsInline={true}
           muted={true}
           publicId={publicId}
           loop={true}
-          autoplay="true"
-          autoplayMode="on-scroll"
+          autoPlay={true}
+          autoplaymode="on-scroll"
           controls={false}
           innerRef={videoRef}
         />

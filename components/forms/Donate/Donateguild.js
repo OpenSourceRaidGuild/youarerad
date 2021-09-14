@@ -53,7 +53,7 @@ export default function DonateGuild() {
             <input
               type="radio"
               name="donation"
-              value="price_1JXB2OEavBxf0OLSdG6zXsMF"
+              value="testprice"
               id="300"
               onChange={handleInputChange}
             />
