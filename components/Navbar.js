@@ -10,6 +10,7 @@ import {
 import Image from 'next/dist/client/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
+import Button from './Button.js'
 
 const resources = [
   { name: 'Careers', href: '/careers', icon: UserGroupIcon },
@@ -285,10 +286,9 @@ export default function Navbar() {
                     </Link>
                   </div>
                   <div className="items-center justify-center mx-auto mt-6 space-y-2">
+                    <Button linkTo="/donate"> Donate Therapy </Button>
                     <Link href="/therapy">
-                      <a className="flex items-center justify-center w-full px-4 py-2 text-black bg-white border-2 border-transparent rounded-xl">
-                        Start Therapy
-                      </a>
+                      <a className="form-button">Start Therapy</a>
                     </Link>
                   </div>
                 </div>
