@@ -1,12 +1,20 @@
-import Stripe from 'stripe'
+import { useEffect, useState } from 'react'
 import Login from '../components/guildportal/login.js'
+import Membersession from '../components/utils/membersession.js'
+import { supabase } from '../components/utils/supabaseClient.js'
 
-const stripe = new Stripe.default(process.env.STRIPE_SECRET_KEY, {})
+export default function Member() {
+  const [session, setSession] = useState(null)
 
-export default function member() {
+  useEffect(() => {
+    setSession(supabase.auth.session())
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
+
   return (
-    <div>
-      <Login />
-    </div>
+    <div>{!session ? <Login /> : <Membersession key={session.user.id} session={session} />} </div>
   )
 }
