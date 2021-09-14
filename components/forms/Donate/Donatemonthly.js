@@ -53,7 +53,7 @@ export default function Donatemonthly() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="relative p-10 border rounded-xl bg-gray-50">
+      <form className="relative p-10 border rounded-xl bg-gray-50">
         <div
           role="group"
           aria-labelledby="donation-amount"
@@ -124,7 +124,7 @@ export default function Donatemonthly() {
       </form>
       <button
         disabled={loading}
-        type="submit"
+        onClick={handleSubmit}
         className="relative items-center w-full col-span-3 p-2 mx-auto mt-4 overflow-hidden text-xl transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white"
       >
         <span className="relative z-10 w-full font-bold text-center">Donate</span>
