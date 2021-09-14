@@ -54,11 +54,11 @@ export default function DonateGuild() {
               type="radio"
               name="donation"
               value="testprice"
-              id="300"
+              id="0"
               onChange={handleInputChange}
             />
-            <label className="relative radio-label" htmlFor="300">
-              $30
+            <label className="relative radio-label" htmlFor="0">
+              $0
             </label>
           </div>
           <input
