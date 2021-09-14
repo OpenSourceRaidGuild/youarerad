@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 export default function Success() {
-  const [successstate, setSuccessState] = useState(false)
+  const [successState, setSuccessState] = useState(false)
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search)
@@ -13,5 +13,5 @@ export default function Success() {
     }
   }, [])
 
-  return <div>{successstate ? <div>success</div> : <div>oof</div>}</div>
+  return <div>{successState ? <div>success</div> : <div>oof</div>}</div>
 }
