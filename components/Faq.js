@@ -17,7 +17,7 @@ export default function Faq({ faqs }) {
                 <>
                   <dt>
                     <Disclosure.Button className="flex items-start justify-between w-full text-left">
-                      <span>
+                      <span className={classNames(open ? 'text-indigo-400' : 'text-white')}>
                         <h3>{faq.question}</h3>
                       </span>
                       <span className="flex items-center ml-6 h-7">
