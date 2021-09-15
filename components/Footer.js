@@ -12,7 +12,6 @@ const navigation = {
     { name: 'Volunteer', href: '/volunteer' },
     { name: 'Partner', href: '/partner' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Merch', href: '/merch' },
     { name: 'Privacy', href: '/privacy' },
     { name: 'Terms', href: '/terms' },
   ],
