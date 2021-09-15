@@ -1,17 +1,41 @@
+import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
+import useSWR from 'swr'
+import Account from '../components/forms/Guild/Account.js'
+import Signup from '../components/forms/Guild/Signup.js'
+import Login from '../components/guildportal/login.js'
+import { fetchGetJSON } from '../components/utils/api-helpers.js'
+import { supabase } from '../components/utils/supabaseClient.js'
 
-export default function Success() {
-  const [successState, setSuccessState] = useState(false)
+const Success = () => {
+  const [session, setSession] = useState(null)
+  const {
+    query: { session_id },
+  } = useRouter()
+
+  const { data, error } = useSWR(() => `/api/checkout_sessionsguild/${session_id}`, fetchGetJSON)
+
   useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search)
-    if (query.get('success')) {
-      setSuccessState(true)
-    }
-    if (query.get('canceled')) {
-      console.log('Order canceled -- continue to shop around and checkout when you’re ready.')
-    }
+    setSession(supabase.auth.session())
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
   }, [])
 
-  return <div>{successState ? <div>success</div> : <div>oof</div>}</div>
+  return (
+    <div>
+      {error ? (
+        <Login />
+      ) : !data ? (
+        <div>loading</div>
+      ) : (
+        <section className="max-w-screen-md">
+          {!session ? <Signup /> : <Account key={session.user.id} session={session} />}
+        </section>
+      )}
+    </div>
+  )
 }
+
+export default Success

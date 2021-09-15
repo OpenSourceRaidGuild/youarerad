@@ -1,13 +1,15 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
 
-const stripe = new Stripe.default(process.env.STRIPE_SECRET_KEY, {})
+const stripe = new Stripe('sk_test_gyC2nFcHJKSiqUrsUBz7BoJ4', {
+  apiVersion: '2020-08-27',
+})
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const priceID = req.body.amount.value
-
     try {
-      const params = {
+      const params: Stripe.Checkout.SessionCreateParams = {
         mode: 'subscription',
         payment_method_types: ['card'],
         line_items: [
@@ -20,7 +22,7 @@ export default async function handler(req, res) {
         success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/`,
       }
-      const checkoutSession = await stripe.checkout.sessions.create(params)
+      const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params)
       res.status(200).json(checkoutSession)
     } catch (err) {
       res.status(500).json({
