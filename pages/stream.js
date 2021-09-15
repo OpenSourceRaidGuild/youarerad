@@ -66,7 +66,7 @@ export default function Stream() {
                 headertwo="Change lives"
                 chartwo="♡"
               />
-              <Button linkTo="/">Plan Your Stream</Button>
+              <Button linkTo="https://tiltify.com/anxiety-gaming">Plan Your Stream</Button>
             </div>
             <div className="relative w-full overflow-hidden lg:w-2/5 rounded-xl">
               <div className="grid grid-cols-2 col-start-2 gap-x-4 gap-y-4">

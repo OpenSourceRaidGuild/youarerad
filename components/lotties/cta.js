@@ -1,6 +1,13 @@
+import { useEffect, useState } from 'react'
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
-import cta from './cta.json'
 
-export default function Ctahover() {
-  return <Lottie loop animationData={cta} play style={{ width: '100%', height: '100%' }} />
+export default function Cta() {
+  const [animationData, setAnimationData] = useState()
+
+  useEffect(() => {
+    import('./cta.json').then(setAnimationData)
+  }, [])
+
+  if (!animationData) return <div>Loading...</div>
+  return <Lottie loop play animationData={animationData} />
 }
