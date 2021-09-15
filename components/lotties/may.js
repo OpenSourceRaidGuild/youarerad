@@ -9,7 +9,7 @@ const Mayhover = () => {
   }, [])
 
   if (!animationData) return <div>Loading...</div>
-  return <Lottie loop play animationData={animationData} />
+  return <Lottie speed={0.5} loop play animationData={animationData} />
 }
 
 export default Mayhover
