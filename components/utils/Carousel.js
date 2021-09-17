@@ -113,7 +113,7 @@ const Carousel = () => {
           id="1395283072619147269"
           name="Emma"
           author="@EmmaMeiLi"
-          media="https://pbs.twimg.com/profile_images/1424732772535611394/_GgAflbO_400x400.jpg"
+          media="https://pbs.twimg.com/profile_images/1436259592208470018/N4ssvWSZ_400x400.jpg"
           created_at="12:39 AM · May 20, 2021"
           text={
             <div>

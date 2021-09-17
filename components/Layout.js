@@ -38,7 +38,9 @@ export default function Layout({ children, pageHeader, pageTitle, pageLink, desc
         />
       </Head>
       <div id="root">
-        <Navbar></Navbar>
+        <Navbar>
+          <h1 className="sr-only">{pageTitle}</h1>
+        </Navbar>
         <header>{pageHeader}</header>
         <main>{children}</main>
         <footer ref={elemRef}>
