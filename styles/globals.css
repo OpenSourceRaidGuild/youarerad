@@ -72,6 +72,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 10;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
 :root {
   --step-0: clamp(1.31rem, 1.31rem + 0vw, 1.31rem);
   --step-1: clamp(1.58rem, 1.55rem + 0.13vw, 1.64rem);

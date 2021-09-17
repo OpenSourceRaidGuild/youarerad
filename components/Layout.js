@@ -38,10 +38,8 @@ export default function Layout({ children, pageHeader, pageTitle, pageLink, desc
         />
       </Head>
       <div id="root">
-        <header className="">
-          <Navbar></Navbar>
-          {pageHeader}
-        </header>
+        <Navbar></Navbar>
+        <header>{pageHeader}</header>
         <main>{children}</main>
         <footer ref={elemRef}>
           {isVisable && console.log('visable')}
