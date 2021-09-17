@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
   h1 {
-    font-size: var(--step-6);
+    font-size: var(--step-5);
     @apply font-extrabold leading-tight tracking-tight text-black;
   }
   h2 {
@@ -9,7 +9,7 @@
     @apply font-extrabold leading-tight tracking-tight;
   }
   h3 {
-    font-size: var(--step-2);
+    font-size: var(--step-3);
     @apply font-extrabold tracking-tight;
   }
   h5 {

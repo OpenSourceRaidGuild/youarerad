@@ -55,7 +55,7 @@ export default function About() {
         <div className="text-white bg-black ">
           <section>
             <div className="space-y-16 lg:space-y-0 lg:justify-between lg:flex">
-              <div>
+              <div className="w-full maw-w-xl">
                 <Pageheader
                   color="text-white"
                   subheader="We believe"
@@ -67,7 +67,7 @@ export default function About() {
                   charthree="♡"
                 />
               </div>
-              <div className="relative w-full overflow-hidden lg:w-2/5 rounded-xl">
+              <div className="relative w-full col-start-2 overflow-hidden border border-transparent lg:w-4/5 rounded-xl">
                 <VideoPlayer publicId="General%20Media/Aboutrad" />
               </div>
             </div>
