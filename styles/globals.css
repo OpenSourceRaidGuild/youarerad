@@ -49,7 +49,7 @@
   }
 
   section {
-    @apply px-4 pt-16 pb-16 mx-auto max-w-screen-2xl lg:pb-32 lg:pt-32;
+    @apply max-w-screen-xl px-4 pt-16 pb-16 mx-auto lg:pb-32 lg:pt-32;
   }
 
   input[type='radio'] {
