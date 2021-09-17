@@ -6,6 +6,7 @@ const Navbar = dynamic(() => import('../components/Navbar.js'))
 const Footer = dynamic(() => import('../components/Footer.js'))
 
 export const siteTitle = 'Rise Above The Disorder'
+
 export default function Layout({ children, pageHeader, pageTitle, pageLink, description }) {
   const elemRef = useRef()
   const isVisable = useIsVisable(elemRef)
@@ -39,10 +40,7 @@ export default function Layout({ children, pageHeader, pageTitle, pageLink, desc
       </Head>
       <div id="root">
         <Navbar></Navbar>
-        <header>
-          <h1 className="sr-only">{'Rise Above The Disorder' + ' ' + { pageLink }}</h1>
-          {pageHeader}
-        </header>
+        <header>{pageHeader}</header>
         <main>{children}</main>
         <footer ref={elemRef}>
           {isVisable && console.log('visable')}
