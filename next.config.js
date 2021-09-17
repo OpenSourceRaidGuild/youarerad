@@ -16,6 +16,53 @@ module.exports = withBundleAnalyzer({
   },
   i18n: {
     locales: ['en'],
-    defaultLocale: 'en',
+    defaultLocale: 'en-US',
+
+    domains: [
+      {
+        domain: 'youarerad.org',
+        defaultLocale: 'en-US',
+      },
+      {
+        domain: 'de.youarerad.org',
+        defaultLocale: 'de',
+      },
+      {
+        domain: 'es.youarerad.org',
+        defaultLocale: 'es',
+      },
+      {
+        domain: 'fr.youarerad.org',
+        defaultLocale: 'fr',
+      },
+      {
+        domain: 'ja.youarerad.org',
+        defaultLocale: 'ja',
+      },
+      {
+        domain: 'ko.youarerad.org',
+        defaultLocale: 'ko',
+      },
+      {
+        domain: 'pt.youarerad.org',
+        defaultLocale: 'pt',
+      },
+      {
+        domain: 'ru.youarerad.org',
+        defaultLocale: 'ru',
+      },
+      {
+        domain: 'th.youarerad.org',
+        defaultLocale: 'th',
+      },
+      {
+        domain: 'vi.youarerad.org',
+        defaultLocale: 'vi',
+      },
+      {
+        domain: 'zh.youarerad.org',
+        defaultLocale: 'zh',
+      },
+    ],
   },
 })
