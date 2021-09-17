@@ -15,7 +15,7 @@ class MyDocument extends Document {
           <link rel="alternate" hrefLang="de" href="https://de.youarerad.org" />
           <link rel="alternate" hrefLang="ja" href="https://ja.youarerad.org" />
           <link rel="alternate" hrefLang="ko" href="https://ko.youarerad.org" />
-          <link rel="alternate" hrefLang="pt" href="https://pt.youarerad.org" />
+          <link rel="alternate" hrefLang="pt" href="https://pt-br.youarerad.org" />
           <link rel="alternate" hrefLang="ru" href="https://ru.youarerad.org" />
           <link rel="alternate" hrefLang="zh" href="https://zh.youarerad.org" />
           <link rel="alternate" hrefLang="es" href="https://es.youarerad.org" />
