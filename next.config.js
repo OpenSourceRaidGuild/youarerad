@@ -15,7 +15,7 @@ module.exports = withBundleAnalyzer({
     domains: ['res.cloudinary.com', 'pbs.twimg.com', 'abs.twimg.com'],
   },
   i18n: {
-    locales: ['en-US'],
+    locales: ['en-US', 'de', 'es', 'fr', 'ja', 'ko', 'pt', 'ru', 'th', 'vi', 'zh'],
     defaultLocale: 'en-US',
 
     domains: [
