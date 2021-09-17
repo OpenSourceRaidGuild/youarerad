@@ -19,7 +19,7 @@ export default function Sectiontext({
           <h5>{subheader}</h5>
           <h3>
             {headerone}{' '}
-            <span className="block text-transparent  bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
+            <span className="block text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
               {headertwo}
             </span>
           </h3>

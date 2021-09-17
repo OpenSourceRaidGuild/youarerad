@@ -1,6 +1,86 @@
 @tailwind base;
+@layer base {
+  h1 {
+    font-size: var(--step-6);
+    @apply font-extrabold leading-tight tracking-tight text-black;
+  }
+  h2 {
+    font-size: var(--step-4);
+    @apply font-extrabold leading-tight tracking-tight;
+  }
+  h3 {
+    font-size: var(--step-2);
+    @apply font-extrabold tracking-tight;
+  }
+  h5 {
+    font-size: var(--step-0);
+    @apply font-bold leading-normal tracking-tighter capitalize;
+  }
+  p {
+    font-size: var(--step-0);
+  }
+
+  label {
+    @apply block text-sm font-medium text-left text-gray-600;
+  }
+
+  input[type='text'] {
+    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+  }
+
+  input[type='password'] {
+    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+  }
+
+  input[type='password']:focus {
+    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+  }
+
+  input[type='text']:focus {
+    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+  }
+
+  input[type='email'] {
+    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+  }
+
+  input[type='email']:focus {
+    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+  }
+
+  section {
+    @apply max-w-screen-xl px-4 pt-16 pb-16 mx-auto lg:pb-32 sm:px-6 md:px-8 lg:px-10 lg:pt-32;
+  }
+
+  input[type='radio'] {
+    @apply hidden w-0 h-0;
+  }
+  .radio-label {
+    @apply relative z-10 items-center justify-center block w-full p-4 mx-auto font-bold text-center text-black align-middle bg-white border cursor-pointer h-14 rounded-xl;
+  }
+  input[type='radio']:checked + .radio-label {
+    @apply z-0 text-white bg-indigo-500 border-indigo-500 shadow-2xl bg-clip-border drop-shadow-xl;
+  }
+  .radio-label:hover {
+    @apply z-0 text-white transition-all duration-300 bg-indigo-500 border-indigo-500 shadow-2xl bg-clip-border drop-shadow-xl;
+  }
+  input[type='email'] {
+    border-radius: 0.75rem;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --step-0: clamp(1.31rem, 1.31rem + 0vw, 1.31rem);
+  --step-1: clamp(1.58rem, 1.55rem + 0.13vw, 1.64rem);
+  --step-2: clamp(1.89rem, 1.83rem + 0.31vw, 2.05rem);
+  --step-3: clamp(2.27rem, 2.15rem + 0.58vw, 2.56rem);
+  --step-4: clamp(2.72rem, 2.53rem + 0.94vw, 3.2rem);
+  --step-5: clamp(3.27rem, 2.98rem + 1.44vw, 4.01rem);
+  --step-6: clamp(3.92rem, 3.49rem + 2.12vw, 5.01rem);
+}
 
 .transparent {
   filter: alpha(opacity=50); /* internet explorer */
@@ -149,71 +229,5 @@ video {
   }
   .form-button:hover {
     @apply hover:shadow-none hover:bg-black hover:text-white;
-  }
-}
-
-@layer base {
-  h1 {
-    @apply text-6xl font-extrabold tracking-tight text-black sm:text-7xl lg:text-8xl;
-  }
-  h2 {
-    @apply text-3xl font-extrabold tracking-tight whitespace-pre-wrap sm:text-5xl lg:text-5xl lg:whitespace-normal;
-  }
-  h3 {
-    @apply text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl;
-  }
-  h5 {
-    @apply text-sm font-bold leading-normal tracking-tighter capitalize lg:text-lg;
-  }
-  p {
-    @apply max-w-2xl pt-4 text-base lg:text-xl;
-  }
-
-  label {
-    @apply block text-sm font-medium text-left text-gray-600;
-  }
-
-  input[type='text'] {
-    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
-  }
-
-  input[type='password'] {
-    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
-  }
-
-  input[type='password']:focus {
-    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
-  }
-
-  input[type='text']:focus {
-    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
-  }
-
-  input[type='email'] {
-    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
-  }
-
-  input[type='email']:focus {
-    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
-  }
-
-  section {
-    @apply max-w-screen-xl px-4 pt-16 pb-16 mx-auto lg:pb-32 sm:px-6 md:px-8 lg:px-10 lg:pt-32;
-  }
-
-  input[type='radio'] {
-    @apply hidden w-0 h-0;
-  }
-  .radio-label {
-    @apply relative z-10 items-center justify-center block w-full p-4 mx-auto font-bold text-center text-black align-middle bg-white border cursor-pointer h-14 rounded-xl;
-  }
-  input[type='radio']:checked + .radio-label {
-    @apply z-0 text-white bg-indigo-500 border-indigo-500 shadow-2xl bg-clip-border drop-shadow-xl;
-  }
-  .radio-label:hover {
-    @apply z-0 text-white transition-all duration-300 bg-indigo-500 border-indigo-500 shadow-2xl bg-clip-border drop-shadow-xl;
-  }
-  input[type='email'] {
-    border-radius: 0.75rem;
   }
 }
