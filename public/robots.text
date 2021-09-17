@@ -1,4 +1,8 @@
 User-agent: *
-Allow: /
+Disallow: /privacy
+Disallow: /terms
+Disallow: /donationcomplete
+Disallow: /success
+Disallow: /api/
 
 Sitemap: https://www.youarerad.org/sitemap.xml
