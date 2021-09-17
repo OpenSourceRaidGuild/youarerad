@@ -40,7 +40,7 @@ export default function Layout({ children, pageHeader, pageTitle, pageLink, desc
       <div id="root">
         <Navbar></Navbar>
         <header>
-          <h1 className="sr-only">{pageTitle}</h1>
+          <h1 className="sr-only">{'Rise Above The Disorder' + ' ' + { pageLink }}</h1>
           {pageHeader}
         </header>
         <main>{children}</main>
