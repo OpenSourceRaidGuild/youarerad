@@ -42,7 +42,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Popover className="relative z-50 px-4 py-4 mx-auto max-w-screen-2xl sm:px-6 md:px-8 lg:px-10">
+    <Popover className="relative z-50 px-4 py-4 mx-auto max-w-screen-2xl">
       {({ open }) => (
         <>
           <div className="relative z-20">
