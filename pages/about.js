@@ -53,9 +53,9 @@ export default function About() {
       description="Learn more Rise Above The Disorder. A World of Warcraft guild turned international non-profit covering the cost of mental health care for people around the world."
       pageHeader={
         <div className="text-white bg-black ">
-          <section className="">
+          <section className="text-white">
             <div className="space-y-16 lg:space-y-0 lg:justify-between lg:flex">
-              <div>
+              <div className="text-white">
                 <Pageheader
                   subheader="We believe"
                   headerone="People can be helped"

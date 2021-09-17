@@ -17,7 +17,7 @@ export default function Guild() {
     >
       <section>
         <div className="space-y-16 lg:space-y-0 lg:justify-between lg:flex ">
-          <div className="relative z-30">
+          <div className="relative ">
             <Pageheader
               subheader="the guild"
               headerone="Join our guild"
