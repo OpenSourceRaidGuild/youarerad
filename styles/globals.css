@@ -101,6 +101,10 @@
   position: relative;
   padding-top: 56.25%;
 }
+.display {
+  font-size: var(--step-6);
+  @apply font-extrabold leading-tight tracking-tight text-black;
+}
 
 .body {
   overscroll-behavior-y: none;
