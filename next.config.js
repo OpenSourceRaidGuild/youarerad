@@ -15,7 +15,7 @@ module.exports = withBundleAnalyzer({
     domains: ['res.cloudinary.com', 'pbs.twimg.com', 'abs.twimg.com'],
   },
   i18n: {
-    locales: ['en'],
+    locales: ['en-US'],
     defaultLocale: 'en-US',
 
     domains: [
@@ -23,6 +23,7 @@ module.exports = withBundleAnalyzer({
         domain: 'youarerad.org',
         defaultLocale: 'en-US',
       },
+
       {
         domain: 'de.youarerad.org',
         defaultLocale: 'de',
