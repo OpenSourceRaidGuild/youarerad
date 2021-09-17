@@ -16,14 +16,12 @@ export default function Pageheader({
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-600 to-red-300">
           {charone}
         </span>
-      </h1>
-      <h1 className={color}>
+        <br />
         {headertwo}
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-green-400">
           {chartwo}
         </span>
-      </h1>
-      <h1 className={color}>
+        <br />
         {headerthree}
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-600">
           {charthree}
