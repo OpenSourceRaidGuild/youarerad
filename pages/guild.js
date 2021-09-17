@@ -13,7 +13,7 @@ export default function Guild() {
     <Layout
       pageTitle="RAD The Guild"
       pageLink="/guild"
-      description="Join incredible partners like Electronic Arts, Jagex, Columbia Records, Dream, and more! Rise Above The Disorder partners with teams all over the world to make mental health care accessible to all."
+      description="Founded as a World of Warcraft guild dedicated to covering the cost of mental health care for members, our cause has always centered around our Guild. Become a guild member today and help thousands of people access mental health care all over the world."
     >
       <section>
         <div className="space-y-16 lg:space-y-0 lg:justify-between lg:flex ">
