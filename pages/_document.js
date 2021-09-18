@@ -10,8 +10,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script async type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-          <script
+          <NextScript
+            async
+            type="text/javascript"
+            src="https://cdn.weglot.com/weglot.min.js"
+          ></NextScript>
+          <NextScript
             dangerouslySetInnerHTML={{
               __html: 'Weglot.initialize({api_key:"wg_0f763ce0b95670ae3cec6ef2c30ccffc3"})',
             }}
