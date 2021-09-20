@@ -10,6 +10,20 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <NextScript async src="https://www.googletagmanager.com/gtag/js?id=UA-126320896-1" />
+          <NextScript
+            id:Ganalytics
+            onLoad={() => {
+              window.dataLayer = window.dataLayer || []
+              function gtag() {
+                dataLayer.push(arguments)
+              }
+              gtag('js', new Date())
+
+              gtag('config', 'UA-126320896-1')
+            }}
+          />
+
           <NextScript
             async
             type="text/javascript"
