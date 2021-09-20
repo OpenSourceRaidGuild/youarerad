@@ -37,7 +37,7 @@ export default function Guild() {
           <Sectiontext
             subheader="Your membership"
             headerone="At just $1 a day,"
-            headertwo="you join a community of IRL healers"
+            headertwo="you join a community of IRL healers."
             body="Over a decade ago, our founder took what little was left from his disability check to pay for someone's therapy. Alone, he was able to pay for one therapy session a month. As a guild, RAD has been able to cover thousands of therapy sessions. "
             media={<VideoPlayer publicId="RADHighlightTwo" />}
           />

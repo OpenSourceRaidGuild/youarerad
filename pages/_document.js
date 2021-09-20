@@ -12,7 +12,6 @@ class MyDocument extends Document {
         <Head>
           <NextScript async src="https://www.googletagmanager.com/gtag/js?id=UA-126320896-1" />
           <NextScript
-            id:Ganalytics
             onLoad={() => {
               window.dataLayer = window.dataLayer || []
               function gtag() {

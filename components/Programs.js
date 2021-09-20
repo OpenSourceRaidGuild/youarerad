@@ -4,7 +4,7 @@ import Link from 'next/dist/client/link'
 import { useState } from 'react'
 
 const Programs = () => {
-  const [openTab, setOpenTab] = useState(0)
+  const [openTab, setOpenTab] = useState(1)
   return (
     <div className="lg:grid lg:grid-cols-2 lg:gap-x-20">
       <div className="">

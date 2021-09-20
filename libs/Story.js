@@ -87,7 +87,7 @@ export const Story = [
     chaptertext: (
       <div>
         <h3>
-          Changing mental health care became their end- game. The cost of therapy was a new raid.
+          Changing mental health care became their end-game. The cost of therapy was a new raid.
         </h3>
         <p>
           Desperate to make therapy available to everyone in need, the guild settled on a wild idea:
