@@ -18,7 +18,7 @@ export default function Home() {
         pageLink="/"
         description="We are a non-profit covering the cost of mental health care for thousands of people around the world."
       >
-        <section className="h-[80vh] pt-0  lg:pt-40">
+        <section className="h-[100vh] pt-0  lg:pt-40">
           <h1 className="display">
             We are a nonprofit covering the cost of mental health care for{' '}
             <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
