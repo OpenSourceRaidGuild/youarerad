@@ -24,28 +24,36 @@
     @apply block text-sm font-medium text-left text-gray-600;
   }
 
+  input[type='date'] {
+    @apply block w-full px-3 py-2 border-2 border-gray-300 appearance-none rounded-xl focus:outline-none sm:text-sm;
+  }
+
   input[type='text'] {
-    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+    @apply block w-full px-3 py-2 placeholder-gray-400 border-2 border-gray-300 appearance-none rounded-xl focus:outline-none sm:text-sm;
   }
 
   input[type='password'] {
-    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+    @apply block w-full px-3 py-2 placeholder-gray-400 border-2 border-gray-300 appearance-none rounded-xl focus:outline-none sm:text-sm;
   }
 
   input[type='password']:focus {
-    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+    @apply shadow-xl focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
   }
 
   input[type='text']:focus {
-    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+    @apply shadow-xl focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
   }
 
   input[type='email'] {
-    @apply block w-full px-3 py-3 placeholder-gray-400 border-2 border-gray-300 shadow-sm appearance-none rounded-xl focus:outline-none sm:text-sm;
+    @apply block w-full px-3 py-2 placeholder-gray-400 border-2 border-gray-300 appearance-none rounded-xl focus:outline-none sm:text-sm;
   }
 
   input[type='email']:focus {
-    @apply focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+    @apply shadow-xl focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+  }
+
+  .error {
+    @apply text-red-500;
   }
 
   section {
@@ -241,5 +249,51 @@ video {
   }
   .form-button:hover {
     @apply hover:shadow-none hover:bg-black hover:text-white;
+  }
+
+  .careform-button {
+    @apply flex justify-center w-full px-3 py-2 overflow-hidden text-base font-semibold text-white align-middle transition-all duration-300 ease-linear bg-blue-500 border-2 rounded-xl;
+  }
+
+  .careform-button:hover {
+    animation: careform-button 30s ease infinite;
+    background: linear-gradient(270deg, #60a5fa, #f472b6);
+    background-size: 400% 400%;
+    -webkit-animation: careform-button 30s ease infinite;
+    -moz-animation: careform-button 30s ease infinite;
+    animation: careform-button 30s ease infinite;
+  }
+  @-webkit-keyframes careform-button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @-moz-keyframes careform-button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes careform-button {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }

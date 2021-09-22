@@ -154,7 +154,7 @@ export default function Careers() {
 export const perks = [
   {
     id: '401k',
-    context: 'Matching 401k with an additional %3 of total salary added as a bonus each year.',
+    context: 'Matching 401k with an additional 3% of total salary added as a bonus each year.',
     icon: BeakerIcon,
     iconForeground: 'text-indigo-400',
     iconBackground: 'bg-indigo-50',

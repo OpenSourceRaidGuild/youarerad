@@ -2,8 +2,8 @@ import { Doughnut } from 'react-chartjs-2'
 
 const options = {
   layout: {
-    responsive: false,
-    maintainAspectRation: false,
+    responsive: true,
+    maintainAspectRation: true,
   },
 }
 
@@ -62,11 +62,11 @@ const gen = {
 }
 
 const Teamstats = () => (
-  <div className="flex-wrap pt-10 sm:grid sm:grid-cols-2 sm:top-0 sm:gap-10">
-    <div>
+  <div className="flex-wrap pt-10 sm:grid sm:grid-cols-2 sm:top-0 sm:gap-10 ">
+    <div className="w-2/6">
       <Doughnut data={gen} options={options} />
     </div>
-    <div>
+    <div className="w-2/6">
       <Doughnut data={eth} options={options} />
     </div>
   </div>

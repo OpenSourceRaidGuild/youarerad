@@ -116,7 +116,7 @@ export const Story = [
     chaptertext: (
       <div>
         <h3>
-          One gamers attempt to save a life had grown into a something no one could have ever
+          One gamer&apos;s attempt to save a life had grown into a something no one could have ever
           imagined.
         </h3>
         <p>
