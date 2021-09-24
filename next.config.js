@@ -9,6 +9,10 @@ module.exports = withBundleAnalyzer({
         source: '/(.*)',
         headers: securityHeaders,
       },
+      {
+        source: '/:path*',
+        headers: securityHeaders,
+      },
     ]
   },
   experimental: { esmExternals: true },
@@ -33,8 +37,8 @@ module.exports = withBundleAnalyzer({
 const ContentSecurityPolicy = `
   default-src 'self';
   frame-src https://js.stripe.com https://hooks.stripe.com;
-  script-src 'self' www.google-analytics.com ajax.googleapis.com https://js.stripe.com;
-  child-src *.youtube.com *.google.com *.twitter.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' www.google-analytics.com ajax.googleapis.com https://js.stripe.com;
+  child-src *.youtube.com *.google.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   media-src *.cloudinary.com;
   img-src 'self' *.cloudinary.com;
