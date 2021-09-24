@@ -148,7 +148,7 @@ export default function About() {
                       objectFit="scale-down"
                       src={team.picture}
                       alt=""
-                      className="object-cover pointer-events-none group-hover:opacity-75"
+                      className="object-cover pointer-events-none "
                     />
                   </div>
                   <p className="block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none">
