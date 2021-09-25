@@ -124,7 +124,7 @@ export default function Donateonce() {
             </div>
           </div>
         </div>
-        <p>
+        <p className="pt-8">
           Your donation of <span className="font-bold">{impact}</span>
           {message}
         </p>
