@@ -13,6 +13,7 @@ export default function Donateonce() {
   const [input, setInput] = useState()
   const [impact, setImpact] = useState('$30')
   const [message, setMessage] = useState(stepTwo)
+  const [customMessage, setCustomMessage] = useState()
 
   const handleInputChange = (e) => {
     const id = e.target.id
@@ -22,8 +23,16 @@ export default function Donateonce() {
       ...input,
       value: Math.round(value * 100),
     })
-    setImpact('$' + Math.floor(id / 10))
+    setImpact('$' + Math.floor(value))
     setMessage(provides)
+
+    if (id === 'donateother') {
+      setCustomMessage({
+        ...input,
+        value: Math.round(value),
+      })
+      setMessage(' will cover ' + Math.floor(value / 30) + ' therapy sessions.')
+    }
   }
 
   console.log(input)
