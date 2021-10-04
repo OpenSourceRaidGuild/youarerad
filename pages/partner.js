@@ -27,7 +27,7 @@ const tabs = [
       {
         name: 'Attend rad events with RAD',
         description:
-          "Once it's safe to do so, we'd love to have you join us at all of the big conventions. Introduce content creators to our cause at TwitchCon, booth it up and party at PAX, and pass out positive letters at DreamHack.",
+          'Join us as a partner on some of the greatest events going on in the gaming commuity! You can place your brand at the heart of activations that help thousands of people start therapy. ',
         video: 'General%20Media/ChessxCoinbase',
         imageAlt:
           'Rise Above The Disorder teams up with Chess.com, Coinbase, and some of the most well known content creators in the world for the ultimate Chess tournament.',
@@ -42,7 +42,8 @@ const tabs = [
         description:
           "We're honored to be a core benefit for many of the greatest companies, teams, and agencies out there! When you empower your team with RAD, you provide them with access to a global network of mental health professionals ready to make sure they feel well.",
         video: 'General%20Media/teamworkshop',
-        imageAlt: "A volunteer for Rise Above The Disorder's developer team.",
+        imageAlt:
+          'Our founder speaking with a group of leaders about balancing wellness in the work place.',
       },
     ],
   },
@@ -53,9 +54,10 @@ const tabs = [
       {
         name: 'Gaming for good',
         description:
-          'From playing games with those in need of someone to game with to reporting concerning behavior across Twitch to our clinical team- our community volunteers help RAD keep people safe.',
+          'When you donate directly to our programs, you provide the life changing funds that help someone start therapy straight away. Your impact becomes a part of their life, and we are honored to share with each person how you made their journey possible.',
         video: 'General%20Media/DreamclothingxRAD',
-        imageAlt: "A volunteer for Rise Above The Disorder's community team.",
+        imageAlt:
+          'Dream Clothing launches an incredible series of merch in support of Rise Above The Disorder..',
       },
     ],
   },
