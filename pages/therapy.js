@@ -89,7 +89,7 @@ if you are seeking help but don't want to go from therapist to therapist trying 
                     likes="28"
                     retweets="8"
                     comments="3"
-                    media="https://pbs.twimg.com/profile_images/1419119433704898560/87PN7qUD_400x400.jpg"
+                    media="https://pbs.twimg.com/profile_images/1445132595155529744/7cDzqQZK_400x400.jpg"
                   />
                 </div>
               }
