@@ -4,6 +4,8 @@ export const Staff = [
     title: 'Chief Executive Officer',
     salary: '$65,000',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628121499/Jason.jpg',
+    twitter: 'https://twitter.com/JasonDocton',
+    twitterName: 'JasonDocton',
   },
   {
     name: 'Meaghan Highwood',

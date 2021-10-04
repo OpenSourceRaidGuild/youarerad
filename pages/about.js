@@ -157,6 +157,21 @@ export default function About() {
                   <p className="block text-sm font-medium text-gray-500 pointer-events-none">
                     {team.title}
                   </p>
+                  {team.twitter && (
+                    <Link passHref href={team.twitter}>
+                      <a className="flex items-center text-sm">
+                        <span>
+                          <Image
+                            src="https://res.cloudinary.com/df23ubjbb/image/upload/v1628594660/Logos/Logo_blue_tbwwed.svg"
+                            width="12"
+                            height="12"
+                            alt="twitter-logo"
+                          />
+                        </span>
+                        {team.twitterName}
+                      </a>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
