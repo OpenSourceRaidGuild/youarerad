@@ -18,6 +18,8 @@ export const Staff = [
     title: 'Director of Operations',
     salary: '$65,000',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628121500/Brian.jpg',
+    twitter: 'https://twitter.com/Tranmobile_',
+    twitterName: 'TranMobile_',
   },
   {
     name: 'Courtney Thornton',
@@ -60,5 +62,7 @@ export const Staff = [
     title: 'Communications Lead',
     salary: '$42,000',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628121499/Parker.jpg',
+    twitter: 'https://twitter.com/caffeined__',
+    twitterName: 'caffeined__',
   },
 ]
