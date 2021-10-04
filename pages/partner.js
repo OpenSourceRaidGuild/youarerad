@@ -25,7 +25,7 @@ const tabs = [
     name: 'Event Activations',
     features: [
       {
-        name: 'Attend rad events with RAD',
+        name: 'The raddest events on the internet',
         description:
           'Join us as a partner on some of the greatest events going on in the gaming commuity! You can place your brand at the heart of activations that help thousands of people start therapy. ',
         video: 'General%20Media/ChessxCoinbase',
