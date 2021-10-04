@@ -159,7 +159,11 @@ export default function About() {
                   </p>
                   {team.twitter && (
                     <Link passHref href={team.twitter}>
-                      <a className="flex items-center text-sm">
+                      <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="flex items-center text-sm"
+                      >
                         <span>
                           <Image
                             src="https://res.cloudinary.com/df23ubjbb/image/upload/v1628594660/Logos/Logo_blue_tbwwed.svg"
