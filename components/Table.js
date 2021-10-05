@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import Image from 'next/dist/client/image'
 import { Staff } from '../libs/Data/Staff'
 

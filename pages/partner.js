@@ -57,7 +57,7 @@ const tabs = [
           'When you donate directly to our programs, you provide the life changing funds that help someone start therapy straight away. Your impact becomes a part of their life, and we are honored to share with each person how you made their journey possible.',
         video: 'General%20Media/DreamclothingxRAD',
         imageAlt:
-          'Dream Clothing launches an incredible series of merch in support of Rise Above The Disorder..',
+          'Dream Clothing launches an incredible series of merch in support of Rise Above The Disorder.',
       },
     ],
   },
