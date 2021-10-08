@@ -21,9 +21,7 @@ export default function Home() {
         <section className="lg:h-[80vh] pt-0 pb-32 lg:pt-40">
           <h1 className="display">
             We are a nonprofit covering the cost of mental health care for{' '}
-            <span className="text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
-              everyone.
-            </span>
+            <span className="text-rad">everyone.</span>
           </h1>
           <Button linkTo="/donate">Donate Therapy</Button>
         </section>
