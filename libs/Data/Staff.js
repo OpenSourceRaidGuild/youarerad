@@ -66,8 +66,15 @@ export const Staff = [
     twitterName: 'caffeined__',
   },
   {
+    name: 'Renn Criswell',
+    title: 'Clinical Social Work Intern',
+    salary: '$15/hr',
+    picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1633453742/RennCriswell.jpg',
+  },
+
+  {
     name: 'Jenny Hogan',
-    title: 'Clinical Social Worker Intern',
+    title: 'Clinical Social Work Intern',
     salary: '$37,000',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1633453593/JennyHogan.jpg',
   },
