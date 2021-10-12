@@ -145,7 +145,7 @@ export default function About() {
                       width="400"
                       height="400"
                       layout="responsive"
-                      objectFit="scale-down"
+                      objectFit="cover"
                       src={team.picture}
                       alt=""
                       className="object-cover pointer-events-none "
