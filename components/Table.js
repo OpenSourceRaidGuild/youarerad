@@ -40,7 +40,7 @@ export default function Table() {
                             width="400"
                             height="400"
                             layout="responsive"
-                            objectFit="scale-down"
+                            objectFit="cover"
                             className="w-10 h-10 rounded-full"
                             src={person.picture}
                             alt=""
