@@ -1,8 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
 import * as Yup from 'yup'
-import Careformgrid from './grid.js'
-import { Personaldetails } from './step1.js'
+import PersonalDetails from './PersonalDetails.js'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -86,27 +85,11 @@ const App = () => (
       <WizardStep
         onSubmit={() => console.log('Step1 onSubmit')}
         validationSchema={Yup.object({
-          firstName: Yup.string().required('required'),
-          lastName: Yup.string().required('required'),
+          firstName: Yup.string().required('First name is required'),
+          lastName: Yup.string().required('Last name is required'),
         })}
       >
-        <section>
-          <h2 className="py-8 text-2xl">General Information</h2>
-          <Careformgrid>
-            {Personaldetails.map((details) => (
-              <div key={details.id} className={details.length}>
-                <label htmlFor={details.htmlFor}>{details.label}</label>
-                <Field
-                  autoComplete={details.autoComplete}
-                  component="input"
-                  id={details.id}
-                  name={details.name}
-                  type={details.type}
-                />
-              </div>
-            ))}
-          </Careformgrid>
-        </section>
+        <PersonalDetails />
       </WizardStep>
       <WizardStep
         onSubmit={() => console.log('Step2 onSubmit')}
