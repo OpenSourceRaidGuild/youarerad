@@ -53,7 +53,7 @@ export const Staff = [
   },
   {
     name: 'Aubrey Elmer',
-    title: 'Clinical Social Worker I',
+    title: 'Clinical Social Worker II',
     salary: '$45,000',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628121500/Aubrey.jpg',
   },
@@ -67,14 +67,14 @@ export const Staff = [
   },
   {
     name: 'Renn Criswell',
-    title: 'Clinical Social Work Intern',
+    title: 'Clinical Social Work I',
     salary: '$15/hr',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1633453742/RennCriswell.jpg',
   },
 
   {
     name: 'Jenny Hogan',
-    title: 'Clinical Social Work Intern',
+    title: 'Clinical Social Work I',
     salary: '$37,000',
     picture: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1634051172/JennyHogan.jpg',
   },

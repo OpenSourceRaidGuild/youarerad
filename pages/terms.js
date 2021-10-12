@@ -9,6 +9,7 @@ export default function Terms() {
       description="Rise Above The Disorders terms of service, where you can access and learn more about the terms set for use of our website."
     >
       <section className="">
+        <h1 className="sr-only">Terms of Service</h1>
         <h2 className="text-2xl font-bold">Terms of Service</h2>
         <p className="pt-4">
           These Terms of Service govern your use of the website located at{' '}

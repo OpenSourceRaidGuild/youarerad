@@ -9,6 +9,7 @@ export default function Privacy() {
       description="Rise Above The Disorders privacy statement, where you can access and learn more about the privacy settings of our website."
     >
       <section className="">
+        <h1 className="sr-only">Privacy Policy</h1>
         <h2 className="text-2xl font-bold">Privacy Policy</h2>
         <p>
           Your privacy is important to us. It is Rise Above The Disorder&#39;s policy to respect
