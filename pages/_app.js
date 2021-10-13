@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     Fathom.load('YSLVGREN', {
-      includedDomains: ['youarerad.org'],
+      includedDomains: ['youarerad.org', 'www.youarerad.org'],
     })
 
     function onRouteChangeComplete() {
