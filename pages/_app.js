@@ -1,22 +1,26 @@
+import * as Fathom from 'fathom-client'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import * as ga from '../libs/GA'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      ga.pageview(url)
-    }
+    Fathom.load('YSLVGREN', {
+      includedDomains: ['youarerad.org'],
+    })
 
-    router.events.on('routeChangeComplete', handleRouteChange)
+    function onRouteChangeComplete() {
+      Fathom.trackPageview()
+    }
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
 
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
-  }, [router.events])
+  }, [])
+
   return <Component {...pageProps} />
 }
 
