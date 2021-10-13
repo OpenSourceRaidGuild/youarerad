@@ -10,7 +10,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <NextScript async src="https://www.googletagmanager.com/gtag/js?id=UA-126320896-1" />
+          <NextScript
+            async
+            src={
+              'https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}'
+            }
+          />
           <NextScript
             onLoad={() => {
               window.dataLayer = window.dataLayer || []
@@ -19,7 +24,9 @@ class MyDocument extends Document {
               }
               gtag('js', new Date())
 
-              gtag('config', 'UA-126320896-1')
+              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                page_path: window.location.pathname,
+              })
             }}
           />
 
