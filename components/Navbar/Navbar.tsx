@@ -11,14 +11,13 @@ import Image from 'next/dist/client/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import Button from '@/components/Button'
-import type { BlogPost, Resource } from './type'
 
-const resources: Resource[] = [
+const resources = [
   { name: 'Careers', href: '/careers', icon: UserGroupIcon },
   { name: 'Volunteer', href: '/volunteer', icon: GlobeAltIcon },
   { name: 'Partnerships', href: '/partner', icon: BookmarkAltIcon },
 ]
-const blogPosts: BlogPost[] = [
+const blogPosts = [
   {
     id: 1,
     name: 'Join The Guild',
