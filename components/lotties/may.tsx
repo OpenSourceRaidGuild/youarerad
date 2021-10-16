@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import Lottie from 'react-lottie-player'
 
 const Mayhover = () => {
-  const [animationData, setAnimationData] = useState()
+  const [animationData, setAnimationData] = useState<object>()
 
   useEffect(() => {
     import('./May.json').then(setAnimationData)

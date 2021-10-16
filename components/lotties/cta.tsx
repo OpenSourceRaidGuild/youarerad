@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+import Lottie from 'react-lottie-player'
 
 export default function Cta() {
-  const [animationData, setAnimationData] = useState()
+  const [animationData, setAnimationData] = useState<object>()
 
   useEffect(() => {
     import('./cta.json').then(setAnimationData)
