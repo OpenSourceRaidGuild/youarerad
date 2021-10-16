@@ -1,5 +1,5 @@
 import Link from 'next/dist/client/link'
-import Layout from '../components/Layout'
+import Layout from '@/components/Layout'
 
 export default function Terms() {
   return (

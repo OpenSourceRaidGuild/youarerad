@@ -1,14 +1,21 @@
 import Head from 'next/dist/shared/lib/head'
 import dynamic from 'next/dynamic'
-import { useRef } from 'react'
-import useIsVisable from './utils/isvisable.js'
-const Navbar = dynamic(() => import('../components/Navbar.js'))
-const Footer = dynamic(() => import('../components/Footer.js'))
+import React, { useRef } from 'react'
+import useIsVisable from './utils/isvisable'
+const Navbar = dynamic(() => import('./Navbar'))
+const Footer = dynamic(() => import('./Footer'))
 
 export const siteTitle = 'Rise Above The Disorder'
 
-export default function Layout({ children, pageHeader, pageTitle, pageLink, description }) {
-  const elemRef = useRef()
+type TLayoutProps = {
+  children?: React.ReactNode
+  pageHeader?: JSX.Element
+  pageTitle: string
+  pageLink: string
+  description: string
+}
+export default function Layout({ children, pageHeader, pageTitle, pageLink, description }: TLayoutProps) {
+  const elemRef = useRef(null)
   const isVisable = useIsVisable(elemRef)
 
   return (

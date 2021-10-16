@@ -1,16 +1,16 @@
 import Image from 'next/dist/client/image'
 
 type TTwitterProps = {
-  text: string,
-  id: string,
-  name: string,
-  author: string,
-  media: string,
-  created_at: string,
-  likes: string,
-  retweets: string,
-  comments: string,
-  image?: string,
+  text: string
+  id: string
+  name: string
+  author: string
+  media: string
+  created_at: string
+  likes: string
+  retweets: string
+  comments: string
+  image?: string
 }
 export default function Twitter({
   text,
