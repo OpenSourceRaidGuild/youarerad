@@ -1,8 +1,7 @@
 import Image from 'next/dist/client/image'
-import type { ReactNode } from 'react'
 
 type TwitterProps = {
-  text: ReactNode;
+  text: JSX.Element | string
   id: string;
   name: string;
   author: string;

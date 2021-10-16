@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Ctahover from '../../lotties/cta.js'
+import Ctahover from '../../lotties/cta'
 import { fetchPostJSON } from '../../utils/api-helpers.js'
 import getStripe from '../../utils/get-stripe.js'
 
