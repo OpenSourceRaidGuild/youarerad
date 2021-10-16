@@ -2,7 +2,7 @@ import Head from 'next/dist/shared/lib/head'
 import dynamic from 'next/dynamic'
 import { useRef } from 'react'
 import useIsVisable from './utils/isvisable.js'
-const Navbar = dynamic(() => import('../components/Navbar.js'))
+const Navbar = dynamic(() => import('@/components/Navbar'))
 const Footer = dynamic(() => import('../components/Footer.js'))
 
 export const siteTitle = 'Rise Above The Disorder'
