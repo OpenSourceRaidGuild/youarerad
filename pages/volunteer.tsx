@@ -2,13 +2,13 @@ import { Tab } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import VolunteerForm from '../components/forms/Volunteer.js'
-import Layout from '../components/Layout'
-import Ctahover from '../components/lotties/cta.js'
-import Pageheader from '../components/Pageheader'
-import Sectiontext from '../components/Sectiontext'
+import VolunteerForm from '@/components/forms/Volunteer'
+import Layout from '@/components/Layout'
+import Ctahover from '@/components/lotties/cta'
+import Pageheader from '@/components/Pageheader'
+import Sectiontext from '@/components/Sectiontext'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 const tabs = [
   {
@@ -65,7 +65,7 @@ const tabs = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -153,7 +153,7 @@ const Volunteer = () => {
 
                               <div className="relative items-center w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
                                 <button
-                                  onClick={setOpenForm}
+                                  onClick={(event) => setOpenForm(!!event)}
                                   className="relative z-10 w-full p-2 font-bold text-center "
                                 >
                                   Volunteer Form

@@ -4,7 +4,7 @@ import Faq from '../components/Faq.js'
 import Layout from '../components/Layout.js'
 import Pageheader from '../components/Pageheader.js'
 import Sectionheader from '../components/Sectionheader.js'
-import Sectiontext from '../components/Sectiontext.js'
+import Sectiontext from '@/components/Sectiontext'
 import Lazysections from '../components/utils/lazysections.js'
 import Twitter from '../components/utils/Twitter.js'
 

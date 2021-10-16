@@ -3,7 +3,7 @@ import { useState } from 'react'
 import DonateGuild from '../components/forms/Donate/Donateguild.js'
 import Layout from '../components/Layout.js'
 import Pageheader from '../components/Pageheader.js'
-import Sectiontext from '../components/Sectiontext.js'
+import Sectiontext from '@/components/Sectiontext'
 
 const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 

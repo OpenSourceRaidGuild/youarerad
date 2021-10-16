@@ -1,6 +1,17 @@
 import Link from 'next/link'
-import Lazysections from './utils/lazysections.js'
+import Lazysections from './utils/lazysections'
 
+type TSectiontextProps = {
+  subheader?: string
+  headerone?: string
+  headertwo?: string
+  button?: string
+  body?: string
+  learn?: string
+  link?: string
+  media?: JSX.Element
+  alternate?: boolean
+}
 export default function Sectiontext({
   subheader,
   headerone,
@@ -10,8 +21,8 @@ export default function Sectiontext({
   learn,
   link,
   media,
-  alternate = { Boolean },
-}) {
+  alternate = true,
+}: TSectiontextProps) {
   return (
     <Lazysections>
       <div className="flex flex-col-reverse items-center md:justify-between md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0">

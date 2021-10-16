@@ -1,3 +1,14 @@
+type TPageHeaderProps = {
+  subheader?: string;
+  headerone?: string;
+  headertwo?: string;
+  headerthree?: string;
+  charone?: string;
+  chartwo?: string;
+  charthree?: string;
+  color?: string;
+}
+
 export default function Pageheader({
   subheader,
   headerone,
@@ -7,7 +18,7 @@ export default function Pageheader({
   chartwo,
   charthree,
   color,
-}) {
+}: TPageHeaderProps) {
   return (
     <>
       <h5>{subheader}</h5>

@@ -4,7 +4,7 @@ import Button from '../components/Button'
 import Layout from '../components/Layout'
 import Programs from '../components/Programs.js'
 import Sectionheader from '../components/Sectionheader'
-import Sectiontext from '../components/Sectiontext.js'
+import Sectiontext from '@/components/Sectiontext'
 import Carousel from '../components/utils/Carousel'
 import Fadeinsections from '../components/utils/fadesections.js'
 
