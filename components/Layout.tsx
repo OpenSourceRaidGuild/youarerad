@@ -1,6 +1,6 @@
 import Head from 'next/dist/shared/lib/head'
 import dynamic from 'next/dynamic'
-import React, { useRef } from 'react'
+import { useRef, ReactNode } from 'react'
 import useIsVisable from './utils/isvisable'
 const Navbar = dynamic(() => import('./Navbar'))
 const Footer = dynamic(() => import('./Footer'))
@@ -8,7 +8,7 @@ const Footer = dynamic(() => import('./Footer'))
 export const siteTitle = 'Rise Above The Disorder'
 
 type TLayoutProps = {
-  children?: React.ReactNode
+  children?: ReactNode
   pageHeader?: JSX.Element
   pageTitle: string
   pageLink: string
