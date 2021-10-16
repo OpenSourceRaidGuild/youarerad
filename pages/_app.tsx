@@ -3,7 +3,9 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+import type { AppProps } from 'next/dist/shared/lib/router/router'
+
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
@@ -19,7 +21,7 @@ function MyApp({ Component, pageProps }) {
     return () => {
       router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
-  }, [])
+  }, [router])
 
   return <Component {...pageProps} />
 }
