@@ -1,4 +1,17 @@
 import Image from 'next/dist/client/image'
+
+type TTwitterProps = {
+  text: string,
+  id: string,
+  name: string,
+  author: string,
+  media: string,
+  created_at: string,
+  likes: string,
+  retweets: string,
+  comments: string,
+  image?: string,
+}
 export default function Twitter({
   text,
   id,
@@ -10,7 +23,7 @@ export default function Twitter({
   retweets,
   comments,
   image,
-}) {
+}: TTwitterProps) {
   const authorUrl = `https://twitter.com/${author}`
   const tweetUrl = `https://twitter.com/${author}/status/${id}`
 
