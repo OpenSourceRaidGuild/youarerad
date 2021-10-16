@@ -1,4 +1,19 @@
 import Image from 'next/dist/client/image'
+import type { ReactNode } from 'react'
+
+type TwitterProps = {
+  text: ReactNode;
+  id: string;
+  name: string;
+  author: string;
+  media: string;
+  created_at: string;
+  likes: string;
+  retweets: string;
+  comments: string;
+  image?: string;
+}
+
 export default function Twitter({
   text,
   id,
@@ -10,7 +25,7 @@ export default function Twitter({
   retweets,
   comments,
   image,
-}) {
+}: TwitterProps) {
   const authorUrl = `https://twitter.com/${author}`
   const tweetUrl = `https://twitter.com/${author}/status/${id}`
 
