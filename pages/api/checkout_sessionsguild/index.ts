@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
       const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params)
       res.status(200).json(checkoutSession)
-    } catch (err) {
+    } catch (err: any) {
       res.status(500).json({
         statusCode: 500,
         message: err.message,

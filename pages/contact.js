@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Contactform from '../components/forms/Contact.js'
-import Layout from '../components/Layout.js'
-import Pageheader from '../components/Pageheader.js'
+import Layout from '../components/Layout'
+import Pageheader from '../components/Pageheader'
 
 export default function Contact() {
   return (

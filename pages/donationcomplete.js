@@ -1,7 +1,7 @@
 import { CloudinaryContext, Video } from 'cloudinary-react'
 import { useRef } from 'react'
-import Layout from '../components/Layout.js'
-import Pageheader from '../components/Pageheader.js'
+import Layout from '../components/Layout'
+import Pageheader from '../components/Pageheader'
 
 const VideoPlayer = ({ publicId }) => {
   const videoRef = useRef()

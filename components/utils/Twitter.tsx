@@ -1,7 +1,7 @@
 import Image from 'next/dist/client/image'
 
 type TwitterProps = {
-  text: JSX.Element
+  text: JSX.Element | string
   id: string;
   name: string;
   author: string;
