@@ -27,12 +27,12 @@ export default function Layout({ children, pageHeader, pageTitle, pageLink, desc
         <meta property="og:description" content={description} />
         <meta property="og:url" content={'https://youarerad.org/' + { pageLink }} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/radlogo.png" />
+        <meta property="og:image" content="https://www.youarerad.org/radlogo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@youarerad" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://www.youarerad.org/radlogo.png" />
+        <meta name="twitter:image" content="https://www.youarerad.org/radmini.png" />
         <meta
           name="twitter:image:alt"
           content="Rise Above The Disorder's current logo. A brain shaped from a heart."
