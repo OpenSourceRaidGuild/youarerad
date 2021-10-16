@@ -10,7 +10,7 @@ import {
 import Image from 'next/dist/client/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
-import Button from './Button.js'
+import Button from '@/components/Button'
 
 const resources = [
   { name: 'Careers', href: '/careers', icon: UserGroupIcon },
