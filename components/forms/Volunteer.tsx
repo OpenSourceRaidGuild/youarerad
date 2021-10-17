@@ -34,7 +34,7 @@ export default function VolunteerForm() {
 
     const result = await res.json()
 
-    if (true) document.getElementById('name').value = ''
+    if (result) document.getElementById('name').value = ''
     document.getElementById('email').value = ''
     document.getElementById('experience').value = ''
     document.getElementById('why').value = ''
