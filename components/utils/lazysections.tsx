@@ -1,12 +1,12 @@
 import { motion, useAnimation } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, RefObject, ReactNode } from 'react'
 
-function useOnScreen(ref, rootMargin) {
+function useOnScreen(ref: RefObject<HTMLElement>, rootMargin?: string) {
   // State and setter for storing whether element is visible
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
-    let currentRef = null
+    let currentRef: HTMLElement | null = null
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Update our state when observer callback fires
@@ -21,16 +21,22 @@ function useOnScreen(ref, rootMargin) {
       observer.observe(currentRef)
     }
     return () => {
-      observer.unobserve(currentRef)
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
     }
   }, [ref, rootMargin]) // Empty array ensures that effect is only run on mount and unmount
 
   return isIntersecting
 }
 
-const Lazysections = ({ children }) => {
+type LazysectionsProps = {
+  children: ReactNode;
+}
+
+const Lazysections = ({ children }: LazysectionsProps) => {
   const controls = useAnimation()
-  const rootRef = useRef()
+  const rootRef = useRef<HTMLDivElement>(null)
   const onScreen = useOnScreen(rootRef)
   useEffect(() => {
     if (onScreen) {
@@ -44,12 +50,9 @@ const Lazysections = ({ children }) => {
       })
     }
   }, [onScreen, controls])
+
   return (
     <motion.div
-      threshold="0.5"
-      delay="100"
-      rootMargin="0px"
-      triggerOnce="true"
       className="lazy-div"
       ref={rootRef}
       initial={{ opacity: 0, x: -10 }}

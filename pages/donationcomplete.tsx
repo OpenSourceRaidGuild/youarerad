@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 
-const VideoPlayer = ({ publicId }) => {
+const VideoPlayer = ({ publicId }: { publicId: string }) => {
   const videoRef = useRef()
   return (
     <CloudinaryContext cloud_name="df23ubjbb">

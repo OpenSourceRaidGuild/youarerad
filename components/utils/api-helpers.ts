@@ -1,13 +1,17 @@
-export async function fetchGetJSON(url) {
+function hasMessage(err: unknown): err is { message: string } {
+  return (err as { message: string }).message !== undefined
+}
+
+export async function fetchGetJSON(url: string) {
   try {
     const data = await fetch(url).then((res) => res.json())
     return data
   } catch (err) {
-    throw new Error(err.message)
+    throw new Error(hasMessage(err) ? err.message : undefined)
   }
 }
 
-export async function fetchPostJSON(url, data) {
+export async function fetchPostJSON(url: string, data: unknown) {
   try {
     // Default options are marked with *
     const response = await fetch(url, {
@@ -30,6 +34,6 @@ export async function fetchPostJSON(url, data) {
     })
     return await response.json() // parses JSON response into native JavaScript objects
   } catch (err) {
-    throw new Error(err.message)
+    throw new Error(hasMessage(err) ? err.message : undefined)
   }
 }

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 import Link from 'next/link'
 import Lazysections from './utils/lazysections'
 
@@ -5,7 +7,7 @@ type TSectiontextProps = {
   subheader?: string
   headerone?: string
   headertwo?: string
-  button?: string
+  button?: ReactNode
   body?: string
   learn?: string
   link?: string

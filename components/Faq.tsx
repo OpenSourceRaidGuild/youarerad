@@ -1,11 +1,20 @@
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
-function classNames(...classes) {
+export type Faqs = {
+  question: string
+  answer: string
+}
+
+type FaqProps = {
+  faqs: Array<Faqs>
+}
+
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Faq({ faqs }) {
+export default function Faq({ faqs }: FaqProps) {
   return (
     <div className="py-8 mx-auto sm:py-16">
       <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">

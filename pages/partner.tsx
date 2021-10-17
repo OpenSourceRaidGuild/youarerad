@@ -63,12 +63,20 @@ const tabs = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Partner() {
   const [openForm, setOpenForm] = useState(false)
+
+  const handleClick = () => {
+    if (!openForm) {
+      return setOpenForm(true)
+    }
+
+    document.getElementById('name')?.focus()
+  }
 
   return (
     <Layout
@@ -142,7 +150,7 @@ export default function Partner() {
 
                               <div className="relative items-center w-full max-w-md mx-auto mt-10 overflow-hidden text-xl text-black transition-all duration-300 ease-linear bg-white border-2 border-black lg:mx-0 lg:max-w-sm rounded-xl shadow-primary hover:shadow-none hover:bg-black hover:text-white">
                                 <button
-                                  onClick={setOpenForm}
+                                  onClick={handleClick}
                                   className="relative z-10 w-full p-2 font-bold text-center "
                                 >
                                   Partnership Form

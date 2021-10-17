@@ -1,19 +1,27 @@
+import { ReactNode } from 'react'
+
 type TSectionHeaderProps = {
-  subheader: string
+  subheader: ReactNode
   headerone: string
-  headertwo: string
+  headertwo?: string
   bodytext?: string
-  color: string
+  color?: string
 }
-export default function Sectionheader({ subheader, headerone, headertwo, bodytext, color }: TSectionHeaderProps) {
+export default function Sectionheader({
+  subheader,
+  headerone,
+  headertwo,
+  bodytext,
+  color = '',
+}: TSectionHeaderProps) {
   return (
     <div className="max-w-4xl">
       <h5>{subheader}</h5>
       <h2 className="text-rad">
         <span className={color}>{headerone}</span>
-        {headertwo}
+        {Boolean(headertwo) && headertwo}
       </h2>
-      {bodytext && <p>{bodytext}</p>}
+      {Boolean(bodytext) && <p>{bodytext}</p>}
     </div>
   )
 }
