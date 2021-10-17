@@ -1,8 +1,12 @@
 import { motion, useAnimation } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect, ReactNode } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-function FadeInWhenVisible({ children }) {
+type FadeInWhenVisibleProps = {
+  children: ReactNode
+}
+
+function FadeInWhenVisible({ children }: FadeInWhenVisibleProps) {
   const controls = useAnimation()
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -35,7 +39,11 @@ function FadeInWhenVisible({ children }) {
   )
 }
 
-export default function Fadeinsections({ children }) {
+type FadeinsectionsProps = {
+  children: ReactNode
+}
+
+export default function Fadeinsections({ children }: FadeinsectionsProps) {
   return (
     <>
       <FadeInWhenVisible>{children}</FadeInWhenVisible>
