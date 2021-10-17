@@ -6,7 +6,7 @@ function useOnScreen(ref: RefObject<HTMLElement>, rootMargin?: string) {
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
-    let currentRef: HTMLElement = null
+    let currentRef: HTMLElement | null = null
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Update our state when observer callback fires
@@ -21,7 +21,9 @@ function useOnScreen(ref: RefObject<HTMLElement>, rootMargin?: string) {
       observer.observe(currentRef)
     }
     return () => {
-      observer.unobserve(currentRef)
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
     }
   }, [ref, rootMargin]) // Empty array ensures that effect is only run on mount and unmount
 
@@ -34,7 +36,7 @@ type LazysectionsProps = {
 
 const Lazysections = ({ children }: LazysectionsProps) => {
   const controls = useAnimation()
-  const rootRef = useRef<HTMLDivElement>()
+  const rootRef = useRef<HTMLDivElement>(null)
   const onScreen = useOnScreen(rootRef)
   useEffect(() => {
     if (onScreen) {

@@ -11,11 +11,12 @@ const useIsVisable = (elementRef: RefObject<HTMLElement>) => {
 
   useEffect(() => {
     if (elementRef.current) {
+      const currentElement = elementRef.current
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisable(true)
-            observer.unobserve(elementRef.current)
+            observer.unobserve(currentElement)
           }
         })
       }, OPTIONS)
