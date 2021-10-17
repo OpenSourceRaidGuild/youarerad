@@ -1,3 +1,4 @@
+import { ReactElement, ComponentProps } from 'react'
 import {
   BeakerIcon,
   BookmarkAltIcon,
@@ -15,7 +16,7 @@ import Sectionheader from '../components/Sectionheader'
 
 const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -59,8 +60,8 @@ export default function Careers() {
                 className={classNames(
                   contextIdx === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '',
                   contextIdx === 1 ? 'sm:rounded-tr-lg' : '',
-                  contextIdx === context.length - 2 ? 'sm:rounded-bl-lg' : '',
-                  contextIdx === context.length - 1
+                  contextIdx === perks.length - 2 ? 'sm:rounded-bl-lg' : '',
+                  contextIdx === perks.length - 1
                     ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none'
                     : '',
                   'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500'
