@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import Image from 'next/dist/client/image'
-import Link from 'next/dist/client/link'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const Programs = () => {
@@ -397,7 +397,7 @@ const Programs = () => {
                     className="linkedin"
                     src="https://www.linkedin.com/embed/feed/update/urn:li:share:6759920948922732544"
                     frameBorder="0"
-                    allowFullScreen=""
+                    allowFullScreen={false}
                     title="Embedded post"
                   />
                 </div>
@@ -681,7 +681,7 @@ const Programs = () => {
             className="pl-8 linkedin"
             src="https://www.linkedin.com/embed/feed/update/urn:li:share:6759920948922732544"
             frameBorder="0"
-            allowFullScreen=""
+            allowFullScreen={false}
             title="Embedded post"
           />
         </div>

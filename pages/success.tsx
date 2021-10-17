@@ -1,6 +1,6 @@
 import { Session } from '@supabase/gotrue-js'
 import { SupabaseAuthClient } from '@supabase/supabase-js/dist/main/lib/SupabaseAuthClient'
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import Account from '../components/forms/Guild/Account'

@@ -1,5 +1,5 @@
 import { Tab } from '@headlessui/react'
-import Image from 'next/dist/client/image'
+import Image from 'next/image'
 import { Fragment } from 'react'
 
 function classNames(...classes) {
