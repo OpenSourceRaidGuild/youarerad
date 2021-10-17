@@ -63,7 +63,7 @@ const projects = [
 ]
 const pinnedProjects = projects.filter((project) => project.pinned)
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 

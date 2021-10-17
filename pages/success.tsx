@@ -1,3 +1,5 @@
+import { Session } from '@supabase/gotrue-js'
+import { SupabaseAuthClient } from '@supabase/supabase-js/dist/main/lib/SupabaseAuthClient'
 import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
@@ -6,7 +8,7 @@ import { fetchGetJSON } from '../components/utils/api-helpers.js'
 import { supabase } from '../components/utils/supabaseClient.js'
 
 const Success = () => {
-  const [session, setSession] = useState(null)
+  const [session, setSession] = useState<Session | null>(null)
   const {
     query: { session_id },
   } = useRouter()
@@ -29,7 +31,7 @@ const Success = () => {
         <div>loading</div>
       ) : (
         <section className="max-w-screen-md">
-          {!session ? '' : <Account key={session.user.id} session={session} />}
+          {!session ? '' : <Account key={session?.user?.id} session={session} />}
         </section>
       )}
     </div>

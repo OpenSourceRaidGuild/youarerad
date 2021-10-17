@@ -12,9 +12,15 @@ type TLayoutProps = {
   pageHeader?: JSX.Element
   pageTitle: string
   pageLink: string
-  description: string
+  description?: string
 }
-export default function Layout({ children, pageHeader, pageTitle, pageLink, description }: TLayoutProps) {
+export default function Layout({
+  children,
+  pageHeader,
+  pageTitle,
+  pageLink,
+  description,
+}: TLayoutProps) {
   const elemRef = useRef(null)
   const isVisable = useIsVisable(elemRef)
 
