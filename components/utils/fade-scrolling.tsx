@@ -1,8 +1,13 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, ReactNode } from 'react'
 import { useIntersection } from './useintersection.js'
 
-export default function Fadescrolling({ children, videos }) {
-  const ScrollerContainerRef = useRef(null)
+type FadescrollingProps = {
+  videos: ReactNode[];
+  children: ReactNode;
+}
+
+export default function Fadescrolling({ children, videos }: FadescrollingProps) {
+  const ScrollerContainerRef = useRef<HTMLDivElement>(null)
   const [activeVideo, setActiveVideo] = useState(0)
 
   useIntersection(
