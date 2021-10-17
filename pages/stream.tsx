@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
-import Fadescrolling from '../components/utils/fade-scrolling.js'
+import Fadescrolling from '../components/utils/fade-scrolling'
 
 const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 

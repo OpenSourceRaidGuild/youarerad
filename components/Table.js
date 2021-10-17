@@ -1,4 +1,4 @@
-import Image from 'next/dist/client/image'
+import Image from 'next/image'
 import { Staff } from '../libs/Data/Staff'
 
 export default function Table() {

@@ -1,4 +1,4 @@
-import Link from 'next/dist/client/link'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import DonateForm from '../components/forms/Donate/Donation'

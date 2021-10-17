@@ -1,5 +1,5 @@
-import Image from 'next/dist/client/image'
-import Link from 'next/dist/client/link'
+import Image from 'next/image'
+import Link from 'next/link'
 import Newsletter from './forms/Newsletter'
 import Mayhover from './lotties/may'
 
