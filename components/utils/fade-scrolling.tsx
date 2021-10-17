@@ -1,5 +1,5 @@
 import { useRef, useState, ReactNode } from 'react'
-import { useIntersection } from './useintersection.js'
+import { useIntersection } from './useintersection'
 
 type FadescrollingProps = {
   videos: ReactNode[];

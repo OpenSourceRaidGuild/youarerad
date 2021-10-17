@@ -4,15 +4,15 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
-import List from '../components/List.js'
+import List from '../components/List'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Transparency from '../components/Transparencytab'
-import { Board } from '../libs/Data/Board.js'
+import { Board } from '../libs/Data/Board'
 import { Staff } from '../libs/Data/Staff'
 import { Story } from '../libs/Story'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 export default function About() {
   const [viewportRef, embla] = useEmblaCarousel({

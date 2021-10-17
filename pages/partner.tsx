@@ -1,12 +1,12 @@
 import { Tab } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import { Fragment, useState } from 'react'
-import PartnershipForm from '../components/forms/Partnership.js'
+import PartnershipForm from '../components/forms/Partnership'
 import Layout from '../components/Layout'
 import Ctahover from '../components/lotties/cta'
 import Pageheader from '../components/Pageheader'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 const tabs = [
   {

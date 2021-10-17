@@ -7,7 +7,7 @@ import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Sectiontext from '../components/Sectiontext'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 const Partners = [
   {

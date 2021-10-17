@@ -1,8 +1,8 @@
 import Link from 'next/dist/client/link'
 import React, { useState } from 'react'
 import Ctahover from '../../lotties/cta'
-import { fetchPostJSON } from '../../utils/api-helpers.js'
-import getStripe from '../../utils/get-stripe.js'
+import { fetchPostJSON } from '../../utils/api-helpers'
+import getStripe from '../../utils/get-stripe'
 
 const stepOne = ' covers the cost of medication refills each month.'
 const stepTwo = ' covers the cost of one therapy session each month.'

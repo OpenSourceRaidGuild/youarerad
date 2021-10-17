@@ -4,9 +4,9 @@ import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 
 const VideoPlayer = ({ publicId }: { publicId: string }) => {
-  const videoRef = useRef()
+  const videoRef = useRef(null)
   return (
-    <CloudinaryContext cloud_name="df23ubjbb">
+    <CloudinaryContext cloudName="df23ubjbb">
       <div>
         <Video
           playsInline={true}
