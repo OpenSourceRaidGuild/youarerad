@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { FormEvent, Fragment, useState } from 'react'
+import { FormEvent, Fragment, useEffect, useLayoutEffect, useState } from 'react'
 
 const volunteer = [
   { id: 1, name: 'Coding' },
@@ -15,16 +15,17 @@ function classNames(...classes: string[]) {
 export default function VolunteerForm() {
   const [submitted, setSubmitted] = useState(false)
   const [selected, setSelected] = useState(volunteer[3])
+
   const sendVolunteer = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const res = await fetch('/api/volunteer', {
       body: JSON.stringify({
-        name: event.target.name.value,
-        email: event.target.email.value,
+        name: (event.currentTarget.name as unknown as HTMLFormElement).value,
+        email: event.currentTarget.email.value,
         volunteertype: selected.name,
-        experience: event.target.experience.value,
-        why: event.target.why.value,
+        experience: event.currentTarget.experience.value,
+        why: event.currentTarget.why.value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -32,12 +33,11 @@ export default function VolunteerForm() {
       method: 'POST',
     })
 
-    const result = await res.json()
-
-    if (result) document.getElementById('name').value = ''
-    document.getElementById('email').value = ''
-    document.getElementById('experience').value = ''
-    document.getElementById('why').value = ''
+    await res.json()
+    ;(document.getElementById('name') as HTMLInputElement).value = ''
+    ;(document.getElementById('email') as HTMLInputElement).value = ''
+    ;(document.getElementById('experience') as HTMLInputElement).value = ''
+    ;(document.getElementById('why') as HTMLInputElement).value = ''
 
     setSubmitted(true)
   }

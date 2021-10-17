@@ -7,7 +7,7 @@ import Sectionheader from '../components/Sectionheader'
 import Carousel from '../components/utils/Carousel'
 import Fadescrolling from '../components/utils/fade-scrolling.js'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 const videos = [
   <VideoPlayer key="1" publicId="General%20Media/MattWaldenCharithon" />,

@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
 import Sectiontext from '@/components/Sectiontext'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 export default function Guild() {
   const [selected, setSelected] = useState(0)

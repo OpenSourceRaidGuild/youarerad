@@ -1,14 +1,14 @@
 import Link from 'next/dist/client/link'
 import dynamic from 'next/dynamic'
-import Button from '../components/Button'
-import Layout from '../components/Layout'
-import Programs from '../components/Programs.js'
-import Sectionheader from '../components/Sectionheader'
+import Button from '@/components/Button'
+import Layout from '@/components/Layout'
+import Programs from '@/components/Programs'
+import Sectionheader from '@/components/Sectionheader'
 import Sectiontext from '@/components/Sectiontext'
-import Carousel from '../components/utils/Carousel'
-import Fadeinsections from '../components/utils/fadesections.js'
+import Carousel from '@/components/utils/Carousel'
+import Fadeinsections from '@/components/utils/fadesections'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 export default function Home() {
   return (

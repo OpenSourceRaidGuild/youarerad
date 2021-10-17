@@ -8,11 +8,11 @@ import List from '../components/List.js'
 import Pageheader from '../components/Pageheader'
 import Sectionheader from '../components/Sectionheader'
 import Transparency from '../components/Transparencytab'
-import { Board } from '../libs/Data/Board.js'
+import { Board } from '../libs/Data/Board'
 import { Staff } from '../libs/Data/Staff'
 import { Story } from '../libs/Story'
 
-const VideoPlayer = dynamic(() => import('../components/utils/videoplayer.js'), { ssr: false })
+const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 export default function About() {
   const [viewportRef, embla] = useEmblaCarousel({
