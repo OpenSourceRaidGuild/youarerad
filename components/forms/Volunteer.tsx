@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { FormEvent, Fragment, useEffect, useLayoutEffect, useState } from 'react'
+import { FormEvent, Fragment, useState } from 'react'
 
 const volunteer = [
   { id: 1, name: 'Coding' },
