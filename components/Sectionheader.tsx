@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-type TSectionHeaderProps = {
+type SectionHeaderProps = {
   subheader: ReactNode
   headerone: string
   headertwo?: string
@@ -13,7 +13,7 @@ export default function Sectionheader({
   headertwo,
   bodytext,
   color = '',
-}: TSectionHeaderProps) {
+}: SectionHeaderProps) {
   return (
     <div className="max-w-4xl">
       <h5>{subheader}</h5>

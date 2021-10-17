@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import Link from 'next/link'
 import Lazysections from './utils/lazysections'
 
-type TSectiontextProps = {
+type SectiontextProps = {
   subheader?: string
   headerone?: string
   headertwo?: string
@@ -24,7 +24,7 @@ export default function Sectiontext({
   link,
   media,
   alternate = true,
-}: TSectiontextProps) {
+}: SectiontextProps) {
   return (
     <Lazysections>
       <div className="flex flex-col-reverse items-center md:justify-between md:grid md:grid-cols-2 md:grid-flow-col-dense md:gap-20 md:space-y-0">

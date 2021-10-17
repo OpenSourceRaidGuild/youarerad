@@ -7,7 +7,7 @@ const Footer = dynamic(() => import('@/components/Footer'))
 
 export const siteTitle = 'Rise Above The Disorder'
 
-type TLayoutProps = {
+type LayoutProps = {
   children?: ReactNode
   pageHeader?: JSX.Element
   pageTitle: string
@@ -20,7 +20,7 @@ export default function Layout({
   pageTitle,
   pageLink,
   description,
-}: TLayoutProps) {
+}: LayoutProps) {
   const elemRef = useRef(null)
   const isVisable = useIsVisable(elemRef)
 
