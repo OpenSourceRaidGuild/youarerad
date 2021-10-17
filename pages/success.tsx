@@ -3,9 +3,9 @@ import { SupabaseAuthClient } from '@supabase/supabase-js/dist/main/lib/Supabase
 import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
-import Account from '../components/forms/Guild/Account.js'
-import { fetchGetJSON } from '../components/utils/api-helpers.js'
-import { supabase } from '../components/utils/supabaseClient.js'
+import Account from '../components/forms/Guild/Account'
+import { fetchGetJSON } from '../components/utils/api-helpers'
+import { supabase } from '../components/utils/supabaseClient'
 
 const Success = () => {
   const [session, setSession] = useState<Session | null>(null)

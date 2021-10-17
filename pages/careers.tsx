@@ -1,4 +1,3 @@
-import { ReactElement, ComponentProps } from 'react'
 import {
   BeakerIcon,
   BookmarkAltIcon,

@@ -1,6 +1,6 @@
 import { Tab } from '@headlessui/react'
 import { Fragment } from 'react'
-import Teamstats from '../libs/Data/Diversity.js'
+import Teamstats from '../libs/Data/Diversity'
 import Table from './Table'
 
 const tabs = [

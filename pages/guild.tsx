@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
 import DonateGuild from '../components/forms/Donate/Donateguild.js'
 import Layout from '../components/Layout'
 import Pageheader from '../components/Pageheader'
@@ -8,7 +7,6 @@ import Sectiontext from '@/components/Sectiontext'
 const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
 export default function Guild() {
-  const [selected, setSelected] = useState(0)
   return (
     <Layout
       pageTitle="RAD The Guild"

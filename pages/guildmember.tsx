@@ -10,6 +10,7 @@ import {
   UserAddIcon,
 } from '@heroicons/react/solid'
 import Link from 'next/dist/client/link'
+import Image from 'next/dist/client/image'
 import { Fragment, useState } from 'react'
 
 const navigation = [
@@ -241,7 +242,7 @@ export default function Guildmember() {
                 <Menu.Button className="group w-full bg-gray-100 rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-purple-500">
                   <span className="flex items-center justify-between w-full">
                     <span className="flex items-center justify-between min-w-0 space-x-3">
-                      <img
+                      <Image
                         className="flex-shrink-0 w-10 h-10 bg-gray-300 rounded-full"
                         src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
                         alt=""
@@ -442,7 +443,7 @@ export default function Guildmember() {
               <Menu as="div" className="relative ml-3 ">
                 <Menu.Button className="flex max-w-xs text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                   <span className="sr-only">Open user menu</span>
-                  <img
+                  <Image
                     className="w-8 h-8 mr-8 rounded-full "
                     src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
@@ -746,7 +747,7 @@ export default function Guildmember() {
                         <div className="flex items-center space-x-2">
                           <div className="flex flex-shrink-0 -space-x-1">
                             {project.members.map((member) => (
-                              <img
+                              <Image
                                 key={member.handle}
                                 className="w-6 h-6 rounded-full max-w-none ring-2 ring-white"
                                 src={member.imageUrl}

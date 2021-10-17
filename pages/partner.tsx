@@ -1,7 +1,7 @@
 import { Tab } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import { Fragment, useState } from 'react'
-import PartnershipForm from '../components/forms/Partnership.js'
+import PartnershipForm from '../components/forms/Partnership'
 import Layout from '../components/Layout'
 import Ctahover from '../components/lotties/cta'
 import Pageheader from '../components/Pageheader'
