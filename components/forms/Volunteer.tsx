@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { Fragment, useState } from 'react'
+import { FormEvent, Fragment, useState } from 'react'
 
 const volunteer = [
   { id: 1, name: 'Coding' },
@@ -8,14 +8,14 @@ const volunteer = [
   { id: 3, name: 'Community' },
   { id: 4, name: 'Event' },
 ]
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function VolunteerForm() {
   const [submitted, setSubmitted] = useState(false)
   const [selected, setSelected] = useState(volunteer[3])
-  const sendVolunteer = async (event) => {
+  const sendVolunteer = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const res = await fetch('/api/volunteer', {
@@ -33,10 +33,12 @@ export default function VolunteerForm() {
     })
 
     const result = await res.json()
-    if (result) document.getElementById('name').value = ''
+
+    if (true) document.getElementById('name').value = ''
     document.getElementById('email').value = ''
     document.getElementById('experience').value = ''
     document.getElementById('why').value = ''
+
     setSubmitted(true)
   }
   return (
@@ -95,8 +97,8 @@ export default function VolunteerForm() {
                           <Listbox.Options className="absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-white shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none rounded-xl">
                             {volunteer.map((volunteers) => (
                               <Listbox.Option
-                                id={volunteers.id}
-                                name={volunteers.name}
+                                id={volunteers.id.toString()}
+                                refName={volunteers.name}
                                 key={volunteers.id}
                                 className={({ active }) =>
                                   classNames(
