@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Button from '@/components/Button'
-import Faq from '@/components/Faq'
+import Faq, { Faqs } from '@/components/Faq'
 import Layout from '@/components/Layout'
 import Pageheader from '@/components/Pageheader'
 import Sectionheader from '@/components/Sectionheader'
@@ -10,7 +10,7 @@ import Twitter from '@/components/utils/Twitter'
 
 const VideoPlayer = dynamic(() => import('@/components/utils/videoplayer'), { ssr: false })
 
-const faqs = [
+const faqs: Array<Faqs> = [
   {
     question: 'Who can apply?',
     answer:

@@ -3,7 +3,15 @@ import Link from 'next/dist/client/link'
 import Newsletter from './forms/Newsletter'
 import Mayhover from './lotties/may'
 
-const navigation = {
+type NavItem = {
+  name: string
+  href: string
+}
+type Navigation = {
+  main: Array<NavItem>
+}
+
+const navigation: Navigation = {
   main: [
     { name: 'About', href: '/about' },
     { name: 'Therapy', href: '/therapy' },
@@ -17,7 +25,13 @@ const navigation = {
   ],
 }
 
-const socials = [
+type SocialsPlatforms = {
+  logo: string
+  href: string
+  alt: string
+}
+
+const socials: Array<SocialsPlatforms> = [
   {
     logo: 'https://res.cloudinary.com/df23ubjbb/image/upload/v1628595192/Logos/Discord-Logo-Color_dpa4dc.svg',
     href: 'https://www.discord.gg/youarerad/',
