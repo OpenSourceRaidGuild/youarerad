@@ -1,4 +1,4 @@
-export function formatAmountForDisplay(amount, currency) {
+export function formatAmountForDisplay(amount: number, currency: string) {
   let numberFormat = new Intl.NumberFormat(['en-US'], {
     style: 'currency',
     currency: currency,
@@ -7,7 +7,7 @@ export function formatAmountForDisplay(amount, currency) {
   return numberFormat.format(amount)
 }
 
-export default function formatAmountForStripe(amount, currency) {
+export default function formatAmountForStripe(amount: number, currency: string) {
   let numberFormat = new Intl.NumberFormat(['en-US'], {
     style: 'currency',
     currency: currency,

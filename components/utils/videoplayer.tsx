@@ -1,10 +1,14 @@
 import { CloudinaryContext, Video } from 'cloudinary-react'
 import { useRef } from 'react'
 
-const VideoPlayer = ({ publicId }) => {
-  const videoRef = useRef()
+type VideoPlayerProps = {
+  publicId: string;
+}
+
+const VideoPlayer = ({ publicId }: VideoPlayerProps) => {
+  const videoRef = useRef<HTMLVideoElement>(null)
   return (
-    <CloudinaryContext cloud_name="df23ubjbb">
+    <CloudinaryContext cloudName="df23ubjbb">
       <div>
         <Video
           playsInline={true}
