@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, RefObject } from 'react'
 
-const OPTIONS = {
+const OPTIONS: IntersectionObserverInit = {
   root: null,
   rootMargin: '0px 0px 0px 0px',
   threshold: 0,
 }
 
-const useIsVisable = (elementRef) => {
+const useIsVisable = (elementRef: RefObject<HTMLElement>) => {
   const [isVisable, setIsVisable] = useState(false)
 
   useEffect(() => {
