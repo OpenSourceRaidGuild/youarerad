@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { Fragment, useState } from 'react'
+import { FormEvent, Fragment, useState } from 'react'
 
 const partnership = [
   { id: 1, name: 'Community' },
@@ -15,16 +15,16 @@ function classNames(...classes) {
 export default function PartnershipForm() {
   const [submitted, setSubmitted] = useState(false)
   const [selected, setSelected] = useState(partnership[3])
-  const sendPartnership = async (event) => {
+  const sendPartnership = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const res = await fetch('/api/partnership', {
       body: JSON.stringify({
-        name: event.target.name.value,
-        email: event.target.email.value,
+        name: (event.currentTarget.name as unknown as HTMLInputElement).value,
+        email: event.currentTarget.email.value,
         partnertype: selected.name,
-        company: event.target.company.value,
-        message: event.target.message.value,
+        company: event.currentTarget.company.value,
+        message: event.currentTarget.message.value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -33,11 +33,14 @@ export default function PartnershipForm() {
     })
 
     const result = await res.json()
-    if (result) document.getElementById('name').value = ''
-    document.getElementById('email').value = ''
-    document.getElementById('company').value = ''
-    document.getElementById('message').value = ''
+    
+    if(result){
+    ;(document.getElementById('name')as HTMLInputElement).value = ''
+    ;(document.getElementById('email') as HTMLInputElement).value = ''
+    ;(document.getElementById('company') as HTMLInputElement).value = ''
+    ;(document.getElementById('message') as HTMLInputElement).value = ''
     setSubmitted(true)
+    }
   }
   return (
     <div className="text-black ">
