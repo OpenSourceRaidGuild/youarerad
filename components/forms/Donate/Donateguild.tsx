@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Ctahover from '../../lotties/cta'
 import { fetchPostJSON } from '../../utils/api-helpers'
 import getStripe from '../../utils/get-stripe'
@@ -10,14 +10,14 @@ const stepFour = ' covers an entire month of therapy sessions for two people.'
 
 export default function DonateGuild() {
   const [loading, setLoading] = useState(false)
-  const [input, setInput] = useState()
+  const [input, setInput] = useState({ value: 0 })
   const [impact, setImpact] = useState('$30')
   const [message, setMessage] = useState(stepTwo)
 
-  const handleInputChange = (e) => {
-    const id = e.target.id
-    const value = e.target.value
-    const provides = e.target.step
+  const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
+    const id = Number(e.currentTarget.id)
+    const value = Number(e.currentTarget.value)
+    const provides = e.currentTarget.step
     setInput({
       ...input,
       value,
@@ -28,7 +28,7 @@ export default function DonateGuild() {
 
   console.log(input)
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
 
@@ -42,10 +42,12 @@ export default function DonateGuild() {
     }
 
     const stripe = await getStripe()
-    const { error } = await stripe.redirectToCheckout({
-      sessionId: response.id,
-    })
-    console.warn(error.message)
+    if (stripe !== null) {
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: response.id,
+      })
+      console.warn(error.message)
+    }
     setLoading(false)
   }
 
