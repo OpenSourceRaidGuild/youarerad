@@ -9,8 +9,8 @@ import {
   TrashIcon,
   UserAddIcon,
 } from '@heroicons/react/solid'
-import Link from 'next/dist/client/link'
-import Image from 'next/dist/client/image'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Fragment, useState } from 'react'
 
 const navigation = [

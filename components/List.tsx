@@ -1,11 +1,12 @@
-import Image from 'next/dist/client/image'
+import Image from 'next/image'
+import { Board } from 'libs/Data/Board'
 
-export default function List({ items }) {
+export default function List({ items }: {items: typeof Board}) {
   return (
     <div className="overflow-hidden sm:rounded-xl">
       <ul role="list" className="divide-y divide-white">
         {items.map((item) => (
-          <li key={item.id} className="px-4 py-4 sm:px-6">
+          <li key={item.name} className="px-4 py-4 sm:px-6">
             <div className="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
               <div className="overflow-hidden aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 rounded-xl">
                 <Image

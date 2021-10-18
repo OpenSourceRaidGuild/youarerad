@@ -1,4 +1,4 @@
-import Link from 'next/dist/client/link'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import Ctahover from '../../lotties/cta'
 import { fetchPostJSON } from '../../utils/api-helpers'

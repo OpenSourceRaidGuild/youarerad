@@ -7,7 +7,7 @@ import {
   UserGroupIcon,
   XIcon,
 } from '@heroicons/react/solid'
-import Image from 'next/dist/client/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import Button from '@/components/Button'
