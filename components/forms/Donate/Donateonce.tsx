@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Ctahover from '../../lotties/cta'
 import { fetchPostJSON } from '../../utils/api-helpers'
 import getStripe from '../../utils/get-stripe'
@@ -10,23 +10,24 @@ const stepFour = ' covers the cost of two full months of therapy sessions.'
 
 export default function Donateonce() {
   const [loading, setLoading] = useState(false)
-  const [input, setInput] = useState()
+  const [input, setInput] = useState({value: 0})
   const [impact, setImpact] = useState('$30')
   const [message, setMessage] = useState(stepTwo)
-  const [customMessage, setCustomMessage] = useState()
+  const [customMessage, setCustomMessage] = useState({value: 0})
 
-  const handleInputChange = (e) => {
-    const id = e.target.id
-    const value = e.target.value
-    const provides = e.target.step
+  const handleInputChange = (event: FormEvent<HTMLInputElement>) => {
+    const id = event.currentTarget.id
+    const value = parseInt(event.currentTarget.value)
+    const provides = event.currentTarget.step
     setInput({
       ...input,
-      value: Math.round(value * 100),
+      value: Math.round(value),
     })
     setImpact('$' + Math.floor(value))
     setMessage(provides)
 
     if (id === 'donateother') {
+      // TODO: handle when user removes custom amount so NaN doesnt render
       setCustomMessage({
         ...input,
         value: Math.round(value),
@@ -35,10 +36,10 @@ export default function Donateonce() {
     }
   }
 
-  console.log(input)
+  console.log(input, 'Input')
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (event: FormEvent<HTMLButtonElement>) => {
+    event.preventDefault()
     setLoading(true)
 
     const response = await fetchPostJSON('/api/checkout_sessions', {
@@ -51,10 +52,12 @@ export default function Donateonce() {
     }
 
     const stripe = await getStripe()
+    if(stripe !== null) {
     const { error } = await stripe.redirectToCheckout({
       sessionId: response.id,
     })
     console.warn(error.message)
+    }
     setLoading(false)
   }
 

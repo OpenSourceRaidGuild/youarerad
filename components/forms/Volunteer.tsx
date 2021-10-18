@@ -21,7 +21,7 @@ export default function VolunteerForm() {
 
     const res = await fetch('/api/volunteer', {
       body: JSON.stringify({
-        name: (event.currentTarget.name as unknown as HTMLFormElement).value,
+        name: (event.currentTarget.name as unknown as HTMLInputElement).value,
         email: event.currentTarget.email.value,
         volunteertype: selected.name,
         experience: event.currentTarget.experience.value,
@@ -33,13 +33,15 @@ export default function VolunteerForm() {
       method: 'POST',
     })
 
-    await res.json()
-    ;(document.getElementById('name') as HTMLInputElement).value = ''
-    ;(document.getElementById('email') as HTMLInputElement).value = ''
-    ;(document.getElementById('experience') as HTMLInputElement).value = ''
-    ;(document.getElementById('why') as HTMLInputElement).value = ''
+    const result = await res.json()
+    if (result) {
+      ;(document.getElementById('name') as HTMLInputElement).value = ''
+      ;(document.getElementById('email') as HTMLInputElement).value = ''
+      ;(document.getElementById('experience') as HTMLInputElement).value = ''
+      ;(document.getElementById('why') as HTMLInputElement).value = ''
 
-    setSubmitted(true)
+      setSubmitted(true)
+    }
   }
   return (
     <div className="text-black bg-gray-50">

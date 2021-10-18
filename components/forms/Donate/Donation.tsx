@@ -2,7 +2,7 @@ import { Tab } from '@headlessui/react'
 import Donatemonthly from './Donatemonthly'
 import Donateonce from './Donateonce'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join('')
 }
 
