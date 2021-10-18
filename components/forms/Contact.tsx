@@ -1,6 +1,6 @@
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { Fragment, useState } from 'react'
+import { FormEvent, Fragment, useState } from 'react'
 
 const people = [
   { id: 1, name: 'General Contact' },
@@ -10,22 +10,23 @@ const people = [
   { id: 5, name: 'Fundraising' },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Contactform() {
   const [submitted, setSubmitted] = useState(false)
   const [selected, setSelected] = useState(people[3])
-  const sendContact = async (event) => {
+
+  const sendContact = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const res = await fetch('/api/contact', {
       body: JSON.stringify({
-        name: event.target.name.value,
-        email: event.target.email.value,
+        name: (event.currentTarget.name as unknown as HTMLInputElement).value,
+        email: event.currentTarget.email.value,
         department: selected.name,
-        message: event.target.message.value,
+        message: event.currentTarget.message.value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -34,10 +35,12 @@ export default function Contactform() {
     })
 
     const result = await res.json()
-    if (result) document.getElementById('name').value = ''
-    document.getElementById('email').value = ''
-    document.getElementById('message').value = ''
+    if (result){ 
+    ;(document.getElementById('name')as HTMLInputElement).value = ''
+    ;(document.getElementById('email')as HTMLInputElement).value = ''
+    ;(document.getElementById('message')as HTMLInputElement).value! = ''
     setSubmitted(true)
+  }
   }
   return (
     <form onSubmit={sendContact}>
@@ -80,8 +83,8 @@ export default function Contactform() {
                       <Listbox.Options className="absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-white shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none rounded-xl">
                         {people.map((person) => (
                           <Listbox.Option
-                            id={person.id}
-                            name={person.name}
+                            id={String(person.id)}
+                            refName={person.name}
                             key={person.id}
                             className={({ active }) =>
                               classNames(
