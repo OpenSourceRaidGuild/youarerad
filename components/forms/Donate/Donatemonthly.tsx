@@ -17,7 +17,7 @@ export default function Donatemonthly() {
 
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const id = Number(e.currentTarget.id)
-    const value = Number(e.currentTarget.value)
+    const value = parseInt(e.currentTarget.value)
     const provides = e.currentTarget.step
 
     setInput({
