@@ -10,10 +10,10 @@ const stepThree = ' covers the cost of two therapy sessions each month.'
 const stepFour = ' covers the cost of four therapy sessions each month.'
 
 export default function Donatemonthly() {
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState(false)
   const [input, setInput] = useState({ value: 0 })
-  const [impact, setImpact] = useState<string>('$30')
-  const [message, setMessage] = useState<string>(stepTwo)
+  const [impact, setImpact] = useState('$30')
+  const [message, setMessage] = useState(stepTwo)
 
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const id = Number(e.currentTarget.id)
@@ -34,26 +34,22 @@ export default function Donatemonthly() {
     e.preventDefault()
     setLoading(true)
 
-    try {
-      const response = await fetchPostJSON('/api/checkout_sessionsM', {
-        amount: input,
-      })
+    const response = await fetchPostJSON('/api/checkout_sessionsM', {
+      amount: input,
+    })
 
-      if (response.statusCode === 500) {
-        console.error(response.message)
-        return
-      }
-      const stripe = await getStripe()
-      if (stripe !== null) {
-        const { error } = await stripe.redirectToCheckout({
-          sessionId: response.id,
-        })
-        console.warn(error.message)
-      }
-      setLoading(false)
-    } catch (error) {
-      console.error(error)
+    if (response.statusCode === 500) {
+      console.error(response.message)
+      return
     }
+    const stripe = await getStripe()
+    if (stripe !== null) {
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: response.id,
+      })
+      console.warn(error.message)
+    }
+    setLoading(false)
   }
 
   return (
