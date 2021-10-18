@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../utils/supabaseClient'
+import { Session } from '@supabase/gotrue-js'
 
-export default function Account({ session }) {
+export default function Account({ session }: { session: Session }) {
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const [username, setUsername] = useState('')
+  const [website, setWebsite] = useState('')
+  const [avatar_url, setAvatarUrl] = useState('')
 
   useEffect(() => {
     getProfile()
@@ -14,7 +15,7 @@ export default function Account({ session }) {
   async function getProfile() {
     try {
       setLoading(true)
-      const user = supabase.auth.user()! // Is null possible? 
+      const user = supabase.auth.user()! // Is null possible?
 
       let { data, error, status } = await supabase
         .from('profiles')
@@ -31,17 +32,25 @@ export default function Account({ session }) {
         setWebsite(data.website)
         setAvatarUrl(data.avatar_url)
       }
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message)
     } finally {
       setLoading(false)
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({
+    username,
+    website,
+    avatar_url,
+  }: {
+    username: string
+    website: string
+    avatar_url: string
+  }) {
     try {
       setLoading(true)
-      const user = supabase.auth.user()
+      const user = supabase.auth.user()! // Is null possible?
 
       const updates = {
         id: user.id,
@@ -58,7 +67,7 @@ export default function Account({ session }) {
       if (error) {
         throw error
       }
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message)
     } finally {
       setLoading(false)
@@ -69,15 +78,15 @@ export default function Account({ session }) {
     <div className="form-widget">
       <div>
         <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session.user.email} disabled />
+        <input id="email" type="text" value={session.user?.email ?? ''} disabled />
       </div>
       <div>
         <label htmlFor="username">Name</label>
         <input
           id="username"
           type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
+          value={username ?? ''}
+          onChange={(event) => setUsername(event.target.value)}
         />
       </div>
       <div>
@@ -85,8 +94,8 @@ export default function Account({ session }) {
         <input
           id="website"
           type="website"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
+          value={website ?? ''}
+          onChange={(event) => setWebsite(event.target.value)}
         />
       </div>
 
