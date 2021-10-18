@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import Ctahover from '../../lotties/cta'
 import { fetchPostJSON } from '../../utils/api-helpers'
 import getStripe from '../../utils/get-stripe'
@@ -10,15 +10,15 @@ const stepThree = ' covers the cost of two therapy sessions each month.'
 const stepFour = ' covers the cost of four therapy sessions each month.'
 
 export default function Donatemonthly() {
-  const [loading, setLoading] = useState(false)
-  const [input, setInput] = useState()
-  const [impact, setImpact] = useState('$30')
-  const [message, setMessage] = useState(stepTwo)
+  const [loading, setLoading] = useState<boolean>(false)
+  const [input, setInput] = useState({ value: 0 })
+  const [impact, setImpact] = useState<string>('$30')
+  const [message, setMessage] = useState<string>(stepTwo)
 
-  const handleInputChange = (e) => {
-    const id = e.target.id
-    const value = e.target.value
-    const provides = e.target.step
+  const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
+    const id = Number(e.currentTarget.id)
+    const value = Number(e.currentTarget.value)
+    const provides = e.currentTarget.step
 
     setInput({
       ...input,
@@ -30,25 +30,30 @@ export default function Donatemonthly() {
 
   console.log(input)
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
     setLoading(true)
 
-    const response = await fetchPostJSON('/api/checkout_sessionsM', {
-      amount: input,
-    })
+    try {
+      const response = await fetchPostJSON('/api/checkout_sessionsM', {
+        amount: input,
+      })
 
-    if (response.statusCode === 500) {
-      console.error(response.message)
-      return
+      if (response.statusCode === 500) {
+        console.error(response.message)
+        return
+      }
+      const stripe = await getStripe()
+      if (stripe !== null) {
+        const { error } = await stripe.redirectToCheckout({
+          sessionId: response.id,
+        })
+        console.warn(error.message)
+      }
+      setLoading(false)
+    } catch (error) {
+      console.error(error)
     }
-
-    const stripe = await getStripe()
-    const { error } = await stripe.redirectToCheckout({
-      sessionId: response.id,
-    })
-    console.warn(error.message)
-    setLoading(false)
   }
 
   return (
