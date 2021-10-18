@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 export default function Newsletter() {
   const [submitted, setSubmitted] = useState(false)
@@ -6,17 +6,17 @@ export default function Newsletter() {
     email: '',
   })
 
-  const handleParam = () => (e) => {
-    const name = e.target.name
-    const value = e.target.value
+  const handleParam = () => (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.currentTarget.name
+    const value = event.currentTarget.value
     setQuery((prevState) => ({
       ...prevState,
       [name]: value,
     }))
   }
 
-  const formSubmit = (e) => {
-    e.preventDefault()
+  const formSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     setSubmitted(true)
     const formData = new FormData()
     Object.entries(query).forEach(([key, value]) => {
@@ -50,7 +50,7 @@ export default function Newsletter() {
             : 'form-button mt-2'
         }
       >
-        {submitted ? <div className="font-bold ">Success!</div> : 'Sign Up'}
+        {submitted ? <div className="font-bold">Success!</div> : 'Sign Up'}
       </button>
     </form>
   )
