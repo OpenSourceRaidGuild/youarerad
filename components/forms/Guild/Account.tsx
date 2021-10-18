@@ -14,7 +14,7 @@ export default function Account({ session }) {
   async function getProfile() {
     try {
       setLoading(true)
-      const user = supabase.auth.user()
+      const user = supabase.auth.user()! // Is null possible? 
 
       let { data, error, status } = await supabase
         .from('profiles')

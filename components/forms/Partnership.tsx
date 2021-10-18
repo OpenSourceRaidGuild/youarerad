@@ -8,7 +8,7 @@ const partnership = [
   { id: 3, name: 'HR' },
   { id: 4, name: 'Programs' },
 ]
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -107,8 +107,8 @@ export default function PartnershipForm() {
                           <Listbox.Options className="absolute z-10 w-full py-1 mt-1 overflow-auto text-base bg-white shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none rounded-xl">
                             {partnership.map((partner) => (
                               <Listbox.Option
-                                id={partner.id}
-                                name={partner.name}
+                                id={partner.id.toString()}
+                                refName={partner.name}
                                 key={partner.id}
                                 className={({ active }) =>
                                   classNames(
