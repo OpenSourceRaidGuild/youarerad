@@ -2,11 +2,23 @@ import { Tab } from '@headlessui/react'
 import Image from 'next/image'
 import { Fragment } from 'react'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Tabs(tabTitle) {
+type Feature = {
+  imageSrc: string
+  imageAlt: string
+  name: string
+  description: string
+}
+
+type Tab = {
+  name: string
+  features: Array<Feature>
+}
+
+export default function Tabs(tabTitle: string, tabs: Tab[]) {
   return (
     <div aria-labelledby="Volunteer positions open" className="">
       <div className="max-w-2xl mx-auto lg:px-0 lg:max-w-none">
