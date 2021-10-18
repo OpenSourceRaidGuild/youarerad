@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         ],
         success_url: `${req.headers.origin}/donationcomplete?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/`,
-      } 
+      }
       const checkoutSession = await stripe.checkout.sessions.create(params)
       res.status(200).json(checkoutSession)
     } catch (err: any) {

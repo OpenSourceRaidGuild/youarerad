@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../../utils/supabaseClient.js'
+import { supabase } from '../../utils/supabaseClient'
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
