@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FormEvent, FormEventHandler, MouseEventHandler, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Ctahover from '../../lotties/cta'
 import { fetchPostJSON } from '../../utils/api-helpers'
 import getStripe from '../../utils/get-stripe'
